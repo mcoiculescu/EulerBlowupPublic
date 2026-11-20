@@ -83,7 +83,7 @@ private def parseRow (line : String) : Except String (Option Row) := do
   | _ => throw s!"Malformed paper coverage row: {line}"
 
 private def checkSource (row : Row) : CommandElabM Unit := do
-  let frozenPath := "../paper/craik_criminale_rewrite/"
+  let frozenPath := "frozen/torus-rewrite/src/paper/craik_criminale_rewrite/"
   if row.result.startsWith "Auxiliary " then
     unless row.sourcePath == frozenPath ++ "auxiliary/terminal_smoothness.tex" do
       throwError "Expected the frozen auxiliary source for {row.result}"

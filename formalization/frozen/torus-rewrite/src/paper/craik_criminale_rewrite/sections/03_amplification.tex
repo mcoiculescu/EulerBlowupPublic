@@ -1,0 +1,660 @@
+\subsection{Amplification on a prescribed interval}\label{cc:sec:amplification}
+
+Of the two entries $\nu=E_1\cdot BE_2$ and $\eta=E_3\cdot BE_2$ of the
+older gradient introduced in Lemma~\ref{cc:lem:frame}, the coupling
+$\nu$ helps the preceding shear amplify a new wave, while $\eta$
+changes its direction and eventually ends the growth. A small ratio
+$\eta/\nu$ therefore allows a large gain before decay. Up to errors
+measured by one number $\delta$, the amplitude of a new wave solves a
+linear system of two equations with explicit coefficients
+(Lemma~\ref{cc:uf:exact:lem:additive}). Its solution with growing
+initial data peaks after a large gain (Lemma~\ref{cc:lem:model}), and
+the wave follows this solution with relative errors that grow only
+polynomially in the length of the interval
+(Lemma~\ref{cc:lem:finite-comparison}). After the peak, the couplings
+of the new wave reach the ratio prescribed for its successor
+(Proposition~\ref{cc:prop:finite-return}).
+
+\subsubsection{The new wave in the preceding frame}\label{cc:sec:comparison}
+Let $B(t)$ be a smooth trace-free matrix, and let the preceding wave
+$(k_p,\mathbf a_p)$, with $k_p\ne0$ and $\mathbf a_p\ne0$, satisfy
+\eqref{cc:eq:wave-ode} with $D$ replaced by $B$. Let $(E_1,E_2,E_3)$ be
+its frame, $B_{ij}=E_i\cdot BE_j$ the entries of $B$ in this frame, and
+$\sigma_\sharp=|k_p|\,|\mathbf a_p|$ its strength, as in
+Lemma~\ref{cc:lem:frame}. Thus \eqref{cc:eq:frame} holds with the
+functions $B_{12}$, $B_{32}$ and $\sigma_\sharp$ in the places of
+$\nu$, $\eta$ and $\sigma$. The new wave evolves over
+\[
+ M=B+\mathbf a_p\otimes k_p+E=B+\sigma_\sharp E_2\otimes E_1+E,
+\]
+the sum of the older gradient, the gradient of the preceding wave at
+the origin, and a continuous matrix $E(t)$ of errors. Its wave vector
+$k$ solves the first equation of \eqref{cc:eq:wave-ode} with $D=M$ and
+equals $\lambda E_3$, with $\lambda>0$, at the activation time $t_0$.
+For this $k$, an \emph{amplitude vector} is a solution $\mathbf a$ of
+the second equation in \eqref{cc:eq:wave-ode} with $D=M$ satisfying
+$\mathbf a(t)\cdot k(t)=0$. Only these ordinary differential equations
+enter this subsection: the matrices $B$ and $E$ are prescribed, and no
+equation is assumed for them. Subsection~\ref{cc:uf:sec:later-wave}
+applies the results below with $M$ the velocity gradient of the parent
+at the origin, which is a fixed point of the flow.
+
+Freeze the strength and the two couplings at the activation time,
+\[
+ \sigma=\sigma_\sharp(t_0),\qquad \nu=B_{12}(t_0)>0,\qquad
+ \eta=B_{32}(t_0)>0,
+\]
+and put
+\[
+ r=\sqrt{2\sigma\nu},\qquad S=\frac\sigma r=\sqrt{\frac{\sigma}{2\nu}},\qquad
+ \varepsilon=\frac\eta\nu,\qquad \tau=r(t-t_0).
+\]
+To leading order in $\nu/\sigma$, $r$ is the growth rate
+$\sqrt{2\nu(\sigma-\nu)}$ found in Subsection~\ref{cc:sec:intro-waves}. Thus
+$\tau$ measures time in units of the growth time $r^{-1}$, and $S$ is
+the ratio of the preceding shear rate to the growth rate. We work on an
+interval $0\le\tau\le T$ of normalized length $T\ge2$. Primes denote
+derivatives in $\tau$, all suprema are over this interval, and
+$b_{ij}=B_{ij}/r$.
+
+Define scalar functions $X,Q,Z,U,V$ of $\tau$ by
+\begin{equation}\label{cc:eq:scaled-pair}
+ k=\lambda\left(XE_1+\frac QSE_2+ZE_3\right),\qquad
+ \mathbf a=-\frac USE_1+VE_2+\frac{XU-QV}{SZ}E_3 ,
+\end{equation}
+so that $(X,Q,Z)(0)=(0,0,1)$ and $|k|^2=\lambda^2m$ with
+$m=X^2+Q^2/S^2+Z^2$. These are coordinates for the wave vector and the
+amplitude vectors, not a prescribed solution. While $Z\ne0$, the last
+component of $\mathbf a$ enforces $k\cdot\mathbf a=0$, and every vector
+perpendicular to $k$ has this form for exactly one pair $(U,V)$. The
+factor $S^{-1}$ in the $E_2$ coordinate of $k$ makes the contribution
+of $B$ to the coefficient of $Z$ in the equation for $Q$ equal to
+$-B_{32}/\nu$, which equals $-\varepsilon$ at $\tau=0$. The error $E$
+contributes $-SE_{32}/r$. In the growing mode of
+Subsection~\ref{cc:sec:intro-waves}, the components of the amplitude along $E_1$ and $E_2$
+have opposite signs, and the first is
+$2\nu/\sqrt{2\nu(\sigma-\nu)}=S^{-1}(1-\nu/\sigma)^{-1/2}$ times the
+second in absolute value. With the
+factor $S^{-1}$ in the $E_1$ coordinate of $\mathbf a$, this mode is
+$U=V$ to leading order.
+
+The errors of the comparison are measured by
+\begin{equation}\label{cc:uf:exact:eq:additive-error}
+ \delta=\left\|\frac{B_{12}}{\nu}-1\right\|_\infty
+       +\left\|\frac{B_{32}}{\eta}-1\right\|_\infty
+       +\frac{\|B\|_\infty}{r}+\frac{\|E\|_\infty}{\nu}.
+\end{equation}
+The first two terms are the relative variations of the two couplings on
+the interval. The third compares the older gradient with the growth
+rate; it is at least $\nu/r=1/(2S)$, so it is small only if the
+preceding shear is strong. The last compares the error $E$ with the
+coupling $\nu$.
+
+Fix an absolute constant $C_0$, sufficiently large for the finitely
+many estimates of this subsection, and assume
+\begin{equation}\label{cc:eq:finite-smallness}
+ C_0\varepsilon\le1,\qquad C_0T^{C_0}\delta\le\varepsilon .
+\end{equation}
+All other constants and exponents $C,c$ in this subsection are
+absolute and do not depend on $C_0$; they may change from one estimate
+to the next. The errors below have the form $CT^C\delta$, and by
+\eqref{cc:eq:finite-smallness} such an error is at most $\varepsilon$
+times any prescribed negative power of $T$ once $C_0$ is large. In
+particular $S\ge1/(2\delta)\ge T^2$.
+
+Let
+\[
+ x=\tfrac12\varepsilon\tau^2,\qquad s=(1+x^2)^{-1/2}.
+\]
+The \emph{reference value} of an expression in $X,Q,Z$ and the
+coefficients below is its value at $(X,Q,Z)=(x,-\varepsilon\tau,1)$
+for the constant couplings $B_{12}=\nu$ and $B_{32}=\eta$, with all
+other entries of $B$ and the error $E$ equal to zero, so that
+$\sigma_\sharp=\sigma$, in the limit $S\to\infty$ of an infinitely
+strong preceding shear. We call
+\begin{equation}\label{cc:eq:model-system}
+ U'=s^2\bigl((1-\varepsilon x)V-2\varepsilon\tau xU\bigr),\qquad V'=U
+\end{equation}
+the \emph{reference system}.
+
+\begin{lemma}\label{cc:uf:exact:lem:additive}
+Assume \eqref{cc:eq:finite-smallness}. The components of the wave
+vector in \eqref{cc:eq:scaled-pair} satisfy
+\[
+ \sup|(X-x,\,Q+\varepsilon\tau,\,Z-1)|\le CT^C\delta\le\tfrac12 .
+\]
+The components $U,V$ of an amplitude vector satisfy
+\[
+ \frac{d}{d\tau}\binom UV=\left\{
+ \begin{pmatrix}-2\varepsilon\tau xs^2&s^2(1-\varepsilon x)\\1&0\end{pmatrix}
+ +\mathcal E(\tau)\right\}\binom UV,
+ \qquad \sup|\mathcal E|\le CT^C\delta ,
+\]
+where the matrix $\mathcal E$ is the same for all amplitude vectors.
+\end{lemma}
+\begin{proof}
+The equations \eqref{cc:eq:wave-ode} and \eqref{cc:eq:frame} are in the
+time $t$, and every coefficient in them is a rate of change in $t$.
+Since $d/d\tau=r^{-1}d/dt$, each such coefficient is divided by $r$,
+which turns $B_{ij}$ into $b_{ij}$ and $\sigma_\sharp$ into
+$S\sigma_\sharp/\sigma$. By \eqref{cc:uf:exact:eq:additive-error} and
+$r/S=2\nu$,
+\[
+ |b_{ij}|\le\delta,\qquad
+ |2Sb_{12}-1|=\left|\frac{B_{12}}{\nu}-1\right|\le\delta,\qquad
+ |2Sb_{32}-\varepsilon|
+ =\varepsilon\left|\frac{B_{32}}{\eta}-1\right|\le\delta .
+\]
+By the last equation of \eqref{cc:eq:frame},
+$\sigma_\sharp/\sigma=\exp\int_0^\tau b_{33}$, hence
+$\sup|\sigma_\sharp/\sigma-1|\le2T\delta$, because $T\delta\le1$.
+
+When $E=0$, the equation for $k$ and
+\eqref{cc:eq:frame} give
+\[
+ Q'=-b_{22}Q-2Sb_{32}Z,\qquad
+ Z'=-b_{33}Z-(b_{23}-b_{32})Q/S,
+\]
+\[
+ X'=-b_{11}X-(\sigma_\sharp/\sigma+b_{21}/S+b_{12}/S)Q
+                         -(b_{31}+b_{13})Z.
+\]
+When $E\ne0$, the term $-E^Tk$ is added to the equation for $k$, and
+the frame does not change, since it is the frame of the preceding wave
+over $B$. In frame components
+$k=\lambda\operatorname{diag}(1,S^{-1},1)(X,Q,Z)^T$, so in the time
+$\tau$ this adds to the system for $(X,Q,Z)$ the coefficient matrix
+\[
+ -r^{-1}\operatorname{diag}(1,S,1)\,E^T\operatorname{diag}(1,S^{-1},1),
+\]
+where $E^T$ is written in the frame. Since $S\ge1$, its norm is at most
+$(S/r)|E|=|E|/(2\nu)\le\delta$.
+
+Write $y=(X,Q,Z)^T$ and $y'=(A_0+A_1)y$, where $A_0$ is the matrix of
+the system $X'=-Q$, $Q'=-\varepsilon Z$, $Z'=0$, and $A_1$ collects all
+remaining coefficients, including the one from $E$. By the bounds
+above, $\sup|A_1|\le CT\delta$. The solution of $y_0'=A_0y_0$ with the
+initial value $(0,0,1)^T$ of $y$ is $y_0=(x,-\varepsilon\tau,1)^T$, and
+$|y_0|\le2T^2$. The propagator of $A_0$, the matrix that maps the value
+of a solution at $\tau'$ to its value at $\tau$, is a polynomial of
+degree two in $\tau-\tau'$, of norm at most $2T^2$ on the interval.
+Variation of constants writes $y-y_0$ as the integral from $0$ to
+$\tau$ of this propagator applied to $A_1y$. Hence
+\[
+ \sup|y-y_0|\le CT^C\delta\,\bigl(1+\sup|y-y_0|\bigr),
+\]
+and \eqref{cc:eq:finite-smallness} gives the bound for the wave vector.
+In particular
+\[
+ \tfrac12\le Z\le\tfrac32,\qquad |X|\le T^2,\qquad |Q|\le T,\qquad
+ m\ge\tfrac14 .
+\]
+
+To express the pressure coefficient in the amplitude equation for $E=0$, put
+\[
+ F_U=X(-b_{11}+b_{13}X/Z)
+ +Q\bigl(-\sigma_\sharp/\sigma-b_{21}/S+(b_{23}/S)X/Z\bigr)
+ +Z(-b_{31}+b_{33}X/Z),
+\]
+\[
+ F_V=X(Sb_{12}-b_{13}Q/Z)
+ +Q\bigl(b_{22}-(b_{23}/S)Q/Z\bigr)
+ +Z(Sb_{32}-b_{33}Q/Z),
+\]
+so that $2(F_UU+F_VV)/(Sm)$ is the pressure coefficient $p_{\rm w}$ of
+\eqref{cc:eq:wave-ode} times $\lambda/r$. Substituting
+\eqref{cc:eq:scaled-pair} into the amplitude equation of
+\eqref{cc:eq:wave-ode} gives
+$\frac{d}{d\tau}(U,V)^T=N(U,V)^T$, where the matrix $N$ has entries
+\begin{align*}
+ N_{11}&=-b_{11}+2b_{13}X/Z-2XF_U/m,\\
+ N_{12}&=2Sb_{12}-2b_{13}Q/Z-2XF_V/m,\\
+ N_{21}&=\sigma_\sharp/\sigma+(b_{21}-b_{12})/S
+ -\bigl((b_{23}+b_{32})/S\bigr)X/Z+2QF_U/(S^2m),\\
+ N_{22}&=-b_{22}+\bigl((b_{23}+b_{32})/S\bigr)Q/Z+2QF_V/(S^2m).
+\end{align*}
+The reference values of $F_U$, $F_V$ and $m$ are $\varepsilon\tau$,
+$(x+\varepsilon)/2$ and $1+x^2=s^{-2}$, so those of the entries of $N$
+are
+\[
+ -2\varepsilon\tau xs^2,\qquad
+ 1-x(x+\varepsilon)s^2=s^2(1-\varepsilon x),\qquad 1,\qquad 0 .
+\]
+Thus the reference value of $N$ is the coefficient matrix of the
+reference system \eqref{cc:eq:model-system}.
+
+Each entry of $N$ is a polynomial of bounded degree in the coordinates
+$X,Q,Z$, the reciprocals $1/Z$ and $1/m$, and the coefficients
+$b_{11}$, $b_{22}$, $b_{33}$, $b_{13}$, $b_{31}$, $b_{21}/S$,
+$b_{12}/S$, $b_{23}/S$, $b_{32}/S$, $2Sb_{12}$, $2Sb_{32}$,
+$\sigma_\sharp/\sigma$ and $S^{-2}$. Each of these quantities is at
+most $CT^2$. Each also differs from its reference value by at most
+$CT^C\delta$: the coordinates by the bound for the wave vector, the
+reciprocals by a multiple of $|m-(1+x^2)|+|Z-1|$, and the coefficients
+by the bounds at the beginning of the proof and $S^{-1}\le2\delta$.
+Hence each entry of $N$ differs from its reference value by at most
+$CT^C\delta$.
+
+When $E\ne0$, the amplitude equation contains the additional term
+$-\bigl(\Id-2\frac{k}{|k|}\otimes\frac{k}{|k|}\bigr)E\mathbf a$, of
+norm at most $|E|\,|\mathbf a|$. By \eqref{cc:eq:scaled-pair} and
+$S\ge T^2$, $|\mathbf a|\le C|(U,V)|$, while
+$U=-S\,\mathbf a\cdot E_1$ and $V=\mathbf a\cdot E_2$. In the time
+$\tau$ this term therefore adds to the system for $(U,V)$ a coefficient
+matrix of norm at most $C(S/r)|E|\le C\delta$.
+\end{proof}
+
+\subsubsection{The reference solution}\label{cc:sec:scalar}
+The reference value of $k$ is $\lambda(xE_1+E_3)$, so $x=\tan\varphi$
+and $s=\cos\varphi$ for the angle $\varphi$ of
+Subsection~\ref{cc:sec:intro-waves}. As $\varphi$ increases, the
+pressure term of the reference system \eqref{cc:eq:model-system}
+reduces the coefficient driving $U$ and introduces the term
+$-2\varepsilon\tau xs^2U$. The driving coefficient
+becomes negative when $\varepsilon x>1$.
+
+The \emph{reference solution} is the solution with $U(0)=V(0)=1$,
+shown in Figure~\ref{cc:fig:wave-turning}.
+These initial data lie in the growing eigendirection of the coefficient
+matrix $\bigl(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\bigr)$ at
+$\tau=0$, and a later wave is started with them in
+Subsection~\ref{cc:uf:sec:later-wave}. While $V>0$, the logarithmic
+derivative $Y=V'/V$ satisfies the Riccati equation
+\begin{equation}\label{cc:eq:model}
+ Y'=s^2(1-\varepsilon x-2\varepsilon\tau xY)-Y^2,\qquad Y(0)=1.
+\end{equation}
+The next lemma constructs $Y$ for all $\tau\ge0$, so the reference
+solution is
+\[
+ (U,V)=(Yv_g,v_g),\qquad
+ v_g(\tau)=\exp\left(\int_0^\tau Y(\tau')\,d\tau'\right),
+\]
+and the zero of $Y$ locates the maximum of $v_g$.
+
+\begin{lemma}\label{cc:lem:model}
+Let $0<\varepsilon\le1$. The solution $Y$ of the Riccati equation
+\eqref{cc:eq:model} exists for all $\tau\ge0$. It satisfies $|Y|\le1$
+and
+\[
+ Y=s(1+e)-\tfrac12\varepsilon\tau xs^2\qquad\hbox{with a function $e$ such that}\qquad
+ 0\le e\le\tfrac18\varepsilon .
+\]
+It has exactly one zero $\tau_m$, and
+\[
+ 2\le\varepsilon\tau_m\le3 .
+\]
+It is positive before this zero and negative afterwards, and its
+integral up to the zero, the logarithm of the gain of $v_g$, satisfies
+\[
+ \int_0^{\tau_m}Y\,d\tau\ge\varepsilon^{-1/2}-1.
+\]
+\end{lemma}
+\begin{proof}
+Substitute $Y=s(1+e)-\tfrac12\varepsilon\tau xs^2$. Since
+$s'/s=-\varepsilon\tau xs^2$, the equation \eqref{cc:eq:model} is
+equivalent to $e'=s(-2e-e^2+\tfrac12\varepsilon xs^2)$, $e(0)=0$. The
+right-hand side of this equation is nonnegative at $e=0$ and
+nonpositive at $e=\varepsilon/8$, since $xs^2\le1/2$. Thus $e$ remains
+in $[0,\varepsilon/8]$ as long as it exists, and so it exists for all
+$\tau\ge0$. This constructs the global solution $Y$ in the stated form.
+
+Wherever $Y\ge0$, \eqref{cc:eq:model} gives $Y'\le1-Y^2$, because
+$s^2(1-\varepsilon x)\le1$; so $Y$, which starts at one, never exceeds
+one. Also $xs^2\le\min\{1/2,1/x\}$ gives
+$\varepsilon\tau xs^2\le\min\{\varepsilon\tau/2,2/\tau\}\le1$, hence
+$Y\ge-\tfrac12\varepsilon\tau xs^2\ge-\tfrac12$.
+
+Since $Y=s(1+e-\tfrac12\varepsilon\tau xs)$, $Y$ is positive for
+$\varepsilon\tau\le2$, because $e\ge0$ and $xs<1$. For
+$\varepsilon\tau=3$ we have $x\ge9/2$, so $xs>3/4$ and
+$\tfrac12\varepsilon\tau xs>9/8\ge1+e$; the solution is negative
+there. At any zero with $\varepsilon\tau\ge2$ its derivative is
+$s^2(1-\varepsilon x)=s^2(1-(\varepsilon\tau)^2/2)<0$. Consequently
+$Y$ has exactly one zero $\tau_m$, with $2\le\varepsilon\tau_m\le3$, and
+it is positive before $\tau_m$ and negative afterwards.
+
+Since $e\ge0$ and
+$\tfrac12\varepsilon\tau xs^2=\tfrac14\bigl(\log(1+x^2)\bigr)'$, we have
+$Y\ge s-\tfrac14\bigl(\log(1+x^2)\bigr)'$. For
+$0\le\tau\le(2/\varepsilon)^{1/2}$ we have $x\le1$, hence
+$s\ge2^{-1/2}$. This interval ends before $\tau_m\ge2/\varepsilon$, and
+$Y$ is positive before $\tau_m$. Therefore
+\[
+ \int_0^{\tau_m}Y\,d\tau
+ \ge\int_0^{(2/\varepsilon)^{1/2}}Y\,d\tau
+ \ge2^{-1/2}(2/\varepsilon)^{1/2}-\tfrac14\log2
+ \ge\varepsilon^{-1/2}-1 .
+ \qedhere
+\]
+\end{proof}
+
+Relative to the reference solution, the reference system is triangular.
+For a solution $(U,V)$ of \eqref{cc:eq:model-system} put $h=V/v_g$ and
+$l=(U-YV)/(sv_g)$. By \eqref{cc:eq:model}, $s'/s=-\varepsilon\tau xs^2$
+and the formula for $Y$ in Lemma~\ref{cc:lem:model}, the reference
+system becomes
+\begin{equation}\label{cc:eq:triangular-comparison}
+ h'=sl,\qquad l'=-2s(1+e)l,
+\end{equation}
+with the function $e$ of that lemma, and the reference solution is
+$(h,l)=(1,0)$. By the second equation $|l|$ does not increase, and
+since $e\ge0$, for $\tau_1\le\tau_2$,
+\[
+ |h(\tau_2)-h(\tau_1)|\le\int_{\tau_1}^{\tau_2}s|l|
+ \le\int_{\tau_1}^{\tau_2}s(1+e)|l|
+ =\tfrac12\bigl(|l(\tau_1)|-|l(\tau_2)|\bigr).
+\]
+The triangle inequality and $|l(\tau_2)|\le|l(\tau_1)|$ give
+\[
+ |h(\tau_2)|+|l(\tau_2)|\le|h(\tau_1)|+|l(\tau_1)|.
+\]
+Since $|(h,l)|\le|h|+|l|\le\sqrt2\,|(h,l)|$, the propagator of
+\eqref{cc:eq:triangular-comparison} from
+$\tau_1$ to $\tau_2\ge\tau_1$ has norm at most $2$, uniformly in
+$\tau_1$, $\tau_2$ and $\varepsilon$.
+
+\subsubsection{Comparison with the reference solution}
+The next lemma compares the wave started with $(U,V)(0)=(1,1)$ to
+the reference solution on $0\le\tau\le T$. In the variables $h,l$
+the reference propagator is uniformly bounded by the estimate following
+\eqref{cc:eq:triangular-comparison}. The error relative to $v_g$
+therefore depends only polynomially on $T$. A direct Gronwall estimate
+for $(U,V)$ would give errors of size $\exp(CT)\,\delta$, while
+\eqref{cc:eq:finite-smallness} only controls polynomial losses in $T$. The relative
+bounds give $|\mathbf a|$ up to a factor $\exp(\pm\varepsilon)$, so the
+wave inherits the gain of the reference solution.
+
+\begin{lemma}\label{cc:lem:finite-comparison}
+Assume \eqref{cc:eq:finite-smallness}, and let $\mathbf a$ be the
+amplitude vector with
+$\mathbf a(t_0)=-(1/S)E_1(t_0)+E_2(t_0)$, that is, with
+$(U,V)(0)=(1,1)$ in \eqref{cc:eq:scaled-pair}. Then, on
+$0\le\tau\le T$,
+\begin{equation}\label{cc:eq:norm-rate-error}
+ \left|\log\frac{|\mathbf a|}{v_g}\right|\le\varepsilon.
+\end{equation}
+For $0\le\tau_1\le\tau_2\le T$, let $\Phi(\tau_2,\tau_1)$ be the linear
+map that sends $\mathbf b(\tau_1)$ to $\mathbf b(\tau_2)$ for every
+amplitude vector $\mathbf b$. It maps the plane perpendicular to
+$k(\tau_1)$ onto the plane perpendicular to $k(\tau_2)$, and
+\[
+ \|\Phi(\tau_2,\tau_1)\|\le CS\,\frac{|\mathbf a(\tau_2)|}{|\mathbf a(\tau_1)|}.
+\]
+Put $E_{1,+}=\frac{k}{|k|}$, $E_{2,+}=\frac{\mathbf a}{|\mathbf a|}$ and
+$E_{3,+}=E_{1,+}\times E_{2,+}$, and define
+\[
+ \nu_+=E_{1,+}\cdot ME_{2,+},\qquad \eta_+=E_{3,+}\cdot ME_{2,+}.
+\]
+Then $\nu_+\ge\varepsilon\nu/2$ on $0\le\tau\le T$, and for
+$\sqrt2/\varepsilon\le\tau\le T$,
+\begin{equation}\label{cc:eq:actual-ratio}
+ \left|\frac{\nu_+}{\nu}-1\right|\le\varepsilon,\qquad
+ \left|\frac{\eta_+/\nu_+}{s}-1\right|\le\frac12.
+\end{equation}
+\end{lemma}
+\begin{proof}
+\emph{The amplitude and its propagator.} For an amplitude vector, $(U,V)$ solves
+the system of Lemma~\ref{cc:uf:exact:lem:additive}, and we set, as for
+the reference system,
+\[
+ \binom hl=R\binom{U/v_g}{V/v_g},\qquad
+ R=\begin{pmatrix}0&1\\ s^{-1}&-Ys^{-1}\end{pmatrix},\qquad
+ R^{-1}=\begin{pmatrix}Y&s\\ 1&0\end{pmatrix}.
+\]
+Then $(h,l)$ solves \eqref{cc:eq:triangular-comparison} with the
+additional coefficient matrix $R\mathcal ER^{-1}$, where $\mathcal E$
+is the error matrix of Lemma~\ref{cc:uf:exact:lem:additive}. Since
+$|Y|\le1$ by Lemma~\ref{cc:lem:model} and
+$s^{-1}=\sqrt{1+x^2}\le T^2$, we have $|R|\le CT^2$ and
+$|R^{-1}|\le C$, hence $|R\mathcal ER^{-1}|\le CT^C\delta$.
+
+For the prescribed initial amplitude $\mathbf a(t_0)$ we have
+$(h,l)(0)=(1,0)$. Let $\omega=(h-1,l)$. By variation of
+constants, $\omega(\tau)$ is the integral from $0$ to $\tau$ of the
+propagator of \eqref{cc:eq:triangular-comparison} applied to
+$R\mathcal ER^{-1}(h,l)$. That propagator has norm at most $2$, so
+\[
+ \sup|\omega|\le2T\cdot CT^C\delta\,(1+\sup|\omega|)
+ \le CT^C\delta+\tfrac12\sup|\omega|,
+\]
+by \eqref{cc:eq:finite-smallness}, so $\sup|\omega|\le CT^C\delta\le1/2$.
+Since $|h-1|\le1/2$ and $V/v_g=h$, we have $V>0$.
+Also $U/v_g=Yh+sl$, so $w=U/V=Y+sl/h$. Using $0<s\le1$ and
+$|Y|\le1$ gives
+\begin{equation}\label{cc:eq:amplitude-comparison}
+ \begin{gathered}
+ h\ge\tfrac12,\qquad
+ |w-Y|=\frac{s|l|}{h}\le2|l|\le CT^C\delta,\\
+ |w|\le|Y|+2|l|\le2.
+ \end{gathered}
+\end{equation}
+Since the frame is orthonormal, \eqref{cc:eq:scaled-pair} gives
+\[
+ |\mathbf a|=V(1+\rho)^{1/2},\qquad
+ \rho=S^{-2}\left\{w^2+\frac{(Xw-Q)^2}{Z^2}\right\}.
+\]
+Here $|X|\le T^2$, $|Q|\le T$ and $Z\ge1/2$, so
+$\rho\le CT^4S^{-2}\le CT^4\delta$. Thus
+$\log(|\mathbf a|/v_g)=\log h+\tfrac12\log(1+\rho)$ is at most
+$CT^C\delta$ in absolute value, and \eqref{cc:eq:finite-smallness}
+gives \eqref{cc:eq:norm-rate-error}.
+
+To bound $\Phi(\tau_2,\tau_1)$, let $(h,l)$ be the normalized
+coordinates of an arbitrary amplitude vector $\mathbf b$. Since $U=v_g(Yh+sl)$ and
+$V=v_gh$, \eqref{cc:eq:scaled-pair} gives $\mathbf b/v_g=hL_h+lL_l$,
+where
+\[
+ L_h=-\frac YSE_1+E_2+\frac{XY-Q}{SZ}E_3,\qquad
+ L_l=\frac sS\left(-E_1+\frac XZE_3\right).
+\]
+Since $S\ge T^2$, $|L_h|+|L_l|\le C$.
+Conversely, $h=(\mathbf b/v_g)\cdot E_2$, because $L_l$ has no $E_2$
+component, and then $lL_l=\mathbf b/v_g-hL_h$. By the bounds for the
+wave vector, $|L_l|=s\sqrt{1+X^2/Z^2}/S\ge c/S$, so
+$|h|+|l|\le CS|\mathbf b|/v_g$. The propagator of $(h,l)$ differs from
+that of \eqref{cc:eq:triangular-comparison} by variation of constants
+with the coefficient matrix $R\mathcal ER^{-1}$, so by
+\eqref{cc:eq:finite-smallness} its norm is at most $4$. Hence
+\[
+ \|\Phi(\tau_2,\tau_1)\|\le CS\,\frac{v_g(\tau_2)}{v_g(\tau_1)}
+ \le CS\,\frac{|\mathbf a(\tau_2)|}{|\mathbf a(\tau_1)|},
+\]
+where the last step uses \eqref{cc:eq:norm-rate-error}.
+
+\emph{The couplings in the new frame.} With $w=U/V$ put $z=(Xw-Q)/Z$ and
+$n=|\mathbf a|/V$, so that
+\[
+ \frac{\mathbf a}V=-\frac wSE_1+E_2+\frac zSE_3,\qquad
+ n^2=1+\frac{w^2+z^2}{S^2}.
+\]
+In the frame, $M/r$ has entries $b_{ij}$, plus $S\sigma_\sharp/\sigma$
+in position $(2,1)$, plus $E/r$. For $E=0$ the frame components of
+$M\mathbf a/(rV)$ are therefore $(f_1/S,f_2,f_3/S)$, where
+\[
+ f_1=-b_{11}w+Sb_{12}+b_{13}z,\quad
+ f_2=-(\sigma_\sharp/\sigma+b_{21}/S)w+b_{22}+(b_{23}/S)z,\quad
+ f_3=-b_{31}w+Sb_{32}+b_{33}z.
+\]
+The frame components of $(k/\lambda)\times(\mathbf a/V)$ are
+$\bigl(Qz/S^2-Z,\,-(Zw+Xz)/S,\,X+Qw/S^2\bigr)$. Taking scalar products
+and using $r/S=2\nu$, we obtain for $E=0$
+\begin{align}\label{cc:eq:coupling-rational}
+ \nu_+/\nu&=2(Xf_1+Qf_2+Zf_3)/(\sqrt m\,n),\\
+ \eta_+/\nu&=2\{(-Z+Qz/S^2)f_1-(Zw+Xz)f_2
+                         +(X+Qw/S^2)f_3\}/(\sqrt m\,n^2).
+ \label{cc:eq:coupling-rational-end}
+\end{align}
+The matrix $E$ adds $E_{1,+}\cdot EE_{2,+}/\nu$ to $\nu_+/\nu$ and
+$E_{3,+}\cdot EE_{2,+}/\nu$ to $\eta_+/\nu$. Each is at most $\delta$,
+by \eqref{cc:uf:exact:eq:additive-error}.
+
+For the reference solution $w=Y$. At the reference values we have
+$f_1=1/2$, $f_2=-Y$, $f_3=\varepsilon/2$, $n=1$, $m=s^{-2}$ and
+$z=xY+\varepsilon\tau$. Thus the right-hand sides of
+\eqref{cc:eq:coupling-rational}--\eqref{cc:eq:coupling-rational-end}
+reduce to $N_\nu s$ and $N_\eta s$, where
+\[
+ N_\nu=x+\varepsilon+2\varepsilon\tau Y,\qquad
+ N_\eta=-1+\varepsilon x+2(1+x^2)Y^2+2\varepsilon\tau xY.
+\]
+The terms $\varepsilon x$, $2(1+x^2)Y^2$ and $2\varepsilon\tau xY$ in
+$N_\eta$ are not small once $\varepsilon x\ge1$, but they cancel. By
+Lemma~\ref{cc:lem:model}, $Y=p-q$ with $p=s(1+e)$ and
+$q=\tfrac12\varepsilon\tau xs^2$, so that $2\varepsilon\tau x=4q/s^2$.
+Then
+\[
+ 2(1+x^2)Y^2+2\varepsilon\tau xY
+ =\frac{2(p-q)^2+4q(p-q)}{s^2}=\frac{2(p^2-q^2)}{s^2}
+ =2(1+e)^2-\varepsilon x\cdot x^2s^2,
+\]
+since $(\varepsilon\tau)^2=2\varepsilon x$. As $1-x^2s^2=s^2$, this
+gives
+\[
+ N_\eta=1+4e+2e^2+\varepsilon xs^2.
+\]
+Similarly $2\varepsilon\tau Y=2\varepsilon\tau s(1+e)-2\varepsilon x^2s^2$
+and $x^2s^2=1-s^2$ give
+\[
+ N_\nu=x-\varepsilon+2\varepsilon s^2+2\varepsilon\tau s(1+e).
+\]
+
+For $\tau\ge\sqrt2/\varepsilon$ we have $x\ge1/\varepsilon$, hence
+$1-\varepsilon^2/2\le xs\le1$ and $\varepsilon xs^2\le\varepsilon^2$.
+Using $0\le e\le\varepsilon/8$ and
+$\varepsilon\tau s\le\varepsilon\tau/x=2/\tau\le\sqrt2\,\varepsilon$ gives
+\[
+ N_\eta=1+O(\varepsilon),\qquad N_\nu=x\bigl(1+O(\varepsilon^2)\bigr),
+ \qquad \frac{N_\eta}{N_\nu}=s\bigl(1+O(\varepsilon)\bigr),
+ \qquad N_\nu s=1+O(\varepsilon^2),
+\]
+where we used $s=x^{-1}(1+O(\varepsilon^2))$.
+
+For $0\le\tau\le\sqrt2/\varepsilon$ we have $\varepsilon\tau<2$,
+so Lemma~\ref{cc:lem:model} gives $Y>0$. Hence
+$N_\nu\ge x+\varepsilon$. Since
+$(x+\varepsilon)^2\ge\varepsilon^2(1+x^2)$, it follows that
+$N_\nu s\ge\varepsilon$.
+
+For the wave, the coefficients in
+\eqref{cc:eq:coupling-rational}--\eqref{cc:eq:coupling-rational-end}
+differ from their reference values by at most $CT\delta$.
+The changes in $(X,Q,Z)$ and in $w$ are at most $CT^C\delta$
+by Lemma~\ref{cc:uf:exact:lem:additive} and
+\eqref{cc:eq:amplitude-comparison}, respectively. The terms with
+$S^{-2}$ in \eqref{cc:eq:coupling-rational-end}, in $n$ and in $m$
+are omitted in the reference values and are at most $CT^4\delta$ for the wave. The
+numerators are polynomials of bounded degree in these quantities and
+$1/Z$, which are at most $CT^2$, and the denominators $\sqrt m\,n$ and
+$\sqrt m\,n^2$ are at least $1/2$. Together with the contribution of
+$E$, the values of $\nu_+/\nu$ and $\eta_+/\nu$ therefore differ from
+the reference values by at most $CT^C\delta$, which is at most
+$\varepsilon T^{-2}/8$ by \eqref{cc:eq:finite-smallness}.
+
+In both ranges of $\tau$ the reference value $N_\nu s$ of $\nu_+/\nu$
+is at least $\varepsilon$; for $\tau\ge\sqrt2/\varepsilon$ this uses
+$C_0\varepsilon\le1$. Hence $\nu_+/\nu\ge\varepsilon/2$ on the whole
+interval. For
+$\tau\ge\sqrt2/\varepsilon$, the reference values of
+$\nu_+/\nu$ and $\eta_+/\nu$ are $1+O(\varepsilon^2)$ and
+$s(1+O(\varepsilon))$, with $s\ge T^{-2}$, so the relative errors are at
+most $\varepsilon/2$. Hence
+$|\nu_+/\nu-1|\le\varepsilon$ and $\eta_+/\nu_+=s(1+O(\varepsilon))$,
+which gives \eqref{cc:eq:actual-ratio} because $C_0\varepsilon\le1$.
+\end{proof}
+
+\subsubsection{The crossing}
+After the peak of the reference solution at $\tau_m$, the new wave
+becomes the shear for the next wave, whose coupling ratio
+$\varepsilon_+$ is prescribed in advance. By
+\eqref{cc:eq:actual-ratio}, the coupling ratio $\eta_+/\nu_+$ of the
+new wave is comparable to $s$, which decreases to zero. It therefore
+passes through the value $\varepsilon_+$ when $s$ is comparable to
+$\varepsilon_+$, that is, when $x$ is comparable to $1/\varepsilon_+$,
+or $\tau$ to $(\varepsilon\varepsilon_+)^{-1/2}$.
+We call a time $\tau$ at which $\eta_+/\nu_+=\varepsilon_+$ a
+\emph{crossing}. The next wave is activated at a crossing. The next
+proposition finds a crossing after the peak, gives the strength
+$\sigma_+=|\mathbf a||k|$ there, and bounds the gain of the wave:
+during the first unit of normalized time the amplitude is small
+compared with its maximum. With the
+coupling $\nu_+$, which is close to $\nu$ by
+\eqref{cc:eq:actual-ratio}, the strength supplies the frozen parameters
+$\sigma$ and $\nu$ of the next application of
+Lemma~\ref{cc:lem:finite-comparison}.
+
+\begin{proposition}\label{cc:prop:finite-return}
+Assume \eqref{cc:eq:finite-smallness}, let $\mathbf a$ be the amplitude
+vector of Lemma~\ref{cc:lem:finite-comparison}, and suppose that
+$0<\varepsilon_+\le\varepsilon/32$ and
+$T\ge2(\varepsilon\varepsilon_+)^{-1/2}$. Then the interval
+$\tau_m\le\tau\le2(\varepsilon\varepsilon_+)^{-1/2}$, where
+$\tau_m\ge2/\varepsilon$ is the zero of $Y$
+(Lemma~\ref{cc:lem:model}), contains a crossing. At every
+crossing in this interval the strength
+$\sigma_+=|\mathbf a(\tau)||k(\tau)|$ satisfies
+\begin{equation}\label{cc:eq:general-return}
+ C^{-1}(\varepsilon\varepsilon_+)^{-1/2}
+ \le\frac{\sigma_+}{\lambda\max_{[0,T]}|\mathbf a|}
+ \le C(\varepsilon\varepsilon_+)^{-1/2}.
+\end{equation}
+Moreover
+\begin{equation}\label{cc:eq:gain}
+ |\mathbf a(\tau)|\le\exp\bigl(3-\varepsilon^{-1/2}\bigr)
+ \max_{[0,T]}|\mathbf a|\qquad(0\le\tau\le1).
+\end{equation}
+\end{proposition}
+\begin{proof}
+By Lemma~\ref{cc:lem:model}, $2/\varepsilon\le\tau_m\le3/\varepsilon$.
+Since $\varepsilon_+\le\varepsilon/32$, we have
+$(\varepsilon\varepsilon_+)^{-1/2}\ge4/\varepsilon$. Thus
+$\tau_m<2(\varepsilon\varepsilon_+)^{-1/2}\le T$, and $[\tau_m,T]$ lies
+in the range $\tau\ge\sqrt2/\varepsilon$ of \eqref{cc:eq:actual-ratio}.
+
+For $\tau_m\le\tau\le T$ we have
+$x=\varepsilon\tau^2/2\ge2/\varepsilon\ge1$, hence
+$1/(2x)\le s\le1/x$, and \eqref{cc:eq:actual-ratio} gives
+\[
+ \frac1{4x}\le\frac{\eta_+}{\nu_+}\le\frac3{2x} .
+\]
+At $\tau_m$ we have $x\le9/(2\varepsilon)$, so
+$\eta_+/\nu_+\ge\varepsilon/18>\varepsilon_+$. At
+$\tau=2(\varepsilon\varepsilon_+)^{-1/2}$ we have $x=2/\varepsilon_+$,
+so $\eta_+/\nu_+\le3\varepsilon_+/4<\varepsilon_+$.
+Since $\eta_+/\nu_+$ is continuous, it equals $\varepsilon_+$ somewhere
+in the interval. At every crossing in $[\tau_m,T]$ the displayed bounds
+give $1/(4\varepsilon_+)\le x\le3/(2\varepsilon_+)$.
+
+To estimate the strength at a crossing, we compare the amplitude there
+with its maximum on $[0,T]$. By \eqref{cc:eq:norm-rate-error},
+$|\mathbf a|$ lies between $\exp(-\varepsilon)v_g$ and
+$\exp(\varepsilon)v_g$, and by Lemma~\ref{cc:lem:model} the maximum
+of $v_g$ on $[0,T]$ is attained at $\tau_m$. Therefore, for
+$\tau_m\le\tau\le T$,
+$|\mathbf a(\tau)|/\max_{[0,T]}|\mathbf a|$ is bounded above and below by
+absolute multiples of $v_g(\tau)/v_g(\tau_m)$. Integrating
+$Y=s(1+e)-\frac14(\log(1+x^2))'$ from $\tau_m$ gives
+\[
+ \frac{v_g(\tau)}{v_g(\tau_m)}
+ =\left(\frac{1+x(\tau_m)^2}{1+x(\tau)^2}\right)^{1/4}
+       \exp\left(\int_{\tau_m}^{\tau}s(1+e)\,d\tau'\right).
+\]
+Here $x(\tau_m)=(\varepsilon\tau_m)^2/(2\varepsilon)$ lies between
+$2/\varepsilon$ and $9/(2\varepsilon)$, and the integral lies between
+$0$ and $2$, because $s\le1/x=2/(\varepsilon\tau'^2)$ gives
+$\int_{\tau_m}^\infty s\le2/(\varepsilon\tau_m)\le1$. Hence
+$v_g(\tau)/v_g(\tau_m)$ is comparable to $(\varepsilon x)^{-1/2}$. Also
+$|k|=\lambda\sqrt m$ is comparable to $\lambda x$, by the bounds for
+the wave vector in Lemma~\ref{cc:uf:exact:lem:additive}. Thus
+$\sigma_+/(\lambda\max_{[0,T]}|\mathbf a|)$ is
+comparable to $(x/\varepsilon)^{1/2}$ for $\tau_m\le\tau\le T$, and at a
+crossing $x$ is comparable to $1/\varepsilon_+$. This proves
+\eqref{cc:eq:general-return}.
+
+For $0\le\tau\le1$, the bound $Y\le1$ gives
+$v_g(\tau)\le\exp(\tau)\le\exp(1)$, while
+$\log v_g(\tau_m)\ge\varepsilon^{-1/2}-1$ by Lemma~\ref{cc:lem:model}. By
+\eqref{cc:eq:norm-rate-error} at such $\tau$ and at $\tau_m$,
+$|\mathbf a(\tau)|\le\exp(1+\varepsilon)$ and
+$|\mathbf a(\tau_m)|\ge\exp(\varepsilon^{-1/2}-1-\varepsilon)$.
+Since $2\varepsilon\le1$, this gives \eqref{cc:eq:gain}.
+\end{proof}

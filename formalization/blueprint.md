@@ -7,7 +7,7 @@ conclusion includes both divergent time integrals, a uniform velocity
 bound, central curl diverging as $t\uparrow T_*$, and $C^m(K)$ limits
 of $u$ and $\partial_tu$ for every compact $K\subset\mathbb T^3\setminus\{0\}$
 and every $m$. The stronger auxiliary smooth extension is tracked under
-AUX. [Theorem 1.1 and the auxiliary remark](../frozen-manuscript/sections/01_problem.tex#L60)
+AUX. [Theorem 1.1 and the auxiliary remark](frozen/torus-rewrite/src/paper/craik_criminale_rewrite/sections/01_problem.tex#L60)
 
 ## Statement correspondence
 
@@ -155,7 +155,7 @@ derivative. The stronger auxiliary conclusion is tracked under AUX.
 | COR16 | (5.25), (5.35)–(5.47), selected recurrence and tail; COR15, SEQ04 | [`ParentSeedJetBudgets.lean`](lean/TorusEuler/ParentSeedJetBudgets.lean) verifies the later weighted leading estimates. [`HierarchySelectedRecurrence.lean`](lean/TorusEuler/HierarchySelectedRecurrence.lean) and [`InductiveProfileBounds.lean`](lean/TorusEuler/InductiveProfileBounds.lean) derive the exact measured recurrence, retained levels and order-two depth tail from the selected leading input. |
 | SEQ05 | §7 and Appendix C, one schedule for the physical estimates; SEQ04, COR16 | [`InductiveStepNumericalBudgets.lean`](lean/TorusEuler/InductiveStepNumericalBudgets.lean) reserves the required derivative orders and proves the numerical inequalities at every stage. [`InductiveCutoffBudget.lean`](lean/TorusEuler/InductiveCutoffBudget.lean) fixes the Fourier cutoff and its uniform constants. [`InductiveFirstStageAssembly.lean`](lean/TorusEuler/InductiveFirstStageAssembly.lean) connects the exact selected first wave to the base constructor once the graph and cutoff estimates are available. |
 | SEQ06 | Theorem 7.1, actual physical base and successor; SEQ05, COR16 | [`InductiveMeasuredStageReadout.lean`](lean/TorusEuler/InductiveMeasuredStageReadout.lean) uses the exact retained levels to obtain the graph velocity and cutoff flow estimates. [`InductiveStageResidualBounds.lean`](lean/TorusEuler/InductiveStageResidualBounds.lean) proves the scheduled residual bound, including the later activation curl. [`InductiveStagePressureBounds.lean`](lean/TorusEuler/InductiveStagePressureBounds.lean) bounds the physical Hessian. [`InductiveUniformStageEstimates.lean`](lean/TorusEuler/InductiveUniformStageEstimates.lean) uses their fixed-order constants on a single schedule. |
-| MAIN | Theorem 1.1; SEQ06, signed curl and Euler limit | [`Theorem11.lean`](lean/TorusEuler/Theorem11.lean) supplies the actual later leading pressure and activation estimates and proves `TorusEuler.theorem11 : TorusEuler.Theorem11`. [`Verify.lean`](lean/Verify.lean) checks the exact type and transitive axioms. |
+| MAIN | Theorem 1.1; SEQ06, signed curl and Euler limit | [`Theorem11.lean`](lean/TorusEuler/Theorem11.lean) supplies the actual later leading pressure and activation estimates and proves `TorusEuler.theorem11_library : TorusEuler.Theorem11`; `TorusEuler.theorem11` is now the projection of `Paper.theorem_1_1` (`MainTheorem.lean`), see the README section on the latest manuscript and `paper-coverage-latest.md`. [`Verify.lean`](lean/Verify.lean) checks the exact type and transitive axioms. |
 
 Representative applications appear separately in [`Verify.lean`](lean/Verify.lean).
 The statement and the ports received separate reviews against the frozen

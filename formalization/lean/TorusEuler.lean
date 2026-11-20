@@ -467,3 +467,5 @@ import TorusEuler.WaveCurl
 import TorusEuler.WaveDivergence
 import TorusEuler.WavePressureCenter
 import TorusEuler.WaveProfile
+import TorusEuler.Paper.All
+import TorusEuler.MainTheorem

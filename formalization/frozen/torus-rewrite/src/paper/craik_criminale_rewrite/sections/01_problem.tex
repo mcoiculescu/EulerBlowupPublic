@@ -1,0 +1,601 @@
+\section{Introduction}\label{cc:sec:problem}
+
+The incompressible Euler equations are among the earliest partial
+differential equations derived in mathematical physics. Euler presented them in
+1755, less than a decade after d'Alembert derived the wave equation for
+the vibrating string~\cite{DAlembert1747,Euler1757}.
+
+The goal of this work is to construct smooth initial data for the
+incompressible Euler equations on the three-dimensional torus whose
+solution blows up in finite time. We represent $\mathbb T^3$ by the
+centered cube $[-1/2,1/2]^3$ with periodic boundary conditions
+(opposite faces identified). We write these equations as
+\begin{equation}\label{cc:eq:euler}
+ \partial_tu+(u\cdot\nabla)u+\nabla p=0,
+ \qquad \diver u=0
+ \quad\hbox{on }\mathbb T^3\times[0,T_*).
+\end{equation}
+Local existence and uniqueness for sufficiently regular data go back to
+Lichtenstein and G\"unther in the 1920s~\cite{Lichtenstein1925,Gunther1926}.
+Classical theory on $\mathbb T^3$ supplies a unique maximal smooth solution
+from smooth divergence-free data~\cite{EbinMarsden,BedrossianVicol}.
+By the Beale--Kato--Majda criterion~\cite{BKM,GGPP}, a smooth solution on
+$[0,T)$ continues smoothly through $T<\infty$ if
+$\int_0^T\|\curl u(t)\|_{L^\infty}\,\dd t<\infty$.
+
+In two dimensions the scalar vorticity is transported, so its
+$L^\infty$ norm is conserved, and smooth solutions exist for all
+time~\cite{Wolibner1933}. Yudovich~\cite{Yudovich1963} proved global
+existence and uniqueness for bounded, possibly nonsmooth initial
+vorticity. In three dimensions, Fefferman's description of the
+Navier--Stokes Millennium Problem stated that the global regularity
+question on $\R^3$ and on $\mathbb T^3$ was also open for the Euler
+equations~\cite{Fefferman2006}.
+
+Numerical searches for blow-up include the Taylor--Green vortex study
+of Morf, Orszag and Frisch~\cite{MorfOrszagFrisch1980} and Kerr's
+computations for antiparallel vortex tubes~\cite{Kerr1993}.
+In a later computation, Hou and Li~\cite{HouLi2006} observed at most
+double-exponential growth of the maximum vorticity past Kerr's predicted
+singular time.
+Luo and Hou~\cite{LuoHou2014} found numerical evidence for axisymmetric
+blow-up at the wall of an axially periodic cylinder.
+Childress, Gilbert and Valiant~\cite{ChildressGilbertValiant2016}
+studied, analytically and numerically, eroding vortex dipoles in
+axisymmetric flow without swirl, whose maximal vorticity grows like
+$t^{4/3}$, and Childress and Gilbert~\cite{ChildressGilbert2018}
+proposed, by formal asymptotic analysis, the hairpin geometry as a model
+for finite-time blow-up.
+
+On $\R^3$, Elgindi~\cite{ElgindiSingularity} constructed finite-time
+blow-up from $C^{1,\alpha_0}$ initial data for some $\alpha_0>0$.
+Elgindi, Ghoul and Masmoudi~\cite{ElgindiGhoulMasmoudi} obtained stable,
+locally self-similar blow-up for finite-energy data in this regularity class.
+Chen and Hou~\cite{ChenHouSmoothI,ChenHouSmoothII} claim nearly self-similar
+blow-up from smooth axisymmetric data in a periodic cylinder with boundary,
+using computer-assisted estimates. The theorem below concerns smooth
+periodic data on $\mathbb T^3$, with bounded velocity and vorticity growth
+concentrated at the origin.
+
+\begin{theorem}\label{cc:target:unforced}
+There is an odd divergence-free
+$u_0\in C^\infty(\mathbb T^3;\R^3)$ whose maximal classical solution $u$
+of \eqref{cc:eq:euler} is smooth and odd on
+$\mathbb T^3\times[0,T_*)$ for a finite $T_*>0$, and satisfies
+\begin{equation}\label{cc:uf:eq:main-breakdown}
+ \int_0^{T_*}\|\nabla u(t)\|_{L^\infty}\dd t=\infty,
+ \qquad
+ \int_0^{T_*}\|\curl u(t)\|_{L^\infty}\dd t=\infty.
+\end{equation}
+Moreover,
+\begin{equation}\label{cc:uf:eq:main-terminal}
+ \sup_{0\le t<T_*}\|u(t)\|_{L^\infty}<\infty,
+ \qquad \lim_{t\uparrow T_*}|\curl u(t,0)|=\infty.
+\end{equation}
+For every compact $K\subset\mathbb T^3\setminus\{0\}$ and every integer
+$m\ge0$, both $u(t)$ and $\partial_tu(t)$ converge in $C^m(K)$ as
+$t\uparrow T_*$.
+\end{theorem}
+
+\begin{remark}
+The solution in Theorem~\ref{cc:target:unforced} may be chosen so that it
+extends smoothly in space and time through $T_*$ away from the origin.
+A proof is given in the auxiliary note~\cite{TerminalSmoothness}.
+\end{remark}
+
+We construct a sequence of smooth approximate solutions of the Euler
+equations whose residuals tend to zero. The sequence converges in every
+spatial $C^m$ norm, uniformly on compact time intervals before $T_*$, to
+a solution of the Euler equations.
+
+At each step in the sequence we add an oscillation at a higher frequency, localized
+near the origin and initially small in velocity. The velocity gradient
+of the preceding scales amplifies the new oscillation, whose gradient
+in turn drives the growth of the next one. The growth intervals have
+finite total length. This multiscale construction follows the approach of C\'ordoba and
+Mart\'inez-Zoroa for the Euler equations with forcing and for forced
+IPM~\cite{CMZForcedEuler,CMZForcedIPM}.
+C\'ordoba, Mart\'inez-Zoroa and Zheng~\cite{CMZUnforcedEuler} used a cascade of
+vorticity layers to obtain blow-up for the unforced Euler equations
+on $\R^3$ from $C^{1,\alpha}$ data
+smooth away from the origin. Related constructions give blow-up with forcing
+for the inviscid Boussinesq equations, the variable-density Euler equations
+and the hypodissipative Navier--Stokes equations~\cite{CLMZForcedBoussinesq,CLMZNonhomogeneousEuler,CMZHypodissipativeNS}.
+Our companion papers proving singularity formation for forced IPM,
+the forced Boussinesq equations, and the forced Euler
+equations~\cite{AlpogeBuckmasterCoiculescuIPM,AlpogeBuckmasterBoussinesq,AlpogeBuckmasterForcedEuler}
+use forces smooth in space and time up to the singular time. In the
+present construction we use Craik--Criminale waves as building blocks
+and choose the initial velocity at each step so that the limiting
+solution is unforced.
+
+Convex integration constructions of nonunique weak solutions of the Euler equations
+also use oscillations at successive frequency scales. Below the Onsager
+exponent, this method yields solutions with nonconstant kinetic
+energy~\cite{IsettOnsager,BDLSVOnsager}. For the unforced Euler equations
+in the plane, Coiculescu~\cite{CoiculescuEulerI,CoiculescuEulerII}
+uses nested vortex rings at different scales. An instability propagates
+from the inner rings outward, yielding distinct renormalized weak
+solutions with the same initial vorticity. See also Choi~\cite{ChoiEulerNonuniqueness}.
+For the three-dimensional Navier--Stokes equations, Jia and
+\v{S}ver\'ak~\cite{JiaSverak2015} gave a conditional construction of
+nonunique Leray--Hopf solutions based
+on spectral assumptions about forward self-similar flows.
+Nonuniqueness was shown for
+finite-energy weak solutions by Buckmaster and Vicol~\cite{BuckmasterVicolNS},
+and in the Leray--Hopf class with a common force by Albritton, Bru\'e and
+Colombo~\cite{AlbrittonBrueColombo}. In a recent preprint, Buckmaster,
+Coiculescu and Li~\cite{BuckmasterCoiculescuLiNS} obtain nonuniqueness
+of unforced Leray--Hopf solutions.
+
+\subsection{Waves and successive amplification}\label{cc:sec:intro-waves}
+We first describe the wave construction of Craik and
+Criminale~\cite{CraikCriminale}. Let $D(t)$ be a smooth matrix with
+$\operatorname{tr}D=0$ and $D'+D^2$ symmetric. These conditions ensure that
+$U(t,x)=D(t)x$, linear in space, solves the Euler equations on $\R^3$, with pressure
+$p_D(t,x)=-x\cdot(D'+D^2)x/2$. We add to this linear background a velocity
+\[
+ w(t,x)=\mathbf a(t)F(k(t)\cdot x),\qquad \mathbf a\cdot k=0,
+\]
+where $k(t)\ne0$ is the wave vector, $\mathbf a(t)$ is the amplitude
+vector, and $F$ is a smooth odd $1$-periodic profile of the scalar phase $s$.
+For example, one may take $F(s)=\sin(2\pi s)$. The vector $\mathbf a$
+records both size and direction: the velocity amplitude is $|\mathbf a|\|F\|_\infty$, and
+$\mathbf a/|\mathbf a|$ is its unit direction when $\mathbf a\ne0$.
+The unit wave vector is $k/|k|$. The length $|k|$ measures the spatial
+frequency in cycles per unit length for the first phase harmonic.
+
+The sum $u=Dx+w$ is an exact solution of the Euler equations if $k$ and $\mathbf a$ solve
+\begin{equation}\label{cc:intro:wave-ode}
+ k'=-D^Tk,\qquad
+ \mathbf a'=-D\mathbf a+p_{\rm w} k,\qquad
+ p_{\rm w}=\frac{2k\cdot D\mathbf a}{|k|^2}.
+\end{equation}
+Its pressure is $p=p_D-p_{\rm w} P(k\cdot x)$, where $P'=F$.
+Indeed, $\mathbf a\cdot k=0$ gives $(w\cdot\nabla)w=0$, the first
+ordinary differential equation transports the phase by $Dx$, and the
+second cancels the remaining acceleration with the gradient of the
+wave pressure $-p_{\rm w}P(k\cdot x)$.
+The displayed value of $p_{\rm w}$ preserves $\mathbf a\cdot k=0$.
+We call \eqref{cc:intro:wave-ode} the Craik--Criminale equations for the
+wave vector and the amplitude vector. Normalizing $F'(0)=1$ gives
+$\nabla w(t,0)=\mathbf a\otimes k$.
+Related short-wave instabilities of planar vortices were studied by
+Pierrehumbert~\cite{Pierrehumbert1986} and Bayly~\cite{Bayly1986}.
+
+To describe amplification of a new wave, write $k_p$ and $\mathbf a_p$
+for the nonzero wave vector and amplitude vector of the preceding wave,
+and set
+\[
+ E_1=\frac{k_p}{|k_p|},\qquad
+ E_2=\frac{\mathbf a_p}{|\mathbf a_p|},\qquad E_3=E_1\times E_2,
+ \qquad \sigma=|\mathbf a_p|\,|k_p|.
+\]
+$E_1$ is the unit wave vector and $E_2$ the unit polarization vector.
+The preceding wave contributes the velocity gradient
+$\mathbf a_p\otimes k_p=\sigma E_2\otimes E_1$ at the origin.
+Here $(E_2\otimes E_1)v=(E_1\cdot v)E_2$: the corresponding linear
+velocity is $\sigma(E_1\cdot x)E_2$, a shear in direction $E_2$
+varying in direction $E_1$. The new wave therefore sees
+$D=B+\sigma E_2\otimes E_1$, where $B$ is the older background gradient.
+To model the wave equations at the origin, take $B$ with just two
+nonzero entries in this moving frame, both constant,
+\[
+ E_1\cdot BE_2=\nu>0,\qquad E_3\cdot BE_2=\eta>0,
+ \qquad \varepsilon=\eta/\nu\ll1.
+\]
+Start the new wave at time $t=0$ with $k=\lambda E_3$, where $\lambda>0$
+is its initial frequency, and write $a_i=\mathbf a\cdot E_i$. The
+preceding wave evolves by \eqref{cc:intro:wave-ode} with $D=B$.
+Differentiating its normalized vectors gives, in this case,
+$E_1'=-\nu E_2$, $E_2'=\nu E_1-\eta E_3$ and $E_3'=\eta E_2$.
+Combining these frame equations with \eqref{cc:intro:wave-ode} for the
+new wave gives, at $t=0$,
+\[
+ \dot a_1=-2\nu a_2,\qquad
+ \dot a_2=-(\sigma-\nu)a_1.
+\]
+Freezing these coefficients gives a growing mode with rate
+$\sqrt{2\nu(\sigma-\nu)}$ when $\sigma>\nu$. We choose the initial
+polarization along $E_2-\sqrt{2\nu/\sigma}\,E_1$, the growing direction
+to leading order for $\sigma\gg\nu$.
+
+The coefficients evolve as the wave vector turns. Let $\varphi$
+be the angle of $k$ from $E_3$ toward $E_1$:
+\[
+ \tan\varphi=\frac{k\cdot E_1}{k\cdot E_3},
+\]
+so $\varphi=0$ at $t=0$. The coupling $\eta$ tilts $k$ toward $-E_2$,
+and the shear carries this tilt into $E_1$, so $\varphi$ increases;
+while $\eta t$ is small, $\tan\varphi$ grows like $(\sigma+\nu)\eta t^2$.
+In the strong-shear limit $\sigma/\nu\to\infty$, the wave pressure
+multiplies the driving coefficient $2\nu$ in the equation for $a_1$ by
+$\cos^2\varphi\,(1-\varepsilon\tan\varphi)$. This factor changes sign
+at $\tan\varphi=1/\varepsilon$. The reference amplitude reaches its peak
+after this sign change, as shown in Figure~\ref{cc:fig:wave-turning}.
+For the perturbed wave with the chosen polarization,
+Proposition~\ref{cc:prop:finite-return} gives a \emph{gain} of at least
+a fixed multiple of $\exp(\varepsilon^{-1/2})$ on its prescribed interval.
+The gain is the ratio of the maximum of $|\mathbf a|$ on that interval
+to its initial value.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{../../output/figures/wave-turning/wave-turning-paper.pdf}
+\caption{Turning and growth in the case of two nonzero entries, in the
+limit of a strong shear.
+Left: the angle $\varphi$ of the wave vector from $E_3$ toward $E_1$.
+Right: amplitude as a fraction of its peak. The dashed line marks
+the amplitude peak, by which time $\varphi$ is close to $\pi/2$.}
+\label{cc:fig:wave-turning}
+\end{figure}
+
+Size alone does not determine the successor wave. The new wave must
+supply both a large shear and a suitable frame for the next step of
+the iteration. In its frame (the subscript $+$ denotes the frame of
+the newly added wave),
+\[
+ E_{1,+}=k/|k|,\qquad E_{2,+}=\mathbf a/|\mathbf a|,\qquad
+ E_{3,+}=E_{1,+}\times E_{2,+},
+\]
+its shear is $\sigma_+E_{2,+}\otimes E_{1,+}$, with
+$\sigma_+=|\mathbf a|\,|k|$. The older gradient $D$, expressed in this
+new frame, must again have positive couplings
+\[
+ \nu_+=E_{1,+}\cdot D E_{2,+},\qquad
+ \eta_+=E_{3,+}\cdot D E_{2,+}.
+\]
+These play the roles of $\nu$ and $\eta$ in the next amplification
+step. We prescribe a smaller ratio $\eta_+/\nu_+=\varepsilon_+<\varepsilon$
+to give the next wave enough amplification to keep the error from its
+time cutoff small.
+The turning of the wave vector supplies this orientation. In the
+reference calculation $\nu_+$ starts at $\varepsilon\nu$, and the
+large terms in the numerator for $\eta_+$ cancel. For the perturbed wave,
+Lemma~\ref{cc:lem:finite-comparison} shows that at late times $\nu_+$
+is close to $\nu$ and $\eta_+/\nu_+$ is comparable to $\cos\varphi$.
+Under the hypotheses of
+Proposition~\ref{cc:prop:finite-return}, the ratio reaches the prescribed
+value after the reference amplitude peaks, while the new shear remains
+large. We start the successor at that crossing.
+Thus the Craik--Criminale equations produce both amplification and the
+orientation needed to repeat the construction.
+
+\Needspace{10\baselineskip}
+The periodic construction starts from the stationary shear flow
+\[
+ U_0(x)=\sin(2\pi x_2)(e_1+s e_3),
+\]
+where $e_i$ are the coordinate vectors and $s>0$ is small. It solves
+the Euler equations with zero pressure.
+In the initial coordinate frame its central gradient has
+$\nu=2\pi$ and $\eta=2\pi s$. Its explicit flow supplies the first wave;
+subsequent waves use the successive gradients they create.
+
+Craik--Criminale waves on $\R^3$ provide a local model for amplification.
+For the periodic construction, we localize each wave by a smooth cutoff
+supported in the interior of a fundamental cell in Lagrangian
+coordinates. We extend the localized field periodically and transport its
+phase and cutoff by the preceding periodic velocity, as in geometric optics
+\cite{LifschitzHameiri1991,FriedlanderVishik1991,Lax1957,ChoquetBruhat1969}.
+Since the cutoff
+vanishes near the cell boundary, the wave vector need not lie
+in $\mathbb Z^3$. Localization and the spatial variation of the background
+introduce errors, which the corrections below make small at each step
+and remove in the limit.
+
+\subsection{Controlling corrections in an amplifying flow}
+To correct a velocity in an amplifying flow, we use the freedom to choose
+its initial value. To avoid exciting growing modes, we prescribe the final
+particle positions and choose the initial velocity to reach them.
+
+Let $u,p$ solve the Euler equations on $[0,T]$. The flow $X(t,a)$ of
+$u$ gives the position at time $t$ of the particle that starts at $a$.
+It satisfies
+\[
+ \partial_tX(t,a)=u(t,X(t,a)),\qquad X(0,a)=a.
+\]
+For a divergence-free velocity correction $b$, let $X_\delta$ be the
+flow of $u+\delta b$ with the same initial positions, so that
+\[
+ \partial_tX_\delta(t,a)
+       =(u+\delta b)(t,X_\delta(t,a)),\qquad X_\delta(0,a)=a.
+\]
+The first-order change $\xi$ in the particle trajectories is defined by
+\[
+ X_\delta(t,a)=X(t,a)+\delta\xi(t,a)+O(\delta^2).
+\]
+Differentiating the flow equation at $\delta=0$ gives
+\begin{equation}\label{cc:intro:first-variation}
+ \partial_t\xi(t,a)=\nabla u(t,X(t,a))\xi(t,a)+b(t,X(t,a)),
+ \qquad \xi(0,a)=0.
+\end{equation}
+The initial condition follows from the common starting positions.
+We impose $\xi(T,a)=0$ to select $b(0)=\partial_t\xi(0)$ so that the final
+particle positions agree to first order.
+
+For a prescribed momentum source $f$, the inhomogeneous problem is to
+find $b,q$ satisfying the linearized Euler equations
+\begin{equation}\label{cc:intro:linearized-momentum}
+ \partial_t b+(u\cdot\nabla)b+(b\cdot\nabla)u+\nabla q=f,
+ \qquad \diver b=0.
+\end{equation}
+Here $q$ is the pressure variation, and the displacement induced by $b$
+must satisfy $\xi(0)=\xi(T)=0$. Differentiating
+\eqref{cc:intro:first-variation} in time and using
+\eqref{cc:intro:linearized-momentum} gives
+\begin{equation}\label{cc:intro:jacobi}
+ \begin{gathered}
+ \xi_{tt}+H\xi+(\nabla q)\circ X=f\circ X,
+ \qquad H=(D_x^2p)\circ X,\\
+ \diver_x(\xi\circ X^{-1})=0,\qquad \xi(0)=\xi(T)=0.
+ \end{gathered}
+\end{equation}
+The homogeneous equation is the Jacobi equation along the geodesic
+associated with this solution in Arnold's formulation~\cite{Arnold1966}.
+The constraint $\diver_x(\xi\circ X^{-1})=0$ expresses volume
+preservation to first order.
+
+For a solution of \eqref{cc:intro:jacobi}, testing with $-\xi$ and
+integrating by parts gives the identity
+\begin{equation}\label{cc:intro:Q-identity}
+ \underbrace{\int_0^T\!\int_{\mathbb T^3}
+   \bigl(|\xi_t|^2-\xi\cdot H\xi\bigr)\,\dd a\,\dd t}_{\mathcal Q(\xi)}
+ =-\int_0^T\!\int_{\mathbb T^3}(f\circ X)\cdot\xi\,\dd a\,\dd t.
+\end{equation}
+Volume preservation and the divergence constraint remove the pressure
+variation. The quadratic form $\mathcal Q$ is the fixed-endpoint second variation of the action.
+If $H\le\Id$ and $T\le1$, then
+${|\xi(t,a)|^2\le(T-t)\int_t^T|\xi_\tau(\tau,a)|^2\,\dd\tau}$ gives
+\begin{equation}\label{cc:intro:coercivity}
+ \mathcal Q(\xi)\ge\Bigl(1-\frac{T^2}{2}\Bigr)\|\xi_t\|_{L^2_{t,a}}^2
+ \ge\frac12\|\xi_t\|_{L^2_{t,a}}^2 .
+\end{equation}
+The term $-\xi\cdot H\xi$ lowers the integrand where $\xi\cdot H\xi>0$
+and raises it where $\xi\cdot H\xi<0$. Thus an upper bound for $H$ gives
+the lower bound in \eqref{cc:intro:coercivity}.
+For $f=0$, \eqref{cc:intro:Q-identity} gives $\mathcal Q(\xi)=0$. Then
+\eqref{cc:intro:coercivity} forces $\xi_t=0$, and $\xi(0)=0$ gives $\xi=0$.
+Equation~\eqref{cc:intro:first-variation} gives $b=0$, proving that the linearized
+endpoint map $b(0)\mapsto\xi(T)$ has trivial kernel.
+Upper bounds on the pressure Hessian also enter Brenier's fixed-endpoint
+action-minimization criterion~\cite{Brenier1989,Brenier1999}.
+
+For an approximate parent $U$ with residual $R_U$,
+Subsection~\ref{cc:uf:sec:parent-step} uses
+$H^\#=(D_x^2p_U-\nabla R_U)\circ X$ in place of $H$, under the same
+bounds $H^\#\le\Id$ and $T\le1$. Subsection~\ref{cc:uf:sec:mean} uses
+the resulting coercivity to construct a bounded inverse for the forced
+Jacobi problem, and
+Appendix~\ref{cc:app:mean} establishes the quantitative H\"older bounds
+of Theorem~\ref{cc:uf:mean:inverse}.
+
+In the affine wave of Subsection~\ref{cc:sec:intro-waves}, the Hessian of
+$-p_{\rm w}P(k\cdot x)$ is $-p_{\rm w}F'(k\cdot x)k\otimes k$.
+We seek an odd periodic profile
+$F_h$ satisfying
+\begin{equation}\label{cc:intro:profile-slopes}
+ F_h'(0)=1,\qquad -Ch\le F_h'(s)\le1 .
+\end{equation}
+The first condition preserves the wave gradient $\mathbf a\otimes k$
+at the origin, and hence the amplification described in Subsection~\ref{cc:sec:intro-waves}.
+The lower bound on $F_h'$ controls the largest eigenvalue of
+$D_x^2[-p_{\rm w}P_h(k\cdot x)]$, where $P_h'=F_h$. On an interval
+with $p_{\rm w}>0$, its positive part satisfies
+\begin{equation}\label{cc:intro:profile-curvature}
+ p_{\rm w}|k|^2\bigl(-F_h'(k\cdot x)\bigr)_+
+ \le Ch\,p_{\rm w}|k|^2,
+\end{equation}
+where $(r)_+=\max\{r,0\}$. For fixed wave coefficients, taking $h$ small
+makes this positive part small at every point. In the construction $h$
+is a negative power of the frequency of the wave. As $h$ shrinks, the
+wave produces thin layers of strong shear while its velocity amplitude
+is $O(h|\mathbf a|)$. Its gradient at the origin remains
+$\mathbf a\otimes k$, preserving the local shear that amplifies the
+next wave. The pressure Hessian added at each step is bounded above
+by a small multiple of the identity. Section~\ref{cc:uf:sec:tower}
+sums these bounds and controls $\|\nabla R_U\|_\infty$ to obtain
+$H^\#\le\Id$ as a quadratic form.
+
+For $F(s)=\sin(2\pi s)$, the ratio $F'(1/2)/F'(0)$ is $-1$.
+The sine profile with slope one at the origin therefore violates the
+lower bound in \eqref{cc:intro:profile-slopes} for small $h$.
+Subsection~\ref{cc:sec:profile} constructs $F_h$ with a narrow positive
+bump in $F_h'$ and a shallow negative part, as shown in
+Figure~\ref{cc:fig:pressure-profile}.
+
+\begin{figure}[!hbp]
+\centering
+\includegraphics[width=.75\textwidth]{../../output/figures/pressure-and-timeline/pressure-profile.pdf}
+\caption{The sine slope divided by its value at the origin (dashed)
+and the slope $F_h'$ of the modified profile (solid). Both curves equal
+one at the origin.}
+\label{cc:fig:pressure-profile}
+\end{figure}
+
+\subsection{Correcting a localized wave}
+We smoothly truncate the velocity of each step in frequency at the end of the step,
+to simplify the bookkeeping of derivative estimates, as in the mollification
+step of convex integration~\cite[Section~2.4]{BDLSVOnsager}.
+This introduces a small error, carried to the next step;
+Subsection~\ref{cc:uf:trunc:sec:truncation} gives the estimates.
+Write $U$ for the truncated velocity of the preceding step and $R_U$ for
+its residual in the Euler equations.
+
+We add the localized wave described in Subsection~\ref{cc:sec:intro-waves},
+using $F_h$ and a divergence correction. Let $X$ be the flow of $U$ from
+time zero, and fix a nonzero vector $k_*$. The phase $\theta$ of the
+localized wave is defined by
+\[
+ \theta(t,X(t,a))=k_*\cdot a
+\]
+for Lagrangian coordinates $a$ in the fundamental cell. It is the plane
+phase $k_*\cdot x$ at time zero, transported by $U$. Its gradient
+$\kappa=\nabla_x\theta$ is the wave vector of the localized wave; for a
+linear flow, $\theta=\kappa\cdot x$, as in
+Subsection~\ref{cc:sec:intro-waves}. For a wave after the first, $k_*$
+is chosen so that $\kappa=\lambda E_3$ at the origin at its activation
+time, as for the new wave of Subsection~\ref{cc:sec:intro-waves}.
+The leading velocity is $A_1(t,x,\theta(t,x))$. Writing the profile as
+$A_1(t,x,s)$ with $s$ independent lets us distinguish derivatives of
+the coefficients from the large term $\kappa\partial_s$ that arises
+when differentiating through the phase.
+A wave after the first is multiplied
+by a cutoff $\widetilde\chi(t)$ in time that vanishes before its
+amplification interval; for the first wave $\widetilde\chi=1$.
+The derivative of the cutoff leaves an error of the size of the wave at
+the start of that interval, also carried to the next step.
+
+The velocity added to $U$ is an expansion
+\[
+ \sum_{p\ge1}Z_p,\qquad Z_p=V_p+C_{p-1}+B_p,
+\]
+where $V_p(t,x,s)$ is a profile perpendicular to $\kappa$ with zero
+phase average, $C_p$ is the divergence correction of $V_p$, and
+$B_p(t,x)$ is a mean, independent of the phase; the profiles are
+evaluated at $s=\theta$. The leading term is the wave,
+$Z_1=V_1=\widetilde\chi A_1$, with $C_0=0$ and $B_1=0$. We call $p$ the
+\emph{level} of $Z_p$: up to a fixed power of a number that bounds the
+parent, the bound for $Z_p$ is that of the wave times
+$\lambda^{-2(p-1)/3}$, where $\lambda$ is the frequency of the wave.
+The error left by the wave and its divergence correction $C_1$ is a
+profile $H_2(t,x,s)$ of level two.
+We split $H_2$ into its phase average $\av{H_2}$ and its
+oscillatory part $H_2-\av{H_2}$, as in the expansions of
+Cheverry~\cite[Section~4.1]{Cheverry2006}.
+
+The mean correction $B_2$ cancels the phase average of $H_2$ together
+with the parent residual. With $D_t=\partial_t+U\cdot\nabla_x$, the
+linearized Euler equation \eqref{cc:intro:linearized-momentum} gives
+$D_t B_2+(\nabla U)B_2+\nabla q=-\av{H_2}-R_U$ with
+$\diver B_2=0$. The Jacobi inverse selects $B_2(0)$ so that the
+correction leaves the truncated parent's final particle positions fixed
+to first order.
+
+With $B_2$ determined, the oscillatory correction $V_2$ and its pressure
+$\pi_2$ solve
+\begin{equation}\label{cc:intro:transverse-correction}
+ \begin{split}
+ D_tV_2+(\nabla U)V_2+\kappa\partial_s\pi_2
+   &=-(H_2-\av{H_2})-(B_2\cdot\kappa)\partial_s(\widetilde\chi A_1),\\
+ \kappa\cdot V_2&=0,\qquad \av{V_2}=0.
+ \end{split}
+\end{equation}
+The mean $B_2$ transports the leading wave's fast phase. This term has
+zero phase average but is of the same order as the oscillatory part
+$H_2-\av{H_2}$, so we solve for the mean $B_2$ before the oscillatory
+correction $V_2$. At fixed phase along each trajectory,
+\eqref{cc:intro:transverse-correction} is a forced Craik--Criminale
+amplitude equation. Every wave uses
+zero initial data for this correction. The curl construction of
+Subsection~\ref{cc:sec:material} gives the divergence correction $C_2$
+of $V_2$, so that $V_2+C_2$ is exactly divergence free. The term $C_2$
+belongs to level three, where we solve for the mean and oscillatory
+corrections again.
+
+We stop the expansion at a level $P$, its depth, keeping the divergence
+correction $C_P$ of $V_P$. The remainder then has a small factor
+$\lambda^{-2P/3}$, once $\lambda$ is larger
+than a fixed power of a number that bounds the parent
+(Theorem~\ref{cc:uf:hier:thm:depth}). The truncated parent, localized wave
+and linear corrections give an approximate solution $V$ of the Euler
+equations. We truncate $V$ in frequency. Three choices make the three
+errors of the step smaller than a fixed negative power of the frequency
+of the next wave. The depth $P$ controls the remainder of the
+expansion. The frequency cutoff controls the truncation error. The
+ratio $\varepsilon$ of Subsection~\ref{cc:sec:intro-waves} sets the
+gain, which controls the error of the cutoff in time. This cutoff acts
+while the wave's amplitude is at most a fixed multiple of
+$\exp(-\varepsilon^{-1/2})$ times its peak. These three errors make up
+the residual of the truncated velocity, which is the parent of the next step
+(Proposition~\ref{cc:uf:step:thm:step}).
+The pressure and residual-gradient estimates give coercivity for
+the mean equation of the next step. The leading wave and oscillatory
+corrections stay in the transported cutoff region. The mean corrections
+and the truncation difference may extend over the torus. Figure~\ref{cc:fig:correction-flow} summarizes the step.
+
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[
+  font=\small,
+  block/.style={draw=black!65, rounded corners=2pt, align=center,
+                inner xsep=5pt, inner ysep=4pt},
+  correction/.style={block, text width=37mm, minimum height=8mm},
+  line/.style={-{Stealth[length=1.7mm]}, semithick, draw=black!75}
+]
+\node[block] (parent) at (0,0) {Parent with residual $R_U$};
+\node[block] (wave) at (0,-1.2)
+  {Add localized wave and divergence-free corrector (\S\ref{cc:sec:material})\\
+   \emph{Amplify vorticity at the origin}};
+\node[inner sep=0pt] (linear-title) at (0,-2.55)
+  {Linear corrections (\S\ref{cc:uf:sec:hierarchy})};
+\node[correction] (mean) at (-4.65,-3.20)
+  {Mean (\S\ref{cc:uf:sec:mean})};
+\node[correction] (transverse) at (0,-3.20)
+  {Oscillatory};
+\node[correction] (curl) at (4.65,-3.20)
+  {Divergence-free};
+\node[draw=black!40, dashed, rounded corners=3pt,
+      fit=(linear-title)(mean)(transverse)(curl), inner sep=4pt] (linear) {};
+\node[block] (completion) at (0,-4.50)
+  {Truncate in frequency (\S\ref{cc:uf:trunc:sec:truncation})};
+\node[block] (exact) at (0,-5.30)
+  {Next parent (\S\ref{cc:uf:trunc:sec:truncation})};
+\draw[line] (parent) -- (wave);
+\draw[line] (wave) -- (linear);
+\draw[line] (mean) -- (transverse);
+\draw[line] (transverse) -- (curl);
+\draw[line] (linear) -- node[right, xshift=5pt]
+  {Small remaining error} (completion);
+\draw[line] (completion) -- (exact);
+\end{tikzpicture}
+\caption{One step of the construction.}
+\label{cc:fig:correction-flow}
+\end{figure}
+
+\subsection{Comparison with blow-up constructions with forcing}
+The construction of Alp\"oge and Buckmaster
+\cite[Section~1.2]{AlpogeBuckmasterBoussinesq} also uses coupled wave
+amplitudes to amplify a gradient and prepare the next wave. There the
+temperature gradient grows together with a vorticity amplitude. The
+accompanying shear would obstruct the next growth stage, so an external
+force rotates the temperature gradient and wave direction together.
+This preserves the coupling that drives the temperature amplitude while
+changing the horizontal component of the wave vector, and hence the sign
+of vorticity production. A scalar shooting parameter selects a rotation
+pulse that returns the vorticity amplitude and that horizontal component
+to zero, retaining the temperature gain. Keeping the wave vector vertical
+then holds both amplitudes fixed while the next wave grows.
+
+The construction of Alp\"oge and Buckmaster
+\cite[Section~1.2]{AlpogeBuckmasterForcedEuler} for the Euler equations
+with forcing builds on this mechanism for axisymmetric flow with swirl. Circulation replaces temperature and
+couples to azimuthal vorticity. The angular control returns the principal
+azimuthal-vorticity amplitude at the material center to zero while
+retaining the circulation-gradient gain. The radial dependence of the
+elliptic operator and of this coupling requires amplitudes that vary
+across the transported support, with transport by the preceding velocity,
+including its corrections.
+
+In the present unforced construction, the amplified shear itself drives the successor. Its orientation
+is obtained from the Craik--Criminale wave evolution; the pressure coefficient
+is determined by incompressibility and is not a rotation control.
+The next wave is activated at the start of its amplification interval,
+with its amplitude in the growing direction (Subsection~\ref{cc:uf:sec:later-wave}).
+
+Localization presents a further difference. In the construction for
+the Boussinesq equations the profiles are linear near zero, so each layer's velocity and temperature are exactly linear
+on a region containing the later layers. The streamfunction corrections vanish there, preserving
+this region. In both forced constructions, the remaining errors are
+absorbed by a force smooth through the singular time. To solve the unforced Euler equations,
+we must remove those errors. The pressure and velocity
+corrections need not preserve a neighborhood on which the velocity is linear;
+the next wave uses the central gradient and estimates on its spatial variation.
+
+Section~\ref{cc:sec:waves} proves amplification and its stability.
+Sections~\ref{cc:sec:localized}--\ref{cc:sec:exact} localize the waves
+and construct the linear corrections.
+Sections~\ref{cc:sec:iteration} and~\ref{cc:uf:sec:tower} start and
+iterate the construction, and Section~\ref{cc:sec:limit} passes to the limit.
+
+\input{sections/01a_parent_data}

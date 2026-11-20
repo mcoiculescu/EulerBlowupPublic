@@ -1,0 +1,56 @@
+\section{The frequency cutoff}\label{cc:app:cutoff}
+Fix a radial $\psi\in C_c^\infty(\R^3)$ with $0\le\psi\le1$, $\psi=1$ on
+$|\zeta|\le1$ and $\supp\psi\subset\{|\zeta|\le2\}$. For $\Lambda\ge1$ let
+$S_\Lambda$ multiply the spatial Fourier mode $e^{2\pi i\xi\cdot x}$,
+$\xi\in\mathbb Z^3$, by $\psi(\xi/\Lambda)$.
+Subsection~\ref{cc:uf:trunc:sec:truncation} takes $u=S_\Lambda V$ as the
+next parent. The frequencies of $u$ are at most $2\Lambda$, and those of
+$u\cdot\nabla u$ are at most $4\Lambda$. Thus \eqref{cc:uf:trunc:eq:lp}
+bounds derivatives of both $u$ and its residual, while
+\eqref{cc:uf:trunc:eq:tail} controls the error $u-V$.
+
+\begin{lemma}\label{cc:uf:trunc:lem:cutoff}
+$S_\Lambda$ commutes with derivatives, preserves parity and divergence
+freeness, and maps into fields supported on frequencies at most
+$2\Lambda$. Its operator norms on $L^\infty$ and on $\Holder{0}$ are bounded
+in terms of $\psi$ alone. For every integer $m\ge0$ and every
+normed-space-valued $f$ supported on frequencies at most $4\Lambda$,
+\begin{equation}\label{cc:uf:trunc:eq:lp}
+ \sum_{|\beta|=m}\norm{\partial^\beta f}_\infty\le C_m\Lambda^m\norm f_\infty .
+\end{equation}
+For all integers $0\le s\le M$ and every $f\in\Holder{M}$,
+\begin{equation}\label{cc:uf:trunc:eq:tail}
+ \norm{(\Id-S_\Lambda)f}_{\Holder{s}}
+ \le C_M\Lambda^{s-M}\norm f_{\Holder{M}}.
+\end{equation}
+The constants $C_m$ and $C_M$ depend only on their index and on $\psi$.
+\end{lemma}
+
+\begin{proof}
+The symbol is scalar, even and independent of time, so the cutoff
+preserves parity and divergence freeness and commutes with differentiation.
+Its support gives the frequency bound. For the norm estimates we use
+the convolution kernel as in the Euclidean Bernstein inequalities
+\cite[Appendix~A, (A.2)--(A.6)]{TaoDispersive}. Let $K=\check\psi$,
+a Schwartz function, and set $K_\Lambda(y)=\Lambda^3K(\Lambda y)$.
+To compute $S_\Lambda f$,
+convolve the periodic extension of $f$ to $\R^3$ with $K_\Lambda$.
+Since $\norm{K_\Lambda}_{L^1}=\norm K_{L^1}$, applying convolution
+to $f$ and to its spatial increments gives the two operator bounds.
+If $f$ has frequencies at most $4\Lambda$, then $f=S_{4\Lambda}f$.
+The identity $\norm{\partial^\beta K_{4\Lambda}}_{L^1}
+=(4\Lambda)^{|\beta|}\norm{\partial^\beta K}_{L^1}$ gives
+\eqref{cc:uf:trunc:eq:lp} also for normed-space-valued $f$.
+
+For \eqref{cc:uf:trunc:eq:tail} put $k=M-s$. When $k=0$, apply the
+$\Holder{0}$ bound to the derivatives of $f$ through order $s$.
+For $k\ge1$, the kernel has integral one and all its positive-order
+moments vanish because $\psi$ is constant near zero. Thus in
+$f-S_\Lambda f$ only the remainder after expanding $f(x-y)$ at $y=0$
+through degree $k-1$ contributes. Its $\Holder{s}$ norm in $x$ is bounded
+by $C_M|y|^k\norm f_{\Holder{M}}$, by Taylor's formula for each derivative
+through order $s$ and its spatial increments. Integrating this bound
+against $|K_\Lambda(y)|$ gives \eqref{cc:uf:trunc:eq:tail}, since
+$\int_{\R^3}|y|^k|K_\Lambda(y)|\dd y
+=\Lambda^{-k}\int_{\R^3}|y|^k|K(y)|\dd y$.
+\end{proof}

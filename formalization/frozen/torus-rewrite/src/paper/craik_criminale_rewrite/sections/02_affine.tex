@@ -1,0 +1,81 @@
+\subsection{Exact waves over a linear background}\label{cc:sec:affine}
+We first work on $\R^3$, where linear velocity fields give local models for the
+periodic construction. Let $D(t)$ be smooth and trace free, with
+$D'+D^2$ symmetric. Then $Dx$ solves the Euler equations with pressure
+$-x\cdot(D'+D^2)x/2$. Choose a smooth odd $1$-periodic profile
+$F$ with $F'(0)=1$, and let $P'=F$, $\av P=0$.
+Here $\av H=\int_0^1H(s)\,\mathrm ds$ is the phase average.
+
+\begin{lemma}\label{cc:lem:wave}
+Let the wave vector $k(t)\ne0$ and the amplitude vector $\mathbf a(t)$,
+functions of time alone, satisfy
+\begin{equation}\label{cc:eq:wave-ode}
+ k'=-D^Tk,\qquad
+ \mathbf a'=-D\mathbf a+p_{\rm w} k,\qquad
+ p_{\rm w}=\frac{2k\cdot D\mathbf a}{|k|^2},\qquad
+ k\cdot\mathbf a=0.
+\end{equation}
+Then $Dx+\mathbf aF(k\cdot x)$ is divergence free and solves the Euler equations on $\R^3$ with
+pressure $-x\cdot(D'+D^2)x/2-p_{\rm w} P(k\cdot x)$.
+If $k(t_0)\ne0$, $\mathbf a(t_0)\ne0$ and
+$k(t_0)\cdot\mathbf a(t_0)=0$, then both vectors remain nonzero and
+perpendicular for every $t\ge t_0$ in the interval of existence of $D$.
+\end{lemma}
+\begin{proof}
+The equation $k'=-D^Tk$ transports the phase by $Dx$, and
+perpendicularity cancels the self-advection:
+$(\mathbf aF(k\cdot x)\cdot\nabla)\,\mathbf aF(k\cdot x)
+=(k\cdot\mathbf a)FF'\mathbf a=0$. The remaining
+acceleration $(\mathbf a'+D\mathbf a)F=p_{\rm w} kF$ is the gradient of
+$p_{\rm w} P(k\cdot x)$.
+The choice of $p_{\rm w}$ gives
+$(k\cdot\mathbf a)'=-2k\cdot D\mathbf a+p_{\rm w}|k|^2=0$.
+For a given $D$, the equation for $k$ is linear and has an invertible
+fundamental matrix. Hence $k(t_0)\ne0$ implies $k(t)\ne0$. With this
+$k$, the equation
+$\mathbf a'=-(\Id-2\frac{k}{|k|}\frac{k^T}{|k|})D\mathbf a$
+is also linear with an invertible fundamental matrix, so
+$\mathbf a(t_0)\ne0$ implies $\mathbf a(t)\ne0$.
+\end{proof}
+
+For a single profile, this is the inviscid wave construction of
+Craik and Criminale~\cite{CraikCriminale}. For the profiles considered
+above, the curl and amplitude growth are
+\[
+ \curl\bigl(\mathbf aF(k\cdot x)\bigr)
+       =(k\times\mathbf a)F'(k\cdot x),\qquad
+ \tfrac12(|\mathbf a|^2)'=-\mathbf a\cdot D\mathbf a.
+\]
+
+\subsubsection{The preceding frame}\label{cc:sec:frame}
+A wave evolving over a background matrix $B$ becomes part of the
+background for the next wave. At the origin, its contribution to the
+velocity gradient is $\mathbf a\otimes k$, and its unit wave vector and
+velocity direction provide a moving orthonormal frame. We express the
+older gradient $B$ in this frame to identify the couplings that drive the
+next wave. The following calculation uses only $\tr B=0$; it requires no
+symmetry of $B'+B^2$.
+
+\begin{lemma}\label{cc:lem:frame}
+Let $B(t)$ be a smooth trace-free matrix, and let $k\ne0$ and
+$\mathbf a\ne0$ satisfy \eqref{cc:eq:wave-ode} with $D$ replaced by $B$.
+Put $E_1=\frac{k}{|k|}$, $E_2=\frac{\mathbf a}{|\mathbf a|}$ and $E_3=E_1\times E_2$,
+write $B_{ij}=E_i\cdot BE_j$ $(i,j=1,2,3)$ for the entries of $B$ in this
+orthonormal frame, and let $\sigma=|k|\,|\mathbf a|$, $\nu=B_{12}$ and
+$\eta=B_{32}$. Then
+\begin{equation}\label{cc:eq:frame}
+ E_1'=-\nu E_2-B_{13}E_3,\quad
+ E_2'=\nu E_1-\eta E_3,\quad
+ E_3'=B_{13}E_1+\eta E_2,
+ \qquad(\log\sigma)'=B_{33}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Since $k'=-B^Tk$, we have $E_1'=-(\Id-E_1E_1^T)B^TE_1=-B_{12}E_2-B_{13}E_3$
+and $(\log|k|)'=-B_{11}$. Since $\mathbf a'=-B\mathbf a+p_{\rm w} k$
+with $p_{\rm w}|k|=2|\mathbf a|B_{12}$, we have
+$E_2'=(\Id-E_2E_2^T)(-BE_2+2B_{12}E_1)=B_{12}E_1-B_{32}E_3$ and
+$(\log|\mathbf a|)'=-B_{22}$. Then
+$E_3'=E_1'\times E_2+E_1\times E_2'=B_{13}E_1+B_{32}E_2$, and
+$(\log\sigma)'=-B_{11}-B_{22}=B_{33}$ because $\tr B=0$.
+\end{proof}

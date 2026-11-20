@@ -22,8 +22,10 @@ theorem nonempty_laterPrimaryCosts : Nonempty LaterPrimaryCosts := by
       pressure := fun d ha => hPressure d ((le_max_left _ _).trans ha)
       activation := fun d ha => hActivation d ((le_max_right _ _).trans ha) }⟩
 
-/-- Theorem 1.1 of the frozen torus manuscript. -/
-theorem theorem11 : Theorem11 :=
+/-- The library's direct proof of `Theorem11`, which follows the frozen manuscript of
+2026-11-18. The main theorem `TorusEuler.theorem11` is the projection of the spine theorem
+`TorusEuler.Paper.theorem_1_1` (see `TorusEuler.MainTheorem`). -/
+theorem theorem11_library : Theorem11 :=
   theorem11_of_laterPrimaryCosts (Classical.choice nonempty_laterPrimaryCosts)
 
 end TorusEuler

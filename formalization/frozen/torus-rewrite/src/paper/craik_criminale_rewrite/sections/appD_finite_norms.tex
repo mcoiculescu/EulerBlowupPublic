@@ -1,0 +1,198 @@
+\section{Finite norms and coefficient estimates}\label{cc:uf:finite:sec:calculus}
+In Section~\ref{cc:sec:exact} we estimate the mean and the oscillatory
+corrections at every derivative order. We measure label derivatives on
+the envelope radius $\ell_*$ and phase derivatives on the profile width
+$h$, as chosen in Subsection~\ref{cc:uf:sec:parent-step}.
+With these weights the power of the parent bound $\mathsf D$ in the
+inverse estimates is independent of the derivative order.
+
+Write $|f|_m=\sum_{|\beta|=m}\sup|\partial^\beta f|$ for the spatial
+derivatives of order $m$, taken in the label $a$ or the position $x$
+as appropriate. The supremum includes all variables. For a field
+$f(t,a,s)$ of period one in $s$ and an integer $n\ge0$, set
+\begin{equation}\label{cc:uf:trunc:eq:field-norm}
+ \|f\|_{[n]}=
+ \sum_{m+j\le n}\ell_*^mh^j|\partial_s^jf|_m,
+ \qquad \|f\|_{[n],\gamma}=\|f/\gamma\|_{[n]}.
+\end{equation}
+The weighted norm is taken on $[t_0,T]$, where $\gamma(t)>0$ measures
+the amplitude of the seed at the origin. All norms may be restricted to a closed
+subinterval of their time domain.
+
+For a phase-independent field $c(t,a)$, only the terms with $j=0$
+occur in \eqref{cc:uf:trunc:eq:field-norm}. The mean inverse of
+Theorem~\ref{cc:uf:mean:inverse} uses spatial H\"older norms, so we put
+\[
+ |c|_{m,1/2}=\sum_{|\beta|=m}\sup_t\norm{\partial_a^\beta c(t)}_{\Holder{0}},
+ \qquad
+ \|c\|_{[n],1/2}=\sum_{m\le n}\ell_*^m|c|_{m,1/2}.
+\]
+To pass from supremum bounds to this norm costs one derivative and a
+factor $\ell_*^{-1/2}$. Indeed, bounding $|v(x)-v(y)|$ by both
+$2\|v\|_\infty$ and $\|\nabla v\|_\infty|x-y|$ gives
+$[v]_{\Holder{0}}\le(2\|v\|_\infty\|\nabla v\|_\infty)^{1/2}$.
+Applying this to $\partial_a^\beta c$ and using $\ell_*\le1$ gives
+\begin{equation}\label{cc:uf:trunc:eq:holder-sup}
+ \ell_*^m|c|_{m,1/2}
+ \le C\ell_*^{-1/2}\bigl(\ell_*^m|c|_m+\ell_*^{m+1}|c|_{m+1}\bigr),
+ \qquad\hbox{hence}\quad
+ \|c\|_{[n]}\le\|c\|_{[n],1/2}\le C\ell_*^{-1/2}\|c\|_{[n+1]} .
+\end{equation}
+
+\begin{lemma}\label{cc:uf:trunc:lem:fields}
+For every $n\ge0$ and fields $f,g$,
+\begin{align}
+ \sum_i\|\partial_{a_i}f\|_{[n],\gamma}
+ &\le C\ell_*^{-1}\|f\|_{[n+1],\gamma},\qquad
+ \|\partial_sf\|_{[n],\gamma}
+ \le h^{-1}\|f\|_{[n+1],\gamma},
+ \label{cc:uf:trunc:eq:deriv}\\
+ \|fg\|_{[n],\gamma}
+ &\le C_n\|f\|_{[n]}\|g\|_{[n],\gamma}.
+ \label{cc:uf:trunc:eq:product}
+\end{align}
+With $\av f$ the phase average,
+\begin{equation}\label{cc:uf:trunc:eq:phase-ops}
+ \|\av f\|_{[n],\gamma}\le\|f\|_{[n],\gamma},\qquad
+ \|f-\av f\|_{[n],\gamma}\le2\|f\|_{[n],\gamma},\qquad
+ \|\partial_s^{-1}f\|_{[n],\gamma}\le C\|f\|_{[n],\gamma}
+ \quad(\av f=0).
+\end{equation}
+For phase-independent fields,
+\eqref{cc:uf:trunc:eq:product} also holds with
+$\|\cdot\|_{[n],1/2}$ in place of $\|\cdot\|_{[n]}$ and
+$\gamma\equiv1$.
+\end{lemma}
+\begin{proof}
+Each label derivative of order $m+1$ occurs at most three times in the
+sum over $i$ in \eqref{cc:uf:trunc:eq:deriv}. The phase derivative
+shifts $j$ by one in \eqref{cc:uf:trunc:eq:field-norm}. For
+\eqref{cc:uf:trunc:eq:product}, apply Leibniz' rule to $f(g/\gamma)$,
+using that $\gamma$ depends only on time. For the H\"older version use
+the product inequality in $\Holder{0}$.
+
+Phase averaging has supremum norm at most one. For a zero-mean $f$,
+subtracting the average of $\int_0^s f(t,a,\sigma)\dd\sigma$ gives its
+zero-mean periodic primitive, of supremum norm at most $2\sup|f|$.
+The phase operators commute with label and phase derivatives, so these
+bounds give \eqref{cc:uf:trunc:eq:phase-ops} at every order.
+\end{proof}
+
+The coefficients in Subsections~\ref{cc:uf:mean:sec:finite}
+and~\ref{cc:uf:sec:transverse} are independent of the phase. Their
+label derivatives satisfy bounds of the form
+\begin{equation}\label{cc:uf:trunc:eq:power}
+ |c|_m\le C_m\mathsf D^{C(m+1)}\qquad(m\ge0).
+\end{equation}
+The absolute exponent $C$ may depend on the coefficient.
+The next lemma allows us to multiply and invert such coefficients,
+and shows how much of the factor $\ell_*^m$ is available when at
+least one derivative falls on a coefficient.
+
+\Needspace{4\baselineskip}
+\begin{lemma}\label{cc:uf:trunc:lem:coefficients}
+Let $c,d$ be smooth phase-independent matrix fields that satisfy
+\eqref{cc:uf:trunc:eq:power}.
+\begin{enumerate}[label=(\alph*),leftmargin=*]
+\item The product $cd$ satisfies \eqref{cc:uf:trunc:eq:power}.
+\item If $c$ is invertible and $\sup_{t,a}|c^{-1}|$ is at most a power
+of $\mathsf D$ with an absolute exponent, then $c^{-1}$ satisfies
+\eqref{cc:uf:trunc:eq:power}.
+\item If $\ell_*\le\mathsf D^{-C}$ with the exponent $C$ of
+\eqref{cc:uf:trunc:eq:power} for $c$, then
+$\|c\|_{[n]}\le C_n\mathsf D^C$ for every $n\ge0$, and
+$\ell_*^m|c|_m\le C_m\mathsf D^{2C}\ell_*$ for every $m\ge1$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+For (a) and (b) take $C$ large enough for the bounds on $c,d$ and,
+in (b), on $\sup|c^{-1}|$. Leibniz' rule gives
+$|cd|_m\le C_m\mathsf D^{C(m+2)}$, proving (a) with exponent $2C$.
+For $e=c^{-1}$, differentiating $ce=I$ gives
+\[
+ |e|_m\le
+ C_m\mathsf D^C\sum_{i=1}^m|c|_i|e|_{m-i}\qquad(m\ge1).
+\]
+Starting from $|e|_0\le\mathsf D^C$, induction gives
+$|e|_m\le C_m\mathsf D^{C(3m+1)}$, proving (b) with exponent $3C$.
+For (c) use the exponent $C$ for $c$ in \eqref{cc:uf:trunc:eq:power}.
+Then $\ell_*^m|c|_m\le C_m\mathsf D^C(\ell_*\mathsf D^C)^m$.
+Since $\ell_*\mathsf D^C\le1$, summing gives the first bound, and
+retaining one factor $\ell_*\mathsf D^C$ for $m\ge1$ gives the second.
+\end{proof}
+
+For the mean we differentiate the integrated equation
+\eqref{cc:uf:mean:integrated} in the unweighted H\"older norm. For
+the oscillations we differentiate \eqref{cc:uf:tower:eq:coordinate}
+in the $\gamma$-weighted norm. Its unknown takes values in a fixed
+$\R^2$, so label differentiation preserves the space of unknowns.
+In both equations a derivative falling on a coefficient leaves fewer
+derivatives on the solution. The following estimate uses this fact to
+retain just one factor of the zero-order inverse bound.
+
+\begin{lemma}\label{cc:uf:trunc:lem:lifting}
+Consider a linear equation of the form
+\[
+ \mathcal Lv=\mathcal L_0v+\sum_\nu T_\nu(c_\nu v)=F
+\]
+with finitely many phase-independent coefficients $c_\nu(t,a)$.
+Assume that $\mathcal L_0$ and the linear operators $T_\nu$ commute
+with label and phase derivatives. The equation may hold modulo a fixed
+subspace, such as gradients. Assume that differentiation preserves this
+subspace and the linear constraints on $v$, and commutes with the maps
+giving any prescribed data. Write $f$ for the forcing $F$ together with
+these data, with the sum of their norms. Suppose that for every
+admissible source one has the estimate
+\[
+ \|v\|_{[0],\gamma}\le C_{\rm low}\|f\|_{[0],\gamma}.
+\]
+Let $b_\nu$ be the operator norm of $T_\nu$ from
+$\|\cdot\|_{[0],\gamma}$ to the forcing norm. If
+\begin{equation}\label{cc:uf:trunc:eq:slow}
+ C_{\rm low}\sum_\nu b_\nu\ell_*^m|c_\nu|_m\le C_m\qquad(m\ge1),
+\end{equation}
+then every smooth solution satisfies, for $n\ge0$,
+\[
+ \|v\|_{[n],\gamma}\le C_n C_{\rm low}\|f\|_{[n],\gamma}.
+\]
+Here $C_n$ depends only on $n$ and the bounds $C_m$ in
+\eqref{cc:uf:trunc:eq:slow} for $m\le n$. For phase-independent fields
+with $\gamma\equiv1$, the same assertion holds using
+$\|\cdot\|_{[n],1/2}$ and $|c_\nu|_{m,1/2}$ throughout, with $b_\nu$
+taken in the corresponding zero-order norms.
+\end{lemma}
+\begin{proof}
+Phase derivatives commute with the equation. For a label multi-index
+$\beta$ and phase order $j$, the differentiated forcing is
+\[
+ \mathcal L(\partial_a^\beta\partial_s^j v)
+ =\partial_a^\beta\partial_s^j F-
+ \sum_{\nu}\sum_{0<\beta'\le\beta}\binom{\beta}{\beta'}
+ T_\nu\bigl((\partial_a^{\beta'}c_\nu)
+          \partial_a^{\beta-\beta'}\partial_s^j v\bigr).
+\]
+The zero-order estimate applies with the differentiated data. Multiply
+by $\ell_*^{|\beta|}h^j$ and sum over $|\beta|+j\le n$. A term with
+$i=|\beta'|\ge1$ assigns $\ell_*^i$ to the coefficient and leaves
+a norm of order at most $n-i$ on $v$. Thus for $n\ge1$,
+\[
+ \|v\|_{[n],\gamma}\le C_{\rm low}\|f\|_{[n],\gamma}
+ +C_n\sum_{i=1}^n
+ \Bigl(C_{\rm low}\sum_\nu b_\nu\ell_*^i|c_\nu|_i\Bigr)
+ \|v\|_{[n-i],\gamma}.
+\]
+By \eqref{cc:uf:trunc:eq:slow}, the sum is bounded by
+$C_n\|v\|_{[n-1],\gamma}$. Induction from order zero gives the claim.
+For the H\"older norms the same argument uses the product inequality
+in $\Holder{0}$.
+\end{proof}
+
+In Section~\ref{cc:sec:exact} the zero-order bounds come from
+Theorem~\ref{cc:uf:mean:inverse} and \eqref{cc:uf:tower:eq:weighted-forward}.
+For $m\ge1$, Lemma~\ref{cc:uf:trunc:lem:coefficients}(c) leaves a
+factor $\ell_*$ in $\ell_*^m|c_\nu|_m$. In the H\"older norm,
+\eqref{cc:uf:trunc:eq:holder-sup} leaves a factor $\ell_*^{1/2}$,
+as in \eqref{cc:uf:mean:thresholds}. In each case $C_{\rm low}\sum_\nu b_\nu$
+is bounded by a fixed power of $\mathsf D$. One choice
+$\ell_*=\mathsf D^{-A}$ with $A$ sufficiently large therefore gives
+\eqref{cc:uf:trunc:eq:slow} at every order.

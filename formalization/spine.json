@@ -1,0 +1,1326 @@
+{
+ "manuscript": "arXiv version, manuscript commit cb23bf14",
+ "rows": [
+  {
+   "number": "1.1",
+   "kind": "theorem",
+   "label": "cc:target:unforced",
+   "doc": "main",
+   "tex": "sections/01_problem.tex:60",
+   "decl": "TorusEuler.Paper.theorem_1_1",
+   "statement": "TorusEuler.Paper.Statement.theorem_1_1",
+   "cites": [
+    "8.1",
+    "8.2",
+    "8.3",
+    "8.4"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [
+    "section8_setting"
+   ],
+   "exports": [],
+   "content": [
+    "TorusEuler.exists_theorem11Witness_of_inductiveEulerStages",
+    "TorusEuler.theorem11_of_inductiveEulerStages",
+    "TorusEuler.theorem11Witness_of_solution_and_terminal_bounds",
+    "TorusEuler.paper_section_8_of_inductiveEulerStages",
+    "TorusEuler.theorem11_of_uniformPhysicalEstimates"
+   ],
+   "package": "S678",
+   "spine": "full",
+   "setting_predicates": []
+  },
+  {
+   "number": "1.2",
+   "kind": "remark",
+   "label": null,
+   "doc": "main",
+   "tex": "sections/01_problem.tex:80",
+   "decl": "TorusEuler.Paper.remark_1_2",
+   "statement": "TorusEuler.Paper.Statement.remark_1_2",
+   "cites": [],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [],
+   "package": "Auxiliary",
+   "spine": "library",
+   "tex_cites": [
+    "Aux 1.1"
+   ],
+   "tex_text_cites": [],
+   "note": "Proved from the library, not one-to-one (decision D28): the auxiliary note, unchanged since the freeze of 2026-11-18 except for the title of the main paper, is formalized by the library theorems auxiliaryTerminalSmoothness, auxiliaryLemma12 and auxiliaryLemma13, which are not spine nodes; the remark is proved from auxiliaryTerminalSmoothness."
+  },
+  {
+   "number": "1.3",
+   "kind": "lemma",
+   "label": "cc:uf:tower:lem:slow-orders",
+   "doc": "main",
+   "tex": "sections/01b_parameters.tex:54",
+   "decl": "TorusEuler.Paper.lemma_1_3",
+   "statement": "TorusEuler.Paper.Statement.lemma_1_3",
+   "cites": [],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.paperLemma13_slowOrders",
+    "TorusEuler.frequencySchedule_log_bound_of_maxima",
+    "TorusEuler.frequencySchedule_order_tendsto_atTop",
+    "TorusEuler.frequencySchedule_log_bound"
+   ],
+   "package": "S678",
+   "spine": "full",
+   "setting_predicates": []
+  },
+  {
+   "number": "2.1",
+   "kind": "lemma",
+   "label": "cc:lem:wave",
+   "doc": "main",
+   "tex": "sections/02_affine.tex:9",
+   "decl": "TorusEuler.Paper.lemma_2_1",
+   "statement": "TorusEuler.Paper.Statement.lemma_2_1",
+   "cites": [],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.PaperAffine.exactWave",
+    "TorusEuler.affineWave_solvesEulerOn"
+   ],
+   "package": "S2",
+   "spine": "full",
+   "setting_predicates": [],
+   "note": "Not content (glue): affineWave_propagation, the persistence of kappa.a = 0 along the system (2.1) for any background B, used in running text (04_localized_wave.tex:58-59, 08b_induction.tex:296) where Lemma 2.1's symmetry hypothesis fails (D22)."
+  },
+  {
+   "number": "2.2",
+   "kind": "lemma",
+   "label": "cc:lem:frame",
+   "doc": "main",
+   "tex": "sections/02_affine.tex:65",
+   "decl": "TorusEuler.Paper.lemma_2_2",
+   "statement": "TorusEuler.Paper.Statement.lemma_2_2",
+   "cites": [],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.PaperAffine.movingFrameDerivatives",
+    "TorusEuler.hasDerivWithinAt_movingFrame"
+   ],
+   "package": "S2",
+   "spine": "full",
+   "setting_predicates": []
+  },
+  {
+   "number": "2.3",
+   "kind": "lemma",
+   "label": "cc:lem:strong-shear",
+   "doc": "main",
+   "tex": "sections/03_amplification.tex:113",
+   "decl": "TorusEuler.Paper.lemma_2_3",
+   "statement": "TorusEuler.Paper.Statement.lemma_2_3",
+   "cites": [
+    "2.2"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.Paper.Lib.S2a.model_case_equations",
+    "TorusEuler.Paper.Lib.S2a.strongShear_limit"
+   ],
+   "package": "S2",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.MovingWaveVector.PhysicalAmplification",
+    "TorusEuler.Paper.AmplitudeVector",
+    "TorusEuler.Paper.ModelCase",
+    "TorusEuler.Paper.NewWaveVector"
+   ]
+  },
+  {
+   "number": "2.4",
+   "kind": "lemma",
+   "label": "cc:uf:exact:lem:additive",
+   "doc": "main",
+   "tex": "sections/03_amplification.tex:265",
+   "decl": "TorusEuler.Paper.lemma_2_4",
+   "statement": "TorusEuler.Paper.Statement.lemma_2_4",
+   "cites": [
+    "2.2"
+   ],
+   "notation_only": [
+    "2.1",
+    "2.3"
+   ],
+   "setting": [],
+   "text_cites": [],
+   "exports": [
+    "continuity of the error matrix E on [0,T] (sections/03_amplification.tex:640-648, variation of constants in the proof of Lemma 2.6)",
+    "sup|sigma_p/sigma - 1| <= 2T delta from the proof (sections/03_amplification.tex:302-309), read by the proof of Lemma 2.7 (:847-850)"
+   ],
+   "content": [
+    "TorusEuler.PaperAffine.additiveComparison",
+    "TorusEuler.MovingWaveVector.AmplificationWindow.wave_comparison",
+    "TorusEuler.MovingWaveVector.AmplificationWindow.wave_geometry",
+    "TorusEuler.MovingWaveVector.AmplificationWindow.matrixError_polynomial_bound",
+    "TorusEuler.MovingWaveVector.AmplificationWindow.raw_amplitude_equations",
+    "TorusEuler.MovingWaveVector.moving_waveVector_polynomial_error"
+   ],
+   "package": "S2",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.MovingWaveVector.PhysicalAmplification",
+    "TorusEuler.Paper.AmplitudeVector",
+    "TorusEuler.Paper.FiniteSmallness",
+    "TorusEuler.Paper.NewWaveVector"
+   ]
+  },
+  {
+   "number": "2.5",
+   "kind": "lemma",
+   "label": "cc:lem:model",
+   "doc": "main",
+   "tex": "sections/03_amplification.tex:452",
+   "decl": "TorusEuler.Paper.lemma_2_5",
+   "statement": "TorusEuler.Paper.Statement.lemma_2_5",
+   "cites": [],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.PaperAffine.referenceModel"
+   ],
+   "package": "S2",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.ReferenceSlope"
+   ]
+  },
+  {
+   "number": "2.6",
+   "kind": "lemma",
+   "label": "cc:lem:finite-comparison",
+   "doc": "main",
+   "tex": "sections/03_amplification.tex:597",
+   "decl": "TorusEuler.Paper.lemma_2_6",
+   "statement": "TorusEuler.Paper.Statement.lemma_2_6",
+   "cites": [
+    "2.4",
+    "2.5"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.PaperAffine.finiteComparison",
+    "TorusEuler.MovingWaveVector.PhysicalAmplification.exists_physical_growth_bound_threshold"
+   ],
+   "package": "S2",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.MovingWaveVector.PhysicalAmplification",
+    "TorusEuler.Paper.AmplitudeVector",
+    "TorusEuler.Paper.FiniteSmallness",
+    "TorusEuler.Paper.NewWaveVector",
+    "TorusEuler.Paper.ReferenceSlope"
+   ],
+   "note": "Implicit citation: Lemma 2.5 used at sections/03_amplification.tex:636 ('Since |Y| <= 1'); Lean: h2_5 in Lemma26.lean."
+  },
+  {
+   "number": "2.7",
+   "kind": "lemma",
+   "label": "cc:lem:new-wave-couplings",
+   "doc": "main",
+   "tex": "sections/03_amplification.tex:718",
+   "decl": "TorusEuler.Paper.lemma_2_7",
+   "statement": "TorusEuler.Paper.Statement.lemma_2_7",
+   "cites": [
+    "2.4",
+    "2.5",
+    "2.6"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [],
+   "package": "S2",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.MovingWaveVector.PhysicalAmplification",
+    "TorusEuler.Paper.AmplitudeVector",
+    "TorusEuler.Paper.FiniteSmallness",
+    "TorusEuler.Paper.NewWaveVector"
+   ],
+   "note": "Implicit citation: Proposition 2.4 used at sections/03_amplification.tex:850 (zeta differs from zeta_0 by at most C T^C delta)."
+  },
+  {
+   "number": "2.8",
+   "kind": "proposition",
+   "label": "cc:prop:finite-return",
+   "doc": "main",
+   "tex": "sections/03_amplification.tex:894",
+   "decl": "TorusEuler.Paper.proposition_2_8",
+   "statement": "TorusEuler.Paper.Statement.proposition_2_8",
+   "cites": [
+    "2.4",
+    "2.5",
+    "2.6",
+    "2.7"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.PaperAffine.finiteReturn",
+    "TorusEuler.MovingWaveVector.AmplificationWindow.exists_growingWave_crossing",
+    "TorusEuler.MovingWaveVector.PhysicalAmplification.exists_growingCrossing",
+    "TorusEuler.ReferenceAmplitude.growing_amplitude_crossing_strength_and_gain"
+   ],
+   "package": "S2",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.MovingWaveVector.PhysicalAmplification",
+    "TorusEuler.Paper.AmplitudeVector",
+    "TorusEuler.Paper.FiniteSmallness",
+    "TorusEuler.Paper.NewWaveVector",
+    "TorusEuler.Paper.ReferenceSlope"
+   ]
+  },
+  {
+   "number": "3.1",
+   "kind": "lemma",
+   "label": "cc:uf:exact:lem:profile",
+   "doc": "main",
+   "tex": "sections/04_localized_wave.tex:152",
+   "decl": "TorusEuler.Paper.lemma_3_1",
+   "statement": "TorusEuler.Paper.Statement.lemma_3_1",
+   "cites": [],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.paperLemma31_waveProfile",
+    "TorusEuler.lemma31_waveProfile",
+    "TorusEuler.deriv_waveProfile_bounds",
+    "TorusEuler.norm_waveProfile_le",
+    "TorusEuler.hasDerivAt_waveProfile_zero",
+    "TorusEuler.exists_iteratedDeriv_waveProfile_bound"
+   ],
+   "package": "S34A",
+   "spine": "full",
+   "setting_predicates": []
+  },
+  {
+   "number": "4.1",
+   "kind": "lemma",
+   "label": "cc:uf:mean:hardy",
+   "doc": "main",
+   "tex": "sections/06b_mean_inverse.tex:104",
+   "decl": "TorusEuler.Paper.lemma_4_1",
+   "statement": "TorusEuler.Paper.Statement.lemma_4_1",
+   "cites": [],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.paper_mean_hardy",
+    "TorusEuler.endpointLabelEnergy_coercive",
+    "TorusEuler.endpointDisplacementEnergy_coercive",
+    "TorusEuler.endpointLabelEnergy_coercive_velocity",
+    "TorusEuler.endpointL2Energy_coercive",
+    "TorusEuler.endpointMixedPathCoefficient_coercive",
+    "TorusEuler.PaperMeanParent.exists_coefficients"
+   ],
+   "package": "S34A",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.MeanParentFlow"
+   ]
+  },
+  {
+   "number": "4.2",
+   "kind": "theorem",
+   "label": "cc:uf:mean:inverse",
+   "doc": "main",
+   "tex": "sections/06b_mean_inverse.tex:143",
+   "decl": "TorusEuler.Paper.theorem_4_2",
+   "statement": "TorusEuler.Paper.Statement.theorem_4_2",
+   "cites": [
+    "4.1",
+    "A.1",
+    "A.2"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.paper_mean_inverse",
+    "TorusEuler.paper_mean_inverse_smooth_force",
+    "TorusEuler.paper_mean_inverse_smooth_force_of_flow",
+    "TorusEuler.PaperSmoothMeanSolution.strong_label_equation",
+    "TorusEuler.PaperSmoothMeanSolution.eulerian_equation",
+    "TorusEuler.PaperMeanIntegratedSolution.pressure_gradient_eq_on",
+    "TorusEuler.PaperMeanIntegratedSolution.constant_eq_initial",
+    "TorusEuler.PaperMeanParent.exists_integratedForce",
+    "TorusEuler.paperMean_normalized_potential_eq",
+    "TorusEuler.exists_endpointPhysicalForcedMean_withRecovery",
+    "TorusEuler.exists_endpointPhysicalInverseCaps"
+   ],
+   "package": "S34A",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.EndpointSystemSolution",
+    "TorusEuler.Paper.MeanParentFlow"
+   ],
+   "note": "Not content (glue): `PaperMeanIntegratedSolution.exists_of_displacement_pressure_equation` and `PaperSmoothMeanSolution.exists_integratedSolution`, the passage between the strong equation (4.11) and the integrated system (4.9) stated in running text before the theorem (06b_mean_inverse.tex:136-139)."
+  },
+  {
+   "number": "5.1",
+   "kind": "proposition",
+   "label": "cc:uf:trunc:prop:parent",
+   "doc": "main",
+   "tex": "sections/05b_parent_coefficients.tex:16",
+   "decl": "TorusEuler.Paper.proposition_5_1",
+   "statement": "TorusEuler.Paper.Statement.proposition_5_1",
+   "cites": [
+    "B.1",
+    "D.2"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.paperProposition51_parentCoefficients",
+    "TorusEuler.paperProposition51_parentComposition",
+    "TorusEuler.paperProposition51_weightedComposition",
+    "TorusEuler.exists_parentVelocityJetBounds",
+    "TorusEuler.exists_parent_coefficientJetBounds",
+    "TorusEuler.exists_forward_flowJetBounds",
+    "TorusEuler.norm_iteratedFDeriv_parentComposition_le"
+   ],
+   "package": "S5",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.S5.Launch",
+    "TorusEuler.Paper.S5.Parent"
+   ]
+  },
+  {
+   "number": "5.2",
+   "kind": "proposition",
+   "label": "cc:uf:mean:columns",
+   "doc": "main",
+   "tex": "sections/06d_mean_estimates.tex:22",
+   "decl": "TorusEuler.Paper.proposition_5_2",
+   "statement": "TorusEuler.Paper.Statement.proposition_5_2",
+   "cites": [
+    "5.1",
+    "D.1"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [
+    "eq_D_2",
+    "eq_5_14"
+   ],
+   "exports": [],
+   "content": [
+    "TorusEuler.paper_mean_columns",
+    "TorusEuler.PaperSmoothMeanSolution.mean_eq_of_endpoints",
+    "TorusEuler.HierarchyTwistedProfile.exists_physicalSolvers_meanSeminormBound",
+    "TorusEuler.InductiveEulerStage.exists_onSlab_meanSeminormBound",
+    "TorusEuler.exists_endpointPhysicalForcedMean_withUniformEstimate",
+    "TorusEuler.exists_endpointPhysicalRecoveredMean_parentBound",
+    "TorusEuler.HierarchyTwistedProfile.exists_solveMean_labelNormBound"
+   ],
+   "package": "S5",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.S5.MeanSolution",
+    "TorusEuler.Paper.S5.Parent"
+   ],
+   "note": "The displays (5.13) and (5.14) of its proof are nodes (Text eq_5_13, eq_5_14), cited by the auxiliary note; the Lean proof takes them from those nodes. Theorem 4.2, Lemmas D.2, D.3 and (5.13) enter the proof only through the displays (5.13), (5.14) (06d:30-58), so they are cited by the nodes Text eq_5_13, eq_5_14 (decision D17)."
+  },
+  {
+   "number": "5.3",
+   "kind": "lemma",
+   "label": "cc:uf:tower:lem:inverse",
+   "doc": "main",
+   "tex": "sections/06c_finite_hierarchy.tex:54",
+   "decl": "TorusEuler.Paper.lemma_5_3",
+   "statement": "TorusEuler.Paper.Statement.lemma_5_3",
+   "cites": [
+    "3.1",
+    "5.1",
+    "D.1",
+    "D.2",
+    "D.3"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.HierarchyTwistedProfile.exists_paper_hierarchy_inverse",
+    "TorusEuler.exists_paper_hierarchy_inverse_of_active_profiles",
+    "TorusEuler.LocalizedAmplitude.paper_hierarchy_near_seed",
+    "TorusEuler.LocalizedAmplitude.exists_paper_hierarchy_leading",
+    "TorusEuler.LocalizedAmplitude.exists_parent_seed_leadingScaledJetBounds",
+    "TorusEuler.LocalizedAmplitude.exists_seedOn_of_coframe_bounds",
+    "TorusEuler.LocalizedAmplitude.exists_seedOn_of_parent_bounds"
+   ],
+   "package": "S5",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.S5.IsSeed",
+    "TorusEuler.Paper.S5.Launch",
+    "TorusEuler.Paper.S5.Origin",
+    "TorusEuler.Paper.S5.Parent",
+    "TorusEuler.Paper.S5.TransverseSolution"
+   ]
+  },
+  {
+   "number": "5.4",
+   "kind": "proposition",
+   "label": "cc:uf:hier:prop:identity",
+   "doc": "main",
+   "tex": "sections/06c_finite_hierarchy.tex:304",
+   "decl": "TorusEuler.Paper.proposition_5_4",
+   "statement": "TorusEuler.Paper.Statement.proposition_5_4",
+   "cites": [
+    "4.2"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [
+    "existence of the seed of Section 5.1 (the solution of (3.2) with (5.4) on [t0,T]), from which the profiles start; part of 'the profiles are well defined'"
+   ],
+   "content": [
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.paper_hierarchy_identity",
+    "TorusEuler.FiniteHierarchySolvers.construct_momentum",
+    "TorusEuler.HierarchyOperators.momentum_eq_remainder_add_switch",
+    "TorusEuler.HierarchyTwistedProfile.physicalConstruct_support_and_tail_on_inactive",
+    "TorusEuler.HierarchyTwistedProfile.TruncatedHierarchyParent.exists_localizedSeed"
+   ],
+   "package": "S5",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.S5.IsExpansion",
+    "TorusEuler.Paper.S5.IsSeed",
+    "TorusEuler.Paper.S5.Launch",
+    "TorusEuler.Paper.S5.Origin",
+    "TorusEuler.Paper.S5.Parent"
+   ]
+  },
+  {
+   "number": "5.5",
+   "kind": "lemma",
+   "label": "cc:uf:hier:lem:relay",
+   "doc": "main",
+   "tex": "sections/06c_finite_hierarchy.tex:399",
+   "decl": "TorusEuler.Paper.lemma_5_5",
+   "statement": "TorusEuler.Paper.Statement.lemma_5_5",
+   "cites": [
+    "5.1",
+    "D.1"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.HierarchyTwistedProfile.ParentGeometry.paper_hierarchy_relay",
+    "TorusEuler.HierarchyTwistedProfile.ParentGeometry.paper_hierarchy_unswitched_relay",
+    "TorusEuler.HierarchyTwistedProfile.boundedWeightSeminorm_complete_le",
+    "TorusEuler.HierarchyTwistedProfile.boundedWeightSeminorm_waveRelay_le_of_eval",
+    "TorusEuler.HierarchyTwistedProfile.exists_transportedWaveRelayCoefficientBudget"
+   ],
+   "package": "S5",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.S5.IsSeed",
+    "TorusEuler.Paper.S5.Launch",
+    "TorusEuler.Paper.S5.Origin",
+    "TorusEuler.Paper.S5.Parent"
+   ]
+  },
+  {
+   "number": "5.6",
+   "kind": "theorem",
+   "label": "cc:uf:hier:thm:depth",
+   "doc": "main",
+   "tex": "sections/06c_finite_hierarchy.tex:469",
+   "decl": "TorusEuler.Paper.theorem_5_6",
+   "statement": "TorusEuler.Paper.Statement.theorem_5_6",
+   "cites": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5",
+    "D.1",
+    "B.1"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.HierarchyTwistedProfile.TruncatedHierarchyParent.exists_paper_hierarchy_depth_of_cutoff",
+    "TorusEuler.HierarchyTwistedProfile.TruncatedHierarchyParent.exists_paper_hierarchy_depth_from_center",
+    "TorusEuler.HierarchyTwistedProfile.TruncatedHierarchyParent.exists_paper_hierarchy_depth",
+    "TorusEuler.HierarchyTwistedProfile.TruncatedHierarchyParent.exists_paper_hierarchy_depth_of_later_wave",
+    "TorusEuler.HierarchyTwistedProfile.TruncatedHierarchyParent.exists_profileBounds_at_order",
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.selectedNormRecurrence"
+   ],
+   "package": "S5",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.S5.IsExpansion",
+    "TorusEuler.Paper.S5.IsSeed",
+    "TorusEuler.Paper.S5.Launch",
+    "TorusEuler.Paper.S5.Origin",
+    "TorusEuler.Paper.S5.Parent"
+   ],
+   "note": "Implicit citation: Lemma B.1 used through (5.10), the parent-residual bound (05b_parent_coefficients.tex:92-99), at 06c_finite_hierarchy.tex:616."
+  },
+  {
+   "number": "5.7",
+   "kind": "lemma",
+   "label": "cc:uf:hier:lem:physical",
+   "doc": "main",
+   "tex": "sections/08_exact_wave.tex:32",
+   "decl": "TorusEuler.Paper.lemma_5_7",
+   "statement": "TorusEuler.Paper.Statement.lemma_5_7",
+   "cites": [
+    "5.1",
+    "D.1"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.HierarchyTwistedProfile.paperLemma57_graphWeighted",
+    "TorusEuler.HierarchyTwistedProfile.paperLemma57_graphUnweighted",
+    "TorusEuler.HierarchyTwistedProfile.paperLemma57_graphMeanWeighted",
+    "TorusEuler.HierarchyTwistedProfile.paperLemma57_graphMean",
+    "TorusEuler.paperLemma57_periodicGraphFromCell",
+    "TorusEuler.HierarchyTwistedProfile.TruncatedHierarchyParent.exists_paperLemma57_graphReadout",
+    "TorusEuler.HierarchyTwistedProfile.TruncatedHierarchyParent.exists_physicalParentInputs"
+   ],
+   "package": "S5",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.S5.Launch",
+    "TorusEuler.Paper.S5.Origin",
+    "TorusEuler.Paper.S5.Parent"
+   ]
+  },
+  {
+   "number": "5.8",
+   "kind": "lemma",
+   "label": "cc:uf:step:lem:approximate",
+   "doc": "main",
+   "tex": "sections/08_exact_wave.tex:82",
+   "decl": "TorusEuler.Paper.lemma_5_8",
+   "statement": "TorusEuler.Paper.Statement.lemma_5_8",
+   "cites": [
+    "5.3",
+    "5.4",
+    "5.5",
+    "5.6",
+    "5.7"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.HierarchyTwistedProfile.TruncatedHierarchyParent.exists_paper_physicalLaterStep",
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.paperLemma58_approximateEquation",
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.paperLemma58_oscillationHolder",
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.oscillation_sup_of_actualLevels",
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.meanCorrection_holder_of_actualLevels",
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.residual_holder_of_measuredTail_and_primary",
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.residual_holder_of_actualLaterGraph",
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.exists_parent_activationPrimary_phaseJetBound",
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.residual_eq_graph_tail_add_paperCutoff",
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.residual_holder_of_paperCutoff"
+   ],
+   "package": "S5",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.S5.IsExpansion",
+    "TorusEuler.Paper.S5.IsSeed",
+    "TorusEuler.Paper.S5.Launch",
+    "TorusEuler.Paper.S5.Origin",
+    "TorusEuler.Paper.S5.Parent"
+   ]
+  },
+  {
+   "number": "5.9",
+   "kind": "lemma",
+   "label": "cc:uf:step:lem:pressure-center",
+   "doc": "main",
+   "tex": "sections/08_exact_wave.tex:158",
+   "decl": "TorusEuler.Paper.lemma_5_9",
+   "statement": "TorusEuler.Paper.Statement.lemma_5_9",
+   "cites": [
+    "3.1",
+    "4.2",
+    "5.1",
+    "5.3",
+    "5.6",
+    "5.7",
+    "B.1",
+    "D.1",
+    "5.4"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.exists_parent_leading_pressure_hessian_bound",
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.paperLemma59_higherMeanHessians",
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.paperLemma59_leadingSeedReadout",
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.paperLemma59_pressureCenter",
+    "TorusEuler.exists_parent_genericLeading_pressure_hessian_bound",
+    "TorusEuler.LocalizedAmplitude.SeedOn.genericLeading_parentGraph_center"
+   ],
+   "package": "S5",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.S5.IsExpansion",
+    "TorusEuler.Paper.S5.IsSeed",
+    "TorusEuler.Paper.S5.Launch",
+    "TorusEuler.Paper.S5.Origin",
+    "TorusEuler.Paper.S5.Parent"
+   ],
+   "note": "Cites Proposition 5.4: the supports and the vanishing before t0 of the profiles (08_exact_wave.tex:226, :266-267; D21). Implicit citation: Lemma 3.1 used at 08_exact_wave.tex:189, :259 (F_h' >= -C h', F_h'(0)=1, F_h(0)=0)."
+  },
+  {
+   "number": "5.10",
+   "kind": "lemma",
+   "label": "cc:uf:step:lem:flow-bounds",
+   "doc": "main",
+   "tex": "sections/08_exact_wave.tex:290",
+   "decl": "TorusEuler.Paper.lemma_5_10",
+   "statement": "TorusEuler.Paper.Statement.lemma_5_10",
+   "cites": [
+    "5.1",
+    "5.6",
+    "5.4"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.paperLemma510_flowBounds",
+    "TorusEuler.ChildFlow.exists_childFlow_of_profile_jet_bounds",
+    "TorusEuler.HierarchyTwistedProfile.PhysicalApproximationData.uncutPullbackProfileJetBounds_of_actualLevels"
+   ],
+   "package": "S5",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.S5.IsExpansion",
+    "TorusEuler.Paper.S5.IsSeed",
+    "TorusEuler.Paper.S5.Launch",
+    "TorusEuler.Paper.S5.Origin",
+    "TorusEuler.Paper.S5.Parent"
+   ]
+  },
+  {
+   "number": "5.11",
+   "kind": "proposition",
+   "label": "cc:uf:step:thm:step",
+   "doc": "main",
+   "tex": "sections/08_exact_wave.tex:379",
+   "decl": "TorusEuler.Paper.proposition_5_11",
+   "statement": "TorusEuler.Paper.Statement.proposition_5_11",
+   "cites": [
+    "5.8",
+    "5.9",
+    "B.1"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [
+    "eq_5_59"
+   ],
+   "exports": [],
+   "content": [
+    "TorusEuler.paperProposition511_physicalCutoff",
+    "TorusEuler.TruncatedChildStage.exists_cutoffBounds",
+    "TorusEuler.nonempty_truncatedChildStage"
+   ],
+   "package": "S5",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.S5.CutoffSymbol",
+    "TorusEuler.Paper.S5.IsExpansion",
+    "TorusEuler.Paper.S5.IsSeed",
+    "TorusEuler.Paper.S5.IsTruncation",
+    "TorusEuler.Paper.S5.Launch",
+    "TorusEuler.Paper.S5.Origin",
+    "TorusEuler.Paper.S5.Parent"
+   ],
+   "note": "The proof displays (5.59) (08_exact_wave.tex:424-428) as a general inequality and uses it at :428-431; the Lean proof takes it from the node Text eq_5_59. The residual identity (5.58), also displayed there, is derived inside the proof. Not content (glue): periodicPoissonPressure_unique, uniqueness of zero-mean periodic solutions of the Poisson equation (D20)."
+  },
+  {
+   "number": "6.1",
+   "kind": "lemma",
+   "label": "cc:uf:base:lem:first",
+   "doc": "main",
+   "tex": "sections/03a_exact_base.tex:38",
+   "decl": "TorusEuler.Paper.lemma_6_1",
+   "statement": "TorusEuler.Paper.Statement.lemma_6_1",
+   "cites": [
+    "2.2"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.paperLemma61_firstWave",
+    "TorusEuler.paperLemma61_exists_firstWave",
+    "TorusEuler.FirstWaveOrigin.first_coupling_lower",
+    "TorusEuler.FirstWaveOrigin.weighted_forward",
+    "TorusEuler.FirstWaveOrigin.initial_strength",
+    "TorusEuler.LocalizedAmplitude.firstWave_centerWaveOn",
+    "TorusEuler.FirstWaveOrigin.localized_center_estimates"
+   ],
+   "package": "S678",
+   "spine": "full",
+   "setting_predicates": []
+  },
+  {
+   "number": "7.1",
+   "kind": "theorem",
+   "label": "cc:uf:tower:thm:finite",
+   "doc": "main",
+   "tex": "sections/08b_induction.tex:142",
+   "decl": "TorusEuler.Paper.theorem_7_1",
+   "statement": "TorusEuler.Paper.Statement.theorem_7_1",
+   "cites": [
+    "1.3",
+    "2.2",
+    "2.5",
+    "2.6",
+    "2.7",
+    "2.8",
+    "5.4",
+    "5.8",
+    "5.9",
+    "5.10",
+    "5.11",
+    "6.1",
+    "B.1"
+   ],
+   "notation_only": [
+    "2.1"
+   ],
+   "setting": [],
+   "text_cites": [],
+   "exports": [
+    "the step data of the construction, in the vocabulary of Section 5, kept for the out-of-spine auxiliary statements (decision D28); read by no spine row (Theorem71Steps c a psi: for every step j >= 1 the parent U_{j-1} with its flow and pressure under the hypotheses of Subsection 5.1 with D = lambda_{j-1}^9 and lambda = lambda_j, wave j launched at t_j with its seed and its seed at the center a_j, the expansion of Subsection 5.5 at depth P = 6K_{j+1} with l_* = D^{-a} and the cutoff chi_j, the approximate solution V = U_{j-1} + W^nat, Pi = pi_{j-1} + P^nat with (5.46) of Lemma 5.8, U_j and pi_j the truncation S_{Lambda_j} V with the symbol psi, and O_j = W_osc^nat of Lemma 5.8), for every cutoff symbol psi of Appendix B and an envelope exponent a above any floor, both fixed before B; P.strengthConstant = C",
+    "the central waves, crossing windows, the comparison hypotheses (2.7) of item 2 for every constant and all large j (field comparison) and the window bound of item 2 (field window_upper), (5.5) of each wave and the bounds (7.7) (read by Section 8; 09b_terminal_properties.tex:28, :41)"
+   ],
+   "content": [
+    "TorusEuler.paperTheorem71",
+    "TorusEuler.exists_scheduledEulerConstruction",
+    "TorusEuler.exists_scheduledEulerConstruction_of_uniformPhysicalEstimates",
+    "TorusEuler.uniformPhysicalEstimates_of_laterPrimaryCosts",
+    "TorusEuler.paperTheorem71_of_construction",
+    "TorusEuler.InductiveEulerParameters.exists_of_fixedOrderCosts",
+    "TorusEuler.InductiveEulerParameters.exists_of_inductiveStepCosts",
+    "TorusEuler.frequencySchedule_commonLifetime_of_halfLength_bounds",
+    "TorusEuler.frequencySchedule_halfLength_bounds"
+   ],
+   "package": "S678",
+   "spine": "full",
+   "setting_predicates": [],
+   "note": "Cites Lemma 2.5 for the reference solution Y: the statements of Propositions 2.6-2.8 are about 'the' reference solution of (2.12) (decision D23, an implicit citation made explicit)."
+  },
+  {
+   "number": "8.1",
+   "kind": "proposition",
+   "label": "cc:uf:terminal:agreement",
+   "doc": "main",
+   "tex": "sections/09_limit.tex:11",
+   "decl": "TorusEuler.Paper.proposition_8_1",
+   "statement": "TorusEuler.Paper.Statement.proposition_8_1",
+   "cites": [
+    "1.3"
+   ],
+   "notation_only": [],
+   "setting": [
+    "7.1"
+   ],
+   "text_cites": [
+    "eq_5_59"
+   ],
+   "exports": [],
+   "content": [
+    "TorusEuler.InductiveEulerStages.paper_proposition_8_1",
+    "TorusEuler.exists_inductive_periodicEulerSolution",
+    "TorusEuler.exists_inductive_periodicEulerProjectedLimit"
+   ],
+   "package": "S678",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.Theorem71Conclusions"
+   ],
+   "note": "Implicit citation: Lemma 1.3 used at sections/09_limit.tex:23 (q_j increases to infinity)."
+  },
+  {
+   "number": "8.2",
+   "kind": "proposition",
+   "label": "cc:uf:terminal:velocity-curl",
+   "doc": "main",
+   "tex": "sections/09b_terminal_properties.tex:3",
+   "decl": "TorusEuler.Paper.proposition_8_2",
+   "statement": "TorusEuler.Paper.Statement.proposition_8_2",
+   "cites": [
+    "1.3",
+    "2.2",
+    "2.4",
+    "B.1"
+   ],
+   "notation_only": [],
+   "setting": [
+    "7.1",
+    "8.1"
+   ],
+   "text_cites": [],
+   "exports": [
+    "the curl lower bound (8.2) displayed in the proof, passed to the limit u (Proposition82Conclusions.curl_lower), used by Corollary 8.3 in place of the Beale-Kato-Majda criterion"
+   ],
+   "content": [
+    "TorusEuler.norm_limit_center_curl_ge_of_inductive_stage",
+    "TorusEuler.terminalVelocityBound_of_extension"
+   ],
+   "package": "S678",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.Proposition81Conclusions",
+    "TorusEuler.Paper.Theorem71Conclusions"
+   ],
+   "note": "The private library carriers InductiveEulerCentralWaves.eventually_curl_lower_bound and eventually_central_gradient_bound (Theorem11FromInductiveStages.lean:127, :520) are 8.2's own content; being private they cannot be listed by name. Display (7.6), used in the proof (09b:41), is a running-text consequence of Lemma B.1 applied to (T1)-(T2) of Theorem 7.1 (decision D29); the Lean proof derives it from B.1 in place, so 8.2 cites B.1 and 7.1 does not export it."
+  },
+  {
+   "number": "8.3",
+   "kind": "corollary",
+   "label": "cc:uf:terminal:time",
+   "doc": "main",
+   "tex": "sections/09b_terminal_properties.tex:69",
+   "decl": "TorusEuler.Paper.corollary_8_3",
+   "statement": "TorusEuler.Paper.Statement.corollary_8_3",
+   "cites": [],
+   "notation_only": [],
+   "setting": [
+    "7.1",
+    "8.1",
+    "8.2"
+   ],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.curlIntegral_eq_top_of_inductive_physical_crossings",
+    "TorusEuler.IsEulerSolution.isMaximal_of_tendsto_curl_atTop",
+    "TorusEuler.gradientIntegral_eq_top_of_curlIntegral_eq_top"
+   ],
+   "package": "S678",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.Proposition81Conclusions",
+    "TorusEuler.Paper.Proposition82Conclusions",
+    "TorusEuler.Paper.Theorem71Conclusions"
+   ]
+  },
+  {
+   "number": "8.4",
+   "kind": "proposition",
+   "label": "cc:uf:terminal:off-origin",
+   "doc": "main",
+   "tex": "sections/09b_terminal_properties.tex:88",
+   "decl": "TorusEuler.Paper.proposition_8_4",
+   "statement": "TorusEuler.Paper.Statement.proposition_8_4",
+   "cites": [
+    "1.3"
+   ],
+   "notation_only": [],
+   "setting": [
+    "7.1",
+    "8.1"
+   ],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.inductiveEuler_terminal_trace_of_stage_limits",
+    "TorusEuler.IsEulerSolution.hasOffOriginLimits_timeDerivative_of_velocity_jets",
+    "TorusEuler.hasOffOriginLimits_of_inductive_velocity_jets"
+   ],
+   "package": "S678",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.Proposition81Conclusions",
+    "TorusEuler.Paper.Theorem71Conclusions"
+   ],
+   "note": "Implicit citation: Lemma 1.3 used at sections/09b_terminal_properties.tex:96 (q_j >= m)."
+  },
+  {
+   "number": "A.1",
+   "kind": "theorem",
+   "label": "cc:holder:linear",
+   "doc": "main",
+   "tex": "sections/appA_mean_regularity.tex:26",
+   "decl": "TorusEuler.Paper.theorem_A_1",
+   "statement": "TorusEuler.Paper.Statement.theorem_A_1",
+   "cites": [
+    "A.2"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.paperTheoremA1",
+    "TorusEuler.exists_paperA1_smoothSolution",
+    "TorusEuler.endpointMixedPathCoefficient_inner_eq_sobolevEnergy",
+    "TorusEuler.paperA1_solution_of_unprojected_equation",
+    "TorusEuler.paperA1_displacement_eq_primitive",
+    "TorusEuler.exists_endpointMixedTimeRecovery",
+    "TorusEuler.exists_endpointJointVelocity_of_matchedSpatialData",
+    "TorusEuler.exists_endpointJointVelocity_of_matchedSpatialData_withWords",
+    "TorusEuler.norm_endpointPhysicalTimeRepresentative_le",
+    "TorusEuler.paperMeanIntegratedInverse_of_coercivity"
+   ],
+   "package": "S34A",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.EndpointCoefficientC1Bound",
+    "TorusEuler.EndpointSobolevEnergyBound",
+    "TorusEuler.Paper.EndpointSystemSolution"
+   ]
+  },
+  {
+   "number": "A.2",
+   "kind": "lemma",
+   "label": "cc:holder:freezing",
+   "doc": "main",
+   "tex": "sections/appA_mean_regularity.tex:71",
+   "decl": "TorusEuler.Paper.lemma_A_2",
+   "statement": "TorusEuler.Paper.Statement.lemma_A_2",
+   "cites": [],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.paperLemmaA2_spatial_holder",
+    "TorusEuler.paperLemmaA2_mixed_holder",
+    "TorusEuler.paperLemmaA2_spatial_holder_restriction",
+    "TorusEuler.paperLemmaA2_mixed_holder_restriction",
+    "TorusEuler.endpointStrongSpatialLeray_allSpatialDerivatives",
+    "TorusEuler.endpointStrongMixedLeray_allSpatialDerivatives",
+    "TorusEuler.paperLemmaA2_spatial_holder_boundedInverse",
+    "TorusEuler.paperLemmaA2_mixed_holder_boundedInverse",
+    "TorusEuler.paperLemmaA2_spatial_holder_boundedForward",
+    "TorusEuler.paperLemmaA2_mixed_holder_boundedForward",
+    "TorusEuler.paperA2_wordNorm_le",
+    "TorusEuler.paperLemmaA2_spatial",
+    "TorusEuler.paperLemmaA2_mixed",
+    "TorusEuler.paperLemmaA2_spatial_higher",
+    "TorusEuler.paperLemmaA2_mixed_higher",
+    "TorusEuler.paperLemmaA2_spatial_holder_higher",
+    "TorusEuler.paperLemmaA2_mixed_holder_higher",
+    "TorusEuler.exists_endpointSpatialLerayInverse",
+    "TorusEuler.exists_endpointMixedLerayInverse",
+    "TorusEuler.exists_endpointMixedLerayInverse_uniform",
+    "TorusEuler.exists_endpointStrongMixedSolve",
+    "TorusEuler.exists_endpointStrongMixedSolve_uniform",
+    "TorusEuler.exists_endpointSpatialSolenoidalInverse",
+    "TorusEuler.exists_concrete_freezingCompressionEquiv",
+    "TorusEuler.exists_uniform_concrete_freezingCompressionEquiv",
+    "TorusEuler.exists_freezingCompressionEquiv"
+   ],
+   "package": "S34A",
+   "spine": "full",
+   "setting_predicates": [
+    "TorusEuler.Paper.FreezingConclusion"
+   ]
+  },
+  {
+   "number": "B.1",
+   "kind": "lemma",
+   "label": "cc:uf:trunc:lem:cutoff",
+   "doc": "main",
+   "tex": "sections/appB_cutoff.tex:12",
+   "decl": "TorusEuler.Paper.lemma_B_1",
+   "statement": "TorusEuler.Paper.Statement.lemma_B_1",
+   "cites": [],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.paperLemmaB1_cutoff_aeBound",
+    "TorusEuler.paperLemmaB1_cutoff_LInfinity",
+    "TorusEuler.paperLemmaB1_cutoff_sup",
+    "TorusEuler.paperLemmaB1_cutoff_holder",
+    "TorusEuler.paperLemmaB1_cutoff_derivative",
+    "TorusEuler.paperLemmaB1_cutoff_support_parity",
+    "TorusEuler.hasDerivWithinAt_realVectorFourierCutoff_time",
+    "TorusEuler.fderiv_lift_realVectorFourierCutoff_single",
+    "TorusEuler.paperLemmaB1_bernstein",
+    "TorusEuler.paperLemmaB1_bernstein_real_multiIndex",
+    "TorusEuler.paperLemmaB1_cutoff_tail",
+    "TorusEuler.spatialHolderHalfNorm_realVectorCutoffTail",
+    "TorusEuler.paperLemmaB1_realCutoff_parity",
+    "TorusEuler.paperLemmaB1_realCutoff_sup",
+    "TorusEuler.paperLemmaB1_realCutoff_admissible",
+    "TorusEuler.paperLemmaB1_cutoff_commutes_contDiff",
+    "TorusEuler.paperLemmaB1_realCutoff_LInfinity",
+    "TorusEuler.paperLemmaB1_realBanachCutoff_LInfinity",
+    "TorusEuler.realBanachFourierCutoff_scalarization",
+    "TorusEuler.realBanachFourierCutoff_vec_eq",
+    "TorusEuler.bernstein_lift_coordinate_sum_of_band",
+    "TorusEuler.bernstein_lift_of_real_band",
+    "TorusEuler.exists_bandBernsteinJetBounds",
+    "TorusEuler.spatialHolderHalfNorm_cutoffTail",
+    "TorusEuler.spatialHolderHalfNorm_realTensorCutoffTail",
+    "TorusEuler.odd_lift_realVectorFourierCutoff",
+    "TorusEuler.divergence_free_lift_realVectorFourierCutoff",
+    "TorusEuler.mFourierCoeff_realVectorFourierCutoff_of_even",
+    "TorusEuler.paperLemmaB1_bernstein_real"
+   ],
+   "package": "SBD",
+   "spine": "full",
+   "setting_predicates": [],
+   "note": "TorusEuler.bernstein_lift_of_band is not listed as content: it is used inside the definition of the half-Hoelder dyadic multipliers (compactSymbolDyadicBlocks, through torusLip_of_fourierBand), so every statement and proof that mentions those multipliers (Appendix A, Theorem 4.2, Sections 7-8) reaches it; it is library infrastructure, not a marker of Lemma B.1."
+  },
+  {
+   "number": "Text eq_D_2",
+   "kind": "text",
+   "label": "cc:uf:trunc:eq:holder-sup",
+   "doc": "main",
+   "tex": "sections/appD_finite_norms.tex:35",
+   "decl": "TorusEuler.Paper.Text.eq_D_2",
+   "statement": "TorusEuler.Paper.Statement.Text.eq_D_2",
+   "cites": [],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.paperAppendixD_holderComparison",
+    "TorusEuler.hierarchyFiniteWordNorm_holder_le"
+   ],
+   "package": "SBD",
+   "note": "The Hoelder-supremum comparison (D.2), a numbered display outside Lemma D.1, cited by the proof of Proposition 5.2 and by the joint proof of Auxiliary Lemmas 1.2 and 1.3.",
+   "setting_predicates": []
+  },
+  {
+   "number": "D.1",
+   "kind": "lemma",
+   "label": "cc:uf:trunc:lem:fields",
+   "doc": "main",
+   "tex": "sections/appD_finite_norms.tex:42",
+   "decl": "TorusEuler.Paper.lemma_D_1",
+   "statement": "TorusEuler.Paper.Statement.lemma_D_1",
+   "cites": [],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.paperLemmaD1_derivatives",
+    "TorusEuler.paperLemmaD1_product",
+    "TorusEuler.paperLemmaD1_phaseAverage",
+    "TorusEuler.paperLemmaD1_phasePrimitive",
+    "TorusEuler.hierarchyFiniteWordNorm_bilinear_le",
+    "TorusEuler.hierarchyFiniteWordNorm_constDerivative_le",
+    "TorusEuler.hierarchyFiniteWordNorm_phasePrimitive_le",
+    "TorusEuler.HierarchyTwistedProfile.boundedWeightSeminorm_average_le",
+    "TorusEuler.hierarchyFiniteWordNorm_clm_apply_le",
+    "TorusEuler.HierarchyTwistedProfile.boundedWeightSeminorm_bilinear_le"
+   ],
+   "package": "SBD",
+   "spine": "full",
+   "setting_predicates": []
+  },
+  {
+   "number": "D.2",
+   "kind": "lemma",
+   "label": "cc:uf:trunc:lem:coefficients",
+   "doc": "main",
+   "tex": "sections/appD_finite_norms.tex:93",
+   "decl": "TorusEuler.Paper.lemma_D_2",
+   "statement": "TorusEuler.Paper.Statement.lemma_D_2",
+   "cites": [],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.paperLemmaD2_mul",
+    "TorusEuler.paperLemmaD2_inverse",
+    "TorusEuler.paperLemmaD2_weighted",
+    "TorusEuler.finiteCoefficientPower_iff_multiIndex",
+    "TorusEuler.paperLemmaD2_mul_multiIndex",
+    "TorusEuler.paperLemmaD2_inverse_multiIndex",
+    "TorusEuler.paperLemmaD2_weighted_multiIndex",
+    "TorusEuler.norm_iteratedFDeriv_bilinear_scaled_le",
+    "TorusEuler.hierarchy_weighted_coefficient_le",
+    "TorusEuler.norm_iteratedFDeriv_scaledLabel_power_le",
+    "TorusEuler.HierarchyRelayCoefficientJets.of_parent_power_bound"
+   ],
+   "package": "SBD",
+   "spine": "full",
+   "setting_predicates": []
+  },
+  {
+   "number": "D.3",
+   "kind": "lemma",
+   "label": "cc:uf:trunc:lem:lifting",
+   "doc": "main",
+   "tex": "sections/appD_finite_norms.tex:133",
+   "decl": "TorusEuler.Paper.lemma_D_3",
+   "statement": "TorusEuler.Paper.Statement.lemma_D_3",
+   "cites": [],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [
+    "TorusEuler.paperLemmaD3_lifting",
+    "TorusEuler.appendixDerivativeWord_equation",
+    "TorusEuler.appendixSlowCoefficient_word_le",
+    "TorusEuler.meanDerivativeLifting",
+    "TorusEuler.linearODE_wordBounds",
+    "TorusEuler.linearODE_wordBounds_Icc"
+   ],
+   "package": "SBD",
+   "spine": "full",
+   "setting_predicates": [],
+   "note": "Not content (glue): appendixFiniteDerivativeNorm_scaled, the identity that factors the weights r_i out of the finite derivative norm (D.1) (decision D27)."
+  },
+  {
+   "number": "Text section8_setting",
+   "kind": "text",
+   "label": null,
+   "doc": "main",
+   "tex": "sections/09_limit.tex:2",
+   "decl": "TorusEuler.Paper.Text.section8_setting",
+   "statement": "TorusEuler.Paper.Statement.Text.section8_setting",
+   "cites": [
+    "7.1"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [],
+   "package": "S678",
+   "note": "Section 8 opens \"On the common interval [0,T_inf] of Theorem 7.1\": fixes the sequence of Theorem 7.1 for a large initial frequency.",
+   "setting_predicates": []
+  },
+  {
+   "number": "Text eq_5_59",
+   "kind": "text",
+   "label": "cc:holder:product-growth",
+   "doc": "main",
+   "tex": "sections/08_exact_wave.tex (proof of Proposition 5.11)",
+   "decl": "TorusEuler.Paper.Text.eq_5_59",
+   "statement": "TorusEuler.Paper.Statement.Text.eq_5_59",
+   "cites": [],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [],
+   "exports": [],
+   "content": [],
+   "package": "S5",
+   "note": "The product growth inequality (5.59) displayed in the proof of Proposition 5.11 and cited by the proof of Proposition 8.1. Content []: the library proof `spatialHolderHalf_bilinear` is the generic product estimate (Leibniz' rule and the algebra inequality of C^{0,1/2}), which the TeX also uses without citation (proofs of Lemma A.2 and Lemma 5.9); genuine use of hText_eq_5_59 where the TeX cites (5.59) is checked by review.",
+   "setting_predicates": []
+  },
+  {
+   "number": "Text eq_5_13",
+   "kind": "text",
+   "label": "cc:uf:mean:thresholds",
+   "doc": "main",
+   "tex": "sections/06d_mean_estimates.tex:42 (proof of Proposition 5.2)",
+   "decl": "TorusEuler.Paper.Text.eq_5_13",
+   "statement": "TorusEuler.Paper.Statement.Text.eq_5_13",
+   "cites": [
+    "5.1",
+    "D.2"
+   ],
+   "notation_only": [
+    "4.2"
+   ],
+   "setting": [],
+   "text_cites": [
+    "eq_D_2"
+   ],
+   "exports": [],
+   "content": [],
+   "package": "S5",
+   "note": "The threshold bound (5.13) for the coefficients K, Omega of (4.1), displayed in the proof of Proposition 5.2 and cited by the joint proof of Auxiliary Lemmas 1.2 and 1.3 (terminal_smoothness.tex:254). Content []: genuine use checked by review. The constant A of (4.10) enters as the hypothesis A <= D^C_A supplied by the citers; Theorem 4.2 is notation only (D18).",
+   "setting_predicates": [
+    "TorusEuler.Paper.S5.Parent"
+   ]
+  },
+  {
+   "number": "Text eq_5_14",
+   "kind": "text",
+   "label": "cc:uf:mean:holder-bound",
+   "doc": "main",
+   "tex": "sections/06d_mean_estimates.tex:56 (proof of Proposition 5.2)",
+   "decl": "TorusEuler.Paper.Text.eq_5_14",
+   "statement": "TorusEuler.Paper.Statement.Text.eq_5_14",
+   "cites": [
+    "4.2",
+    "5.1",
+    "D.2",
+    "D.3"
+   ],
+   "notation_only": [],
+   "setting": [],
+   "text_cites": [
+    "eq_5_13"
+   ],
+   "exports": [],
+   "content": [],
+   "package": "S5",
+   "note": "The Hoelder bound (5.14) for the velocity of the solution of (4.9) with L = -int g, displayed in the proof of Proposition 5.2 and cited by the joint proof of Auxiliary Lemmas 1.2 and 1.3 (terminal_smoothness.tex:261). Content []: genuine use checked by review. A <= D^C of (4.10) comes from Proposition 5.1 and Lemma D.2(a) (06d:24-38), hence cites 5.1 and D.2 (D19).",
+   "setting_predicates": [
+    "TorusEuler.Paper.S5.Parent",
+    "TorusEuler.Paper.S5.MeanSolution"
+   ]
+  }
+ ]
+}
