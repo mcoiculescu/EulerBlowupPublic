@@ -1,0 +1,250 @@
+\section{The H\"older inverse}\label{cc:app:mean}
+Subsection~\ref{cc:uf:sec:mean} reduces the choice of initial velocity to
+the endpoint problem \eqref{cc:uf:mean:integrated}. We solve it on the
+normalized interval $I=[0,1]$ and estimate the velocity in H\"older norm. Write
+$\norm f_k=\sup_{t\in I}\norm{f(t)}_{\Holder{k}}$.
+Constants $C,p$ depend only on the dimension.
+
+Let $K(t,a)$ be symmetric and $\Omega(t,a)$ skew-symmetric, continuous in time with
+values in $\Holder{1}$. Set
+\[
+ (Jf)(t)=\int_0^t f(s)\dd s.
+\]
+Assume, for some $\kappa,\mu>0$,
+\begin{align}
+ K&\ge\kappa I,\label{cc:holder:eq:elliptic}\\
+ \int_I\bigl(K(t,a)z_t\cdot z_t+\Omega(t,a)z_t\cdot z\bigr)\dd t
+ &\ge\mu\int_I|z_t|^2\dd t
+ \quad(a\in\mathbb T^3,\ z\in H^1_0(I;\R^3)).
+ \label{cc:holder:eq:coercive}
+\end{align}
+Put
+\[
+ Q=2+\kappa^{-1}+\mu^{-1}+\norm K_1+\norm\Omega_1.
+\]
+
+\begin{theorem}\label{cc:holder:linear}
+Under \eqref{cc:holder:eq:elliptic}--\eqref{cc:holder:eq:coercive},
+let $L\in C(I;\Holder{0})$. There are unique
+$z\in C^1(I;\Holder{0})$, $c\in\Holder{0}$ divergence free and
+$\nabla\phi\in C(I;\Holder{0})$ satisfying
+\[
+ Kz_t-J(\Omega z_t)+L=c+\nabla\phi,
+ \qquad \diver z=0,\qquad z(0)=z(1)=0.
+\]
+They obey
+\begin{equation}\label{cc:holder:eq:base-linear}
+ \norm{z_t}_0\le CQ^p\norm L_0.
+\end{equation}
+If $K$, $\Omega$ and $L$ are smooth on $I\times\mathbb T^3$, then so are
+$z$, $c$ and $\nabla\phi$.
+\end{theorem}
+
+Write $v=z_t$ and $z=Jv$. The terminal condition requires $v$ to have
+zero time mean at each label. Let $\mathcal Q$ subtract this mean.
+The spatial Leray projection $\PP$ removes the pressure gradient, and
+$\mathcal Q$ then removes the time-independent field $c$. The two
+projections commute. With $\mathcal R=\PP\mathcal Q$, the equation for
+the solenoidal velocity becomes
+\[
+ \mathcal R Bv=-\mathcal R L,\qquad v=\mathcal Rv,\qquad
+ Bv=Kv-J(\Omega v).
+\]
+For a path of zero time mean $w\in H=L^2(I;\R^3)$, we have
+$Jw\in H^1_0(I;\R^3)$ and $J^*w(t)=\int_t^1 w(s)\dd s=-Jw(t)$.
+Hence at each label $a$,
+\[
+ \ip{B(a)w}{w}_H
+ =\int_I\bigl(Kw\cdot w+\Omega w\cdot Jw\bigr)\dd t
+ \ge\mu\norm w_H^2
+\]
+by \eqref{cc:holder:eq:coercive} applied to $Jw$.
+This coercivity controls $v$ in $\Holder{0}_a(L^2_t)$. To obtain
+continuity in time and \eqref{cc:holder:eq:base-linear}, we also invert
+$v\mapsto\PP(K(t)v)$ at each time using \eqref{cc:holder:eq:elliptic}.
+
+\subsection{Spatial freezing}
+Both inversions have the form $\mathcal R(Bv)=f$ in the range of an
+orthogonal projection. Freezing $B$ at a label makes this equation
+diagonal in the spatial Fourier modes, even when $B$ acts on whole
+time paths.
+\begin{lemma}\label{cc:holder:freezing}
+Let either $H=\R^3$, $\mathcal R=\PP$, or
+$H=L^2(I;\R^3)$, $\mathcal R=\PP\mathcal Q$, where
+$\mathcal Qv=v-\int_0^1v(t)\dd t$.
+Let $B\in\Holder{1}(\mathbb T^3;\mathcal L(H))$ and $\mu>0$. Suppose
+\begin{equation}\label{cc:holder:eq:abstract-coercive}
+ \ip{B(a)w}{w}_H\ge\mu\norm w_H^2
+\end{equation}
+for every $a\in\mathbb T^3$ and every $w\in H$, with
+$\mathcal Qw=w$ in the second case.
+Then $\mathcal RB$ is an isomorphism on $\mathcal R\Holder{0}(\mathbb T^3;H)$, and
+\begin{equation}\label{cc:holder:eq:freezing}
+ \norm v_{\Holder{0}_a(H)}
+ \le C(2+\mu^{-1}+\norm B_{C^1_a\mathcal L(H)})^{p}
+            \norm{\mathcal RBv}_{\Holder{0}_a(H)}.
+\end{equation}
+If moreover $B\in\Holder{k}(\mathbb T^3;\mathcal L(H))$ for an
+integer $k\ge1$, the same operator is an isomorphism on
+$\mathcal R\Holder{k}(\mathbb T^3;H)$.
+\end{lemma}
+
+\begin{proof}
+For $\mathcal Rv=v$, testing $f=\mathcal R(Bv)$ against $v$ and using
+\eqref{cc:holder:eq:abstract-coercive} gives
+\[
+ \mu\norm v_{L^2_a(H)}^2
+ \le \ip{Bv}{v}_{L^2_a(H)}=\ip{f}{v}_{L^2_a(H)} .
+\]
+This bound will control the lower-order term in the H\"older estimate.
+
+Freeze $B_0=B(a_0)$ and let $r(n)$ be the symbol of $\mathcal R$.
+For $n\ne0$ the Leray symbol projects onto $n^\perp$, and at zero it
+is the identity. In the time-dependent case $r(n)$ also includes
+$\mathcal Q$. Extend the frozen operator to all of $H$ by
+\[
+ A_0(n)=r(n)B_0r(n)+I-r(n).
+\]
+It acts as the identity on the orthogonal complement of $r(n)H$.
+Applying \eqref{cc:holder:eq:abstract-coercive} to the real and
+imaginary parts of $r(n)w$ gives
+\[
+ \operatorname{Re}\ip{A_0(n)w}{w}_H
+ \ge\mu\norm{r(n)w}_H^2+\norm{(I-r(n))w}_H^2
+ \ge\min(1,\mu)\norm w_H^2 .
+\]
+Lax--Milgram gives $\|A_0(n)^{-1}\|\le\min(1,\mu)^{-1}$
+\cite[Section 6.2.1, Theorem 1]{Evans}.
+
+The projection $r$ is smooth on the unit sphere. The formula
+$D(A_0^{-1})=-A_0^{-1}(DA_0)A_0^{-1}$ bounds its first five angular
+derivatives by a fixed polynomial in $2+\mu^{-1}+\norm B_\infty$. It
+follows that
+\begin{equation}\label{cc:holder:eq:frozen-bound}
+ \norm{A_0(D)^{-1}f}_{\Holder{0}_a(H)}\le C_0\norm f_{\Holder{0}_a(H)},
+ \qquad C_0\le C(2+\mu^{-1}+\norm B_\infty)^C.
+\end{equation}
+Indeed, localize either symbol $A_0^{-1}$ or $A_0^{-1}r$ to frequencies
+of size $2^j$. Five integrations by parts on the rescaled annulus give
+the Euclidean kernel estimate
+\[
+ \|\nabla^dG_j(y)\|_{\mathcal L(H)}
+ \le CC_0\,2^{(3+d)j}(1+2^j|y|)^{-5},\qquad d=0,1 .
+\]
+For $d=0$ the uniform $L^1$ bound persists under periodization. Applying
+the kernel to a slightly enlarged input block bounds the output block by
+$CC_0\,2^{-j/2}\norm f_{\Holder{0}_a(H)}$. Summing differences with one
+derivative on the low blocks and the supremum bound on the high blocks
+gives \eqref{cc:holder:eq:frozen-bound}.
+The zero mode acts on the mean with norm at most $\min(1,\mu)^{-1}$.
+
+Only near $a_0$ is the coefficient difference $B_0-B$ small.
+Choose a cutoff $\chi$ equal to one on the ball of radius $r$ about
+$a_0$, supported in the ball of radius $2r$, with $0\le\chi\le1$ and
+$|\nabla\chi|\le C/r$. Splitting the source $(B_0-B)v$ gives
+\begin{align}\label{cc:holder:eq:local}
+ v={}&A_0(D)^{-1}f+A_0(D)^{-1}\mathcal R\{\chi(B_0-B)v\}\notag\\
+ &+A_0(D)^{-1}\mathcal R\{(1-\chi)(B_0-B)v\}.
+\end{align}
+The first term is controlled by \eqref{cc:holder:eq:frozen-bound}.
+The coefficient $\chi(B_0-B)$ has supremum norm at most
+$Cr\norm B_{C^1}$ and Lipschitz constant at most $C\norm B_{C^1}$.
+Its $1/2$-H\"older norm is therefore at most $Cr^{1/2}\norm B_{C^1}$.
+Put $Q_0=2+\mu^{-1}+\norm B_{C^1}$. Choosing $r=Q_0^{-M}$ with $M$ sufficiently
+large bounds the second term in
+$\Holder{0}_a(H)$ by $\frac14\norm v_{\Holder{0}_a(H)}$.
+
+For the last term the source vanishes on the ball of radius $r$.
+The periodized bounds for $d=1$ sum to $CC_0(|y|^{-4}+1)$ away from
+zero. At points within $r/2$ of $a_0$, integrating over torus distances
+$|y|\ge r/2$ bounds the gradient by
+$CC_0r^{-1}\norm B_\infty\norm v_\infty$.
+For pairs of points at distance at most $r/2$, center the cutoff at one
+of them. The last term then contributes at most
+$CC_0r^{-1/2}\norm B_\infty\norm v_\infty$ to the H\"older quotient.
+For other pairs use $Cr^{-1/2}\norm v_\infty$ for the quotient of $v$.
+Absorbing the second term of \eqref{cc:holder:eq:local} gives
+\[
+ \norm v_{\Holder{0}_a(H)}\le C_1
+       \bigl(\norm f_{\Holder{0}_a(H)}+\norm v_{L^\infty_a(H)}\bigr),
+ \qquad C_1\le CQ_0^C.
+\]
+Averaging on a ball of radius $\varepsilon^2$ gives
+\[
+ \norm v_\infty\le\varepsilon\norm v_{\Holder{0}_a(H)}
+       +C\varepsilon^{-3}\norm v_{L^2_a(H)}.
+\]
+Taking $\varepsilon=(2C_1)^{-1}$ and using
+$\norm v_{L^2_a(H)}\le\mu^{-1}\norm f_{L^2_a(H)}$ from coercivity
+proves \eqref{cc:holder:eq:freezing}.
+
+To obtain existence from this estimate, set $B_s=(1-s)I+sB$.
+For $0\le s\le1$ its coercivity is at least $\min(1,\mu)$, so the
+estimate is uniform in $s$. When $B\in\Holder{k}$, apply it to
+$\partial^\nu v$ for $|\nu|\le k$. Spatial derivatives commute with
+$\mathcal R$, so
+\[
+ \mathcal R B_s\partial^\nu v
+ =\partial^\nu(\mathcal R B_s v)-\mathcal R[\partial^\nu,B_s]v .
+\]
+Only lower derivatives of $v$ occur in the commutator. Induction
+therefore gives $\norm v_{\Holder{k}}\le M_k\norm{\mathcal R B_s v}_{\Holder{k}}$
+uniformly in $s$. On $\mathcal R\Holder{k}$ the operator at $s=0$ is
+the identity. The uniform estimate and the Neumann series extend its
+inverse in finitely many steps to $s=1$, for $k=0$ and for every
+admissible $k\ge1$.
+\end{proof}
+
+\subsection{Recovering the velocity at each time}
+\begin{proof}[Proof of Theorem~\ref{cc:holder:linear}]
+On $H=L^2(I;\R^3)$ the coefficient $B=K-J\Omega$ satisfies
+$\norm B_{C^1_a\mathcal L(H)}\le C(\norm K_1+\norm\Omega_1)$.
+With the coercivity obtained from \eqref{cc:holder:eq:coercive},
+Lemma~\ref{cc:holder:freezing} gives a unique solution
+$v=\PP\mathcal Qv$ of $\PP\mathcal Q(Bv+L)=0$, with
+\begin{equation}\label{cc:holder:eq:mixed}
+ \norm v_{\Holder{0}_a(L^2_t)}\le C Q^{p}\norm L_0.
+\end{equation}
+Taking the time mean recovers the field removed by $\mathcal Q$,
+\[
+ c=\PP\int_0^1(Bv+L)\dd t .
+\]
+Then $\PP(Bv+L)=c$ in $L^2_t L^2_a$. In particular, for almost every time,
+\begin{equation}\label{cc:holder:eq:instant}
+ \PP(Kv)=c+\PP J(\Omega v)-\PP L.
+\end{equation}
+The right-hand side, denoted by $g(t)$, is already continuous in
+$\Holder{0}$. Indeed, \eqref{cc:holder:eq:mixed} bounds $c$ in
+$\Holder{0}$, and Cauchy--Schwarz on $[s,t]$ bounds the time increment
+of $J(\Omega v)$ in the same norm by
+$|t-s|^{1/2}\norm{\Omega v}_{\Holder{0}_a(L^2_t)}$.
+Together with the hypothesis on $L$, this gives $\norm g_0\le CQ^p\norm L_0$.
+
+For every $t$ let $S(t)u=\PP(K(t)u)$ on $\PP\Holder{0}$.
+By \eqref{cc:holder:eq:elliptic}, Lemma~\ref{cc:holder:freezing} with
+$H=\R^3$ bounds $S(t)^{-1}$ uniformly by $CQ^p$. Since $K$ is continuous
+in time, the resolvent identity gives continuity of $S(t)^{-1}$ in
+operator norm. Thus $\widetilde v(t)=S(t)^{-1}g(t)$ is continuous in
+$\Holder{0}$ and satisfies \eqref{cc:holder:eq:base-linear}.
+For almost every $t$, the difference $u=v(t)-\widetilde v(t)$ is
+solenoidal in $L^2_a$ and satisfies $\PP(K(t)u)=0$ by
+\eqref{cc:holder:eq:instant}. Testing against $u$ gives
+\[
+ \kappa\norm u_{L^2_a}^2\le\ip{K(t)u}{u}_{L^2_a}
+ =\ip{\PP(K(t)u)}{u}_{L^2_a}=0 .
+\]
+Thus $v$ has the continuous representative $\widetilde v$ with the same
+zero time mean, so $z=Jv$ satisfies both endpoint conditions. At every
+time $\PP(Bv+L-c)=0$, hence $Bv+L-c$ is a periodic gradient
+$\nabla\phi\in C(I;\Holder{0})$. Uniqueness of the projected solution
+$v$ gives uniqueness of $z$, $c$ and $\nabla\phi$.
+
+For smooth data the higher-order assertion of Lemma~\ref{cc:holder:freezing}
+first gives $v\in\Holder{k}_a(L^2_t)$, hence $c\in\Holder{k}$ and
+$J(\Omega v)\in C(I;\Holder{k})$. The fixed-time inverse then gives
+$v\in C(I;\Holder{k})$ for each $k$. Since $K$ is smooth, $S(t)^{-1}$
+is smooth in operator norm on $\PP\Holder{k}$. In
+\eqref{cc:holder:eq:instant}, $J(\Omega v)$ gains one time derivative
+from $v$. Induction gives all time derivatives of $v$ in every $\Holder{k}$
+and thus smoothness of $z$ and $\nabla\phi$.
+\end{proof}

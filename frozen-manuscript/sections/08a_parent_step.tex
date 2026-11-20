@@ -1,0 +1,121 @@
+\subsection{A step over a truncated parent}\label{cc:uf:sec:parent-step}
+Throughout this section the parent is the truncated velocity to which
+we add the new wave. We prescribe the wave vector and seed at the origin
+and extend the seed to the labels in the envelope.
+Section~\ref{cc:sec:iteration} verifies the two assumptions
+\eqref{cc:uf:tower:eq:wave-origin} on the central pair for the first
+wave and for each later wave.
+
+We use the Fourier modes $e^{2\pi i\xi\cdot x}$ for $\xi\in\mathbb Z^3$.
+A field is \emph{supported on frequencies at most $\Lambda$} if its
+Fourier coefficients vanish for $|\xi|>\Lambda$. Let
+the parent $U$ be a smooth odd divergence-free field on
+$[0,T]\times\mathbb T^3$, $T\le1$, and use its flow $X$, the matrix $M$
+and the operators $\mathbf d$, $\widetilde{\mathbf d}$ of
+Subsection~\ref{cc:sec:material}. Let $\mathsf D\ge2$ be a number such
+that $U$ is supported on frequencies at most $2\mathsf D$ and
+\begin{equation}\label{cc:uf:tower:eq:parent-bound}
+ \norm{\nabla U}_\infty\le\mathsf D,\qquad
+ \sup|(D_aX)^{\pm1}|\le\mathsf D .
+\end{equation}
+Since $U$ is odd, the flow fixes the origin, and $D_aX$ and $M$ are even
+in $a$. Let $p_U$ be the function of zero mean with
+$\Delta p_U=-\tr((\nabla U)^2)$, and let
+$R_U=U_t+U\cdot\nabla U+\nabla p_U$ be the residual of the parent; no
+other equation is assumed. Thus $R_U=U_t+\PP\diver(U\otimes U)$ is odd,
+divergence free and supported on frequencies at most $4\mathsf D$.
+To apply the endpoint inverse of Theorem~\ref{cc:uf:mean:inverse}
+to the mean correction over $U$, assume that
+\begin{equation}\label{cc:uf:tower:eq:parent-coercive}
+ D^2p_U-\nabla R_U\le\Id\qquad\hbox{on }[0,T]\times\mathbb T^3
+\end{equation}
+as quadratic forms. By \eqref{cc:uf:mean:eq:Hsharp} this is the
+hypothesis $H^\#\le\Id$ of that theorem.
+
+The wave is that of Subsection~\ref{cc:sec:material} over $U$, with its
+constant vector $k_*\ne0$ and transported field
+$\kappa=(D_aX)^{-T}k_*$, its activation time $t_0\in[0,T)$ and its cutoff
+in time $\widetilde\chi$. Let $\lambda\ge1$ be the frequency of the wave:
+its wave vector at the origin has length $|\kappa(t_0,0)|=\lambda$ at the
+activation time. Since $k_*=(D_aX)^T\kappa$ at every time and label, the
+bound \eqref{cc:uf:tower:eq:parent-bound} for the deformation gives
+\begin{equation}\label{cc:uf:tower:eq:wave-vector}
+ \mathsf D^{-1}\lambda\le|k_*|\le\mathsf D\lambda,\qquad
+ \mathsf D^{-2}\lambda\le|\kappa|\le\mathsf D^2\lambda .
+\end{equation}
+The profile is $F_0=F_h$ of Lemma~\ref{cc:uf:exact:lem:profile}, with
+$h=\lambda^{-1/2}$. At the origin the seed $\mathbf a(t,0)$,
+$t_0\le t\le T$, is a solution of the seed equation
+\eqref{cc:uf:step:eq:seed} at the label $a=0$, perpendicular to
+$\kappa(t,0)$ and normalized by
+$\max_{t_0\le t\le T}|\mathbf a(t,0)|=\lambda^{-3/4}$. It does not
+vanish, because it is a nonzero solution of a linear ordinary
+differential equation. Put
+\[
+ \gamma(t)=\lambda^{3/4}|\mathbf a(t,0)|,\qquad
+ \nu(t,0)=\Bigl(\frac{\kappa}{|\kappa|}\cdot
+          M\frac{\mathbf a}{|\mathbf a|}\Bigr)(t,0)
+ \qquad(t_0\le t\le T).
+\]
+As in Lemma~\ref{cc:lem:frame}, $\nu(t,0)$ is the first coupling of the
+pair $(\kappa,\mathbf a)$ at the origin over the parent, and
+$|\mathbf a(t,0)||\kappa(t,0)|$ is its strength. At the other labels
+the seed is the solution of \eqref{cc:uf:step:eq:seed} on $[t_0,T]$ with
+\begin{equation}\label{cc:uf:tower:eq:start}
+ \mathbf a(t_0,a)=\bigl(\Id-P_{\kappa(t_0,a)}\bigr)\mathbf a(t_0,0),
+ \qquad P_\kappa=\frac{\kappa\otimes\kappa}{|\kappa|^2},
+\end{equation}
+the projection of the vector at the origin onto the plane perpendicular
+to $\kappa(t_0,a)$. It is even in $a$.
+
+Fix a smooth function $\chi$ on $[0,\infty)$ with $0\le\chi\le1$,
+$\chi=1$ on $[0,1]$ and $\chi=0$ on $[2,\infty)$, and take the even
+envelope $g(a)=\chi(|a|/\ell_*)$, equal to one on the ball of radius
+$\ell_*$ specified below. The leading oscillation is the field
+$A_1=g\mathbf aF_h$ of \eqref{cc:uf:hier:eq:primary}, and it enters
+through $V_1=\widetilde\chi A_1$ of \eqref{cc:uf:hier:eq:switched}.
+
+At the origin, assume that for $t_0\le t'\le t\le T$,
+\begin{equation}\label{cc:uf:tower:eq:wave-origin}
+ \frac{|\mathbf b(t)|}{\gamma(t)}
+ \le\mathsf D\,\frac{|\mathbf b(t')|}{\gamma(t')},\qquad
+ \nu(t,0)\ge\mathsf D^{-1},
+\end{equation}
+the first for every solution $\mathbf b$ of the seed equation at the
+origin that is perpendicular to $\kappa(\cdot,0)$. The first inequality
+bounds the growth of every transverse solution by that of the seed,
+up to the factor $\mathsf D$. On a sufficiently small envelope this
+gives the weighted estimate for the transverse corrections, and the
+second inequality keeps $\kappa\cdot M\mathbf a$ positive there
+(Lemma~\ref{cc:uf:tower:lem:inverse}). With this sign, the lower bound
+$F_h'\ge-Ch$ controls the leading pressure tensor in
+\eqref{cc:uf:exact:eq:primary-hess} from above.
+Both inequalities can be imposed before choosing the frequency and the
+depth of the expansion.
+
+On the envelope, \eqref{cc:uf:tower:eq:near-origin} bounds the seed
+by twice its size at the origin. Since $\|F_h\|_\infty\le Ch$, the leading
+velocity has size at most $C\lambda^{-3/4}h=C\lambda^{-5/4}$.
+The first mean equation removes both the quadratic wave forcing and
+$R_U$, so we require the parent residual to be at most the square of
+this scale,
+\begin{equation}\label{cc:uf:tower:eq:parent-small}
+ \norm{R_U}_{C_tL^\infty}\le\lambda^{-5/2}.
+\end{equation}
+The radius of the envelope is a negative power of $\mathsf D$ with an
+absolute exponent, $\ell_*\le\mathsf D^{-3}$. The exponent is
+fixed sufficiently large for the finitely many estimates of
+Subsections~\ref{cc:uf:trunc:sec:parent}--\ref{cc:uf:sec:transverse}.
+In particular the support of $g$ lies in the interior of
+$[-1/2,1/2]^3$.
+
+Constants and exponents written $C$ are absolute: they do not depend on
+the parent, the wave, an order of differentiation or the depth of the
+expansion. A constant written $C_n$ depends only on the order $n$, on
+the fixed profiles, and on the constants of the same kind in the
+hypotheses of the statement in which it appears; $C_{n,p}$ and $C_{m,P}$
+depend also on a level $p$ or on the depth $P$. These constants may
+change from one estimate to the next, and no bound on their growth in
+$n$ is used. In the iteration these constants and the powers of
+$\mathsf D$ are at most a small power of $\lambda$; see
+\eqref{cc:par:step}.

@@ -1,0 +1,99 @@
+\subsection{Coefficient bounds for the parent}\label{cc:uf:trunc:sec:parent}
+The coefficients of the two linear problems are built from the
+deformation $D_aX$ of the parent, its velocity gradient $M$ and the wave
+vector $\kappa$. Bernstein's inequality \eqref{cc:uf:trunc:eq:lp} for
+the truncated parent and the differentiated flow equation bound each
+label derivative of these coefficients at the cost of a fixed power
+of $\mathsf D$. The norm $\|\cdot\|_{[n]}$ of
+\eqref{cc:uf:trunc:eq:field-norm} weights each label derivative by
+the radius $\ell_*$ and each phase derivative by the width $h$.
+For a coefficient $c(t,a)$ it is $\sum_{m\le n}\ell_*^m|c|_m$, where
+$|c|_m$ sums the suprema of its label derivatives of order $m$.
+Taking $\ell_*$ sufficiently small absorbs the cost of each derivative,
+so the exponent of $\mathsf D$ in \eqref{cc:uf:hier:eq:coefficient-bound}
+is independent of $n$.
+
+\begin{proposition}\label{cc:uf:trunc:prop:parent}
+There is an absolute exponent $C$ such that each coefficient $c$ among
+\[
+ (D_aX)^{\pm1},\qquad M,\qquad
+ \kappa/\lambda,\qquad \lambda^2/|\kappa|^2,\qquad P_\kappa
+\]
+satisfies \eqref{cc:uf:trunc:eq:power}. Let $f(t,x)$ be a field with
+values in a normed space such that $|f|_m\le C_m'A_f\mathsf D^m$ for
+every $m\ge0$ and a number $A_f$. Then
+\begin{equation}\label{cc:uf:trunc:eq:parent-composition}
+ |f\circ X|_m\le C_mA_f\mathsf D^{Cm}\qquad(m\ge0).
+\end{equation}
+Consequently, for every $n\ge0$,
+\begin{equation}\label{cc:uf:hier:eq:coefficient-bound}
+ \|c\|_{[n]}\le C_n\mathsf D^C,\qquad
+ \|f\circ X\|_{[n]}\le C_nA_f .
+\end{equation}
+\end{proposition}
+\begin{proof}
+For $n\ge1$ let $\upsilon_n=\max_i|X_i|_n$, so
+$\upsilon_1\le3\mathsf D$. By \eqref{cc:uf:trunc:eq:lp} for $\nabla U$,
+with values in the continuous functions of time, and
+\eqref{cc:uf:tower:eq:parent-bound},
+$|U|_k\le C_k\mathsf D^{k-1}\norm{\nabla U}_\infty\le C_k\mathsf D^k$
+for $k\ge1$. For $|\beta|=n\ge2$, the chain rule gives
+\[
+ \partial_t\partial^\beta X=(\nabla U\circ X)\partial^\beta X+N_\beta,
+\]
+where $N_\beta$ is a sum, with coefficients that depend only on $\beta$,
+of the terms
+\[
+ \bigl((\partial^{\beta'}U)\circ X\bigr)
+ \prod_{j=1}^k\partial^{\beta_j}X_{l_j},\qquad
+ 2\le k=|\beta'|\le n,\quad \beta_1+\dots+\beta_k=\beta,\quad|\beta_j|\ge1.
+\]
+Since $\partial_t D_aX=(\nabla U\circ X)D_aX$ and
+$\partial^\beta X(0)=0$,
+\[
+ \partial^\beta X(t)
+ =\int_0^tD_aX(t)(D_aX(\sigma))^{-1}N_\beta(\sigma)\dd\sigma.
+\]
+By \eqref{cc:uf:tower:eq:parent-bound} the propagator has norm at most
+$\mathsf D^2$, and $T\le1$. Hence, for $n\ge2$,
+\begin{equation}\label{cc:uf:trunc:eq:recursion}
+ \upsilon_n\le C_n\mathsf D^2\sum_{k=2}^n\mathsf D^k
+ \sum_{n_1+\dots+n_k=n}\upsilon_{n_1}\cdots\upsilon_{n_k},
+\end{equation}
+with every $n_i\ge1$. Induction on $n$ gives
+$\upsilon_n\le C_n\mathsf D^{5n-4}$: by the bounds at the orders
+$n_i<n$, a term of \eqref{cc:uf:trunc:eq:recursion} with $k$ factors is
+at most $C_n$ times
+\[
+ \mathsf D^{2+k}\,\mathsf D^{5n-4k}
+ =\mathsf D^{5n-4-3(k-2)}\le\mathsf D^{5n-4} .
+\]
+Thus
+$|D_aX|_m\le C_m\mathsf D^{5m+1}$ for every $m\ge0$. For $f$ as in
+the statement, the chain rule bounds $|f\circ X|_n$, $n\ge1$, by $C_n$
+times the terms $A_f\mathsf D^k\mathsf D^{5n-4k}$ with
+$1\le k\le n$, which proves \eqref{cc:uf:trunc:eq:parent-composition}.
+By \eqref{cc:uf:trunc:eq:lp}, $f=\nabla U$ satisfies the hypothesis with
+$A_f=\norm{\nabla U}_\infty\le\mathsf D$, which bounds $M$.
+
+The product and inverse rules of Lemma~\ref{cc:uf:trunc:lem:coefficients}(a),(b)
+now apply successively to $(D_aX)^{-1}$, $\kappa/\lambda=(D_aX)^{-T}k_*/\lambda$,
+$|\kappa/\lambda|^{-2}$ and $P_\kappa$.
+Indeed, \eqref{cc:uf:tower:eq:parent-bound} bounds the inverse deformation,
+and \eqref{cc:uf:tower:eq:wave-vector} gives $|k_*|/\lambda\le\mathsf D$
+and $|\kappa|/\lambda\ge\mathsf D^{-2}$.
+Finally, $\ell_*$ is at most the power $\mathsf D^{-C}$ that occurs
+here. So part (c) gives the first bound of
+\eqref{cc:uf:hier:eq:coefficient-bound}, and
+$\ell_*^m|f\circ X|_m\le C_mA_f(\mathsf D^C\ell_*)^m\le C_mA_f$ gives
+the second.
+\end{proof}
+
+In particular the residual of the parent, which is supported on
+frequencies at most $4\mathsf D$, satisfies the hypothesis of
+\eqref{cc:uf:trunc:eq:parent-composition} with $A_f=\norm{R_U}_{C_tL^\infty}$,
+by \eqref{cc:uf:trunc:eq:lp}. With \eqref{cc:uf:tower:eq:parent-small}
+this gives, for every $n\ge0$,
+\begin{equation}\label{cc:uf:hier:eq:parent-residual}
+ \|R_U\circ X\|_{[n]}\le C_n\lambda^{-5/2}.
+\end{equation}

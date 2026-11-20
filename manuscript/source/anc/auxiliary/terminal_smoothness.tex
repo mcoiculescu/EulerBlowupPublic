@@ -1,0 +1,491 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,mathrsfs,microtype,enumitem,graphicx,needspace}
+\usepackage{xr-hyper}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Holder}[1]{C^{#1,1/2}}
+\newcommand{\T}{\mathbb T^3}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\diver}{\operatorname{div}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\av}[1]{\langle #1\rangle_s}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\eps}{\varepsilon}
+
+\providecommand{\MainAuxPath}{../../../output/pdf/torus-rewrite/main}
+\externaldocument[M-]{\MainAuxPath}[../torus-rewrite/main.pdf]
+\title[Smooth terminal regularity]{Smooth terminal regularity away from the origin}
+\author{}\date{}
+\begin{document}
+\raggedbottom
+\begin{abstract}
+The construction of Craik--Criminale waves on the torus can be chosen so that
+the velocity extends smoothly in space and time through the singular time
+away from the origin. We give the additional estimates for this strengthening
+of the terminal conclusion in the main paper.
+\end{abstract}
+\maketitle
+
+\section{Choice of \texorpdfstring{$\mathcal B$}{B} and the stronger conclusion}
+
+We use the notation and the construction of
+\emph{Finite-Time Singularity Formation for the Three-Dimensional Euler Equations}. References with prefix M refer to that paper.
+
+\begin{theorem}\label{aux:terminal:smooth}
+The function $\mathcal B$ of Subsection~M.\ref{M-cc:sec:parameters} may be chosen so that
+the restriction of the solution in Theorem~M.\ref{M-cc:target:unforced} to
+$[0,T_*)\times(\mathbb T^3\setminus\{0\})$ extends to a smooth field on an
+open space-time neighborhood of
+$\{T_*\}\times(\mathbb T^3\setminus\{0\})$.
+All other conclusions of that theorem remain unchanged.
+The Euler equations are imposed only for $0\le t<T_*$.
+\end{theorem}
+
+Subsection~M.\ref{M-cc:sec:parameters} admits any nondecreasing
+function $\mathcal B$ that satisfies \textup{(M.\ref{M-cc:par:floor})}
+and such that, for every integer $s\ge1$, $\mathcal B(s)$ bounds the
+fixed-order constants of the paper at orders and depths at most
+$7K(s)$. We choose one for which $\mathcal B(s)$ also bounds the
+constants in the time-derivative estimates below with all derivative
+orders and the depth at most $7K(s)$.
+These quantities depend only on the orders and the depth:
+the estimates below display dependence on the previous frequency parameter as fixed
+powers and contain no constant depending on the constructed solution.
+The function $\mathcal B$ is chosen before the initial frequency
+parameter $N$, and the orders $q_j$ and the frequencies are defined by
+\textup{(M.\ref{M-cc:uf:tower:eq:schedule})} with it.
+Lemma~M.\ref{M-cc:uf:tower:lem:slow-orders} applies to this choice,
+and the construction and the main theorem are obtained with it. Thus
+the orders satisfy $q_j\le q_{j+1}\le q_j+1$ and $q_j\to\infty$, and
+\begin{equation}\label{aux:terminal:growth}
+ \mathcal B(q_{j+1})\le\lambda_{j-1}.
+\end{equation}
+The additional estimates concern the fields $U_j$ of this construction.
+
+As in Section~M.\ref{M-cc:uf:sec:tower}, $O_j$ is the oscillation of
+step $j$ and $R_j$ is the residual of $U_j$. The fields of step $j$ are
+defined on $[0,S_j]$, and $S_j>T_\infty=T_*$.
+
+\begin{lemma}\label{aux:terminal:mixed}
+For all integers $m,q\ge0$ and all sufficiently large $j$,
+\begin{equation}\label{aux:terminal:increment-mixed}
+ \|\partial_t^q(U_j-U_{j-1}-O_j)\|_{C([0,S_j];\Holder{m})}
+ \le\lambda_j^{-1}.
+\end{equation}
+The time derivatives are taken at fixed spatial point.
+The starting index may depend on $(m,q)$.
+\end{lemma}
+
+By \textup{(M.\ref{M-cc:uf:tower:eq:leray})} the time derivatives of
+$U_j$ involve those of $R_j$; the next lemma bounds both. The residual
+of $U_j$ is built in step $j$ from the parent $U_{j-1}$, and at time
+order $q$ it uses the residual of that parent only to time order $q-1$.
+This is why the induction on the time order closes.
+
+\begin{lemma}\label{aux:terminal:time}
+For every integer $q\ge0$ there are an exponent $\psi_q$ and an index
+$j_q$, depending only on $q$ and the fixed construction, such that for
+$j\ge j_q$ and $0\le i\le q$,
+\begin{equation}\label{aux:terminal:time-bounds}
+ \|\partial_t^iU_j\|_{C([0,S_j];L^\infty)}\le\lambda_j^{\psi_q},\qquad
+ \|\partial_t^iR_j\|_{C([0,S_j];L^\infty)}\le\lambda_{j+1}^{-5/2}.
+\end{equation}
+\end{lemma}
+
+The fields $\partial_t^iU_j$ and $\partial_t^iR_j$ are supported on frequencies at most
+$2\Lambda_j$ and $4\Lambda_j$. Thus
+\textup{(M.\ref{M-cc:uf:trunc:eq:lp})} and
+\eqref{aux:terminal:time-bounds} bound every spatial derivative of these
+fields: a derivative of order $m$ costs
+$C_m\Lambda_j^m=C_m\lambda_j^{5m}$.
+
+\section{Time derivatives of the increments}
+\begin{proof}[Proof of Lemmas~\ref{aux:terminal:mixed} and~\ref{aux:terminal:time}]
+We argue by induction on $q$. For $q=0$,
+Lemma~\ref{aux:terminal:mixed} is the second bound of
+\textup{(M.\ref{M-cc:uf:tower:eq:increment})}, which holds as soon as
+$q_j\ge m$,
+and \eqref{aux:terminal:time-bounds} is \textup{(T2)} of Theorem~M.\ref{M-cc:uf:tower:thm:finite}, with $\psi_0=1$ and
+$j_0=1$. Let $q\ge1$, and assume Lemma~\ref{aux:terminal:time} with
+$q-1$ in place of $q$. We prove Lemma~\ref{aux:terminal:mixed} for this
+$q$ and every $m$, and then Lemma~\ref{aux:terminal:time} for $q$.
+
+Let $j-1\ge j_{q-1}$, and write $\mu=\lambda_{j-1}$ and $\lambda=\lambda_j$.
+Put $T=S_j$, $U=U_{j-1}$, $R_U=R_{j-1}$,
+$\Lambda_U=\Lambda_{j-1}=\mu^5$ and $h=\lambda^{-1/2}$.
+Below, all exponents depend only on $q$, on $m$ once it
+enters, and on the fixed construction; constants $C_q$ may depend also
+on the label and phase order of the estimate in which they stand. An
+\emph{old-parent polynomial} is a
+bound $C_q\mu^{a_q}$; here $a_q$ denotes an exponent of this kind, which,
+like $C_q$, may change from one estimate to the next. Each statement is for $j$ large
+in terms of these, which raises only the starting index, since
+$K_j$ tends to infinity. We use the step of
+Subsection~M.\ref{M-cc:uf:sec:parent-step} as it is applied in
+Section~M.\ref{M-cc:uf:sec:tower}: the parent $U$,
+with flow $X$ and $M=(\nabla U)\circ X$; the depth $P$ of
+\textup{(M.\ref{M-cc:uf:tower:eq:step-orders})}; and the norms of
+Appendix~M.\ref{M-cc:uf:finite:sec:calculus}, at the label length
+$\ell_*$ and the phase length $h$. There
+$\mathsf D=\mu^9$ and
+$T_\infty<T\le1$. Some constants below depend also on the depth $P$;
+they stand in estimates used at orders at most $P+q+2$, which
+is at most $7K(q_{j+1})$ for $j$ large. The
+value $\mathcal B(q_{j+1})$ in
+\eqref{aux:terminal:growth} bounds these and is at most $\mu$, so a
+bound with such a constant is again an old-parent polynomial.
+By the definitions of Section~M.\ref{M-cc:uf:sec:tower},
+$T=S_j\ge2\tau_j\ge\mu^{-1/8}$. The numbers $T^{-1}$, $\ell_*^{-1}$
+and every power of $\mathsf D$ with an absolute exponent are therefore
+old-parent polynomials.
+
+\emph{Time derivatives of the parent.}
+By the assumed bounds \eqref{aux:terminal:time-bounds} for $U_{j-1}$,
+\[
+ \|\partial_t^iU\|_\infty\le\mu^{\psi_{q-1}},\qquad
+ \|\partial_t^iR_U\|_\infty\le\lambda^{-5/2}
+ \qquad(0\le i\le q-1).
+\]
+Differentiate \textup{(M.\ref{M-cc:uf:tower:eq:leray})} for $U$:
+\[
+ \partial_t^qU
+ =-\PP\diver\sum_{i=0}^{q-1}\binom{q-1}i
+                 \partial_t^iU\otimes\partial_t^{q-1-i}U
+  +\partial_t^{q-1}R_U .
+\]
+The fields on the right are supported on frequencies at most $4\Lambda_U$ and involve time
+derivatives of order at most $q-1$. The periodic Leray projection
+is bounded on $\Holder{0}$, so
+\textup{(M.\ref{M-cc:uf:trunc:eq:lp})} bounds
+$\|\partial_t^qU\|_\infty$ by an old-parent polynomial. By
+\textup{(M.\ref{M-cc:uf:trunc:eq:lp})} again, for every $n\ge0$,
+\begin{equation}\label{aux:terminal:parent-time}
+ \begin{aligned}
+ \sum_{|\beta|=n}\|\partial^\beta\partial_t^iU\|_{L^\infty}
+   &\le C_{n,q}\mu^{a_q}\Lambda_U^n\qquad(0\le i\le q),\\
+ \sum_{|\beta|=n}\|\partial^\beta\partial_t^iR_U\|_{L^\infty}
+   &\le C_n\Lambda_U^n\lambda^{-5/2}\qquad(0\le i\le q-1).
+ \end{aligned}
+\end{equation}
+No time derivative of $R_U$ of order $q$ is used below.
+
+\emph{Time derivatives of the coefficients.}
+With $D_t=\partial_t+U\cdot\nabla$, the
+$\ell$-fold material derivatives $D_t^\ell\nabla U$, $\ell\le q$, and
+$D_t^\ell R_U$, $\ell\le q-1$, are
+finite sums of products of at most $\ell+1$ of the fields in
+\eqref{aux:terminal:parent-time} and their spatial derivatives of order
+at most $\ell+1$, with exactly one factor from the second line in the
+case of $R_U$. They are supported on frequencies at most $4(q+1)\Lambda_U$.
+By \textup{(M.\ref{M-cc:uf:trunc:eq:lp})}, with $(q+1)\Lambda_U$ in
+place of $\Lambda$, their derivatives of order $m$
+are at most $C_m(q+1)^m\Lambda_U^m$ times their suprema. Since
+$\Lambda_U=\mu^5\le\mathsf D$, this is the hypothesis of
+\textup{(M.\ref{M-cc:uf:trunc:eq:parent-composition})} with
+$C_m'=C_m(q+1)^m$.
+Since $\partial_t^\ell M=(D_t^\ell\nabla U)\circ X$, the composition
+estimates \textup{(M.\ref{M-cc:uf:trunc:eq:parent-composition})} and
+\textup{(M.\ref{M-cc:uf:hier:eq:coefficient-bound})} of
+Proposition~M.\ref{M-cc:uf:trunc:prop:parent} bound the norm
+$\|\partial_t^\ell M\|_{[n]}$, $\ell\le q$, at every order $n$ by an
+old-parent polynomial whose exponent depends on $q$, not on $n$. In the
+same way, since
+$\partial_t^\ell(R_U\circ X)=(D_t^\ell R_U)\circ X$,
+\begin{equation}\label{aux:terminal:residual-jets}
+ \|\partial_t^\ell(R_U\circ X)\|_{[n]}\le C_q\mu^{a_q}\lambda^{-5/2}
+ \qquad(0\le\ell\le q-1).
+\end{equation}
+
+The remaining time jets follow from $\partial_t D_aX=MD_aX$, $((D_aX)^{-1})_t=-(D_aX)^{-1}M$,
+$(\kappa/\lambda)_t=-M^T\kappa/\lambda$ and the differentiated inverse identities of
+reciprocal coefficients, by a number of operations depending only on $q$, with
+Proposition~M.\ref{M-cc:uf:trunc:prop:parent} and the product
+estimate of Lemma~M.\ref{M-cc:uf:trunc:lem:fields}. Thus
+$\|\partial_t^\ell\mathsf C\|_{[n]}\le C_q\mu^{a_q}$ for $0\le\ell\le q$ and
+for $\mathsf C$ among $(D_aX)^{\pm1}$, $M$, $\kappa/\lambda$,
+$\lambda^2/|\kappa|^2$, $K=(D_aX)^TD_aX$ and $\mathcal D=2(D_aX)^T\partial_t D_aX$. These bounds hold
+at every order $n$, so no label derivative is
+spent on a time
+derivative, and their exponents depend neither on the order, the level, the depth nor the
+new frequency parameter. They use the time derivatives of $U$ through
+order $q$ only. The construction is jointly smooth by
+Proposition~M.\ref{M-cc:uf:hier:prop:identity}, so no time regularity of an unknown
+is assumed.
+
+\emph{The two inverses with time derivatives.} At each order $n$, put
+$\mathcal J_l(f)=\sum_{i\le l}T^i\|\partial_t^if\|/i!$
+with the norms $\|\cdot\|_{[n],\gamma}$ or $\|\cdot\|_{[n]}$. Time differentiation holds the label
+$a$ and the independent phase $s$ fixed; oscillations are divided by
+$\gamma$ afterwards, and means are unweighted. The time and phase
+suprema remain inside the sums over label multi-indices and phase orders. For $0\le\ell\le q$,
+extracting $\partial_t^\ell f$ from $\mathcal J_q(f)$ costs
+$\ell!T^{-\ell}$. By \textup{(M.\ref{M-cc:uf:hier:eq:graph})},
+$(\partial_t^\ell f)^\natural
+=(\partial_t+U\cdot\nabla_x)^\ell f^\natural$.
+The factors $1/i!$ turn the time Leibniz rule into a convolution, so
+Lemma~M.\ref{M-cc:uf:trunc:lem:fields} holds for $\mathcal J_q$ with the same
+costs, and coefficient multipliers cost old-parent
+polynomials.
+
+A mean $B=D_aX v$ with source $f_{\rm m}$ satisfies, by
+\textup{(M.\ref{M-cc:uf:mean:strong})} with $g=(D_aX)^Tf_{\rm m}$ and $\mathcal T=\PP K$
+on divergence-free label fields, $\mathcal Tv_t=\PP(g-\mathcal Dv)$. Hence
+\[
+ \mathcal T\partial_t^{l+1}v=\PP\Big[\partial_t^l g
+ -\sum_{i=0}^l\binom li(\partial_t^i\mathcal D)\partial_t^{l-i}v
+ -\sum_{i=1}^l\binom li(\partial_t^iK)\partial_t^{l+1-i}v\Big],
+\]
+whose right side contains $v$ and the source only to time order $l$.
+By the last assertion of Theorem~M.\ref{M-cc:uf:mean:inverse}, the
+constant $A$ of \textup{(M.\ref{M-cc:uf:mean:base-constant})} bounds the
+inverse of $\mathcal T$ on the divergence-free fields of $\Holder{0}$ at each
+time. Then \textup{(M.\ref{M-cc:uf:mean:thresholds})} is condition
+\textup{(M.\ref{M-cc:uf:trunc:eq:slow})} for the equation
+$\mathcal Tw=\PP F$ with the coefficient $K$, and
+Lemma~M.\ref{M-cc:uf:trunc:lem:lifting} in its H\"older form inverts
+$\mathcal T$ in the norms $\|\cdot\|_{[n],1/2}$ at every order, with a
+constant that is an old-parent polynomial.
+Starting from the bound
+\textup{(M.\ref{M-cc:uf:mean:holder-bound})} for $v$, induction over
+$l\le q-1$ and \textup{(M.\ref{M-cc:uf:trunc:eq:holder-sup})} give, with
+the norms $\|\cdot\|_{[n]}$ on the left and $\|\cdot\|_{[n+1]}$ on the
+right, and independently of the depth,
+\begin{equation}\label{aux:terminal:mean-gain}
+ \mathcal J_q(B)\le C_q\mu^{a_q}\mathcal J_{q-1}(f_{\rm m}).
+\end{equation}
+Thus the mean velocity at time order $q$ uses its source only to time
+order $q-1$.
+No boundary condition is imposed on time derivatives; the undifferentiated
+solution keeps its actual initial trace. A transverse solution satisfies
+$V_t=-(\Id-2P_\kappa)MV+(\Id-P_\kappa)f$; the same induction from
+\textup{(M.\ref{M-cc:uf:hier:eq:trans-bound})} bounds its time derivatives
+in $\mathcal J_q$ by an old-parent polynomial times $\mathcal J_q(f)$, and
+\textup{(M.\ref{M-cc:uf:hier:eq:pressure-from-trans})} bounds its
+pressure. On $[t_0,T]$ the leading
+oscillation $A_1=g\mathbf aF_h$ solves this equation with $f=0$, and the cutoff of
+Subsection~M.\ref{M-cc:uf:sec:later-wave} satisfies $|\widetilde\chi^{(l)}|\le C_lr^l$,
+with the rate $r$ of the comparison,
+and $r\le\mu$ by item 3 of the proof of
+Theorem~M.\ref{M-cc:uf:tower:thm:finite}. With
+\textup{(M.\ref{M-cc:uf:tower:eq:seed-norm})} and
+\textup{(M.\ref{M-cc:uf:hier:eq:size})}, the same induction bounds
+$A_1$, $V_1=\widetilde\chi A_1$, their pressures and
+$R_{\widetilde\chi}=\widetilde\chi'(A_1+C[A_1])$ of \textup{(M.\ref{M-cc:uf:hier:eq:switch})}
+in the weighted $\mathcal J_q$ by an old-parent polynomial times
+$\lambda^{-5/4}$.
+
+\emph{Sources and the expansion.} By \textup{(M.\ref{M-cc:uf:hier:eq:fast-mean})},
+$\mathbf d\cdot B_i=\mathbf d\cdot C_i=0$ and the vanishing mixed phase means,
+the mean source is
+\[
+ \bar f_p=-\diver_{\mathbf d}\sum_{i+i'=p}
+              (\av{Y_i\otimes Y_{i'}}+B_i\otimes B_{i'})\qquad(p\ge3),
+\]
+where
+$(\diver_{\mathbf d}(\mathbf u\otimes \mathbf w))_\ell=\mathbf d_i(\mathbf u_i\mathbf w_\ell)$,
+and $\bar f_2$ is the same expression minus $R_U\circ X$, by
+\textup{(M.\ref{M-cc:uf:hier:eq:source})}.
+The time derivatives of the divergence term fall only on the fields and
+on the old coefficients in $\mathbf d$; no phase derivative or new wave vector
+appears. The mean sources are measured in $\mathcal J_{q-1}$, which
+\eqref{aux:terminal:mean-gain} allows. The later sources contain
+the means $B_p$ themselves, and neither $\bar f_p$ nor a mean pressure.
+The oscillatory sources are differentiated in the expression for
+$(\partial_t+M)C[V]+\mathbf d\mathsf p$ in the proof of
+Lemma~M.\ref{M-cc:uf:hier:lem:relay}, with
+\textup{(M.\ref{M-cc:uf:hier:eq:potential-time})}, and in \textup{(M.\ref{M-cc:uf:hier:eq:supp})},
+which contain only coefficient multipliers, one label derivative, a
+normalized inverse wave vector, the existing factor $\kappa\partial_s$ and
+the fields; weights are carried as in
+Subsection~M.\ref{M-cc:uf:sec:hierarchy}.
+
+By \eqref{aux:terminal:residual-jets} and $T\le1$, the norm
+$\mathcal J_{q-1}(R_U\circ X)$ is at most an old-parent polynomial
+times $\lambda^{-5/2}$, which is
+\textup{(M.\ref{M-cc:uf:hier:eq:parent-residual})} for these norms with
+that polynomial as a factor.
+The proof of Theorem~M.\ref{M-cc:uf:hier:thm:depth} uses the parent and
+the wave only through the bounds
+\textup{(M.\ref{M-cc:uf:hier:eq:coefficient-bound})},
+\textup{(M.\ref{M-cc:uf:mean:bound})},
+\textup{(M.\ref{M-cc:uf:hier:eq:trans-bound})},
+\textup{(M.\ref{M-cc:uf:hier:eq:size})},
+\textup{(M.\ref{M-cc:uf:hier:eq:parent-residual})},
+\textup{(M.\ref{M-cc:uf:hier:eq:completion-bound})} and
+\textup{(M.\ref{M-cc:uf:hier:eq:relay-bound})}, and through
+Lemma~M.\ref{M-cc:uf:trunc:lem:fields}. By the preceding paragraphs
+these hold in the norms $\mathcal J_q$, with the mean sources and the
+residual of the parent measured in $\mathcal J_{q-1}$, when each power
+of $\mathsf D$ on their right sides is replaced by an old-parent
+polynomial and the constants depend also on $q$. The residual of the
+parent enters that proof only through the mean source at level two,
+whose bound has a power of $\mathsf D$; the polynomial that replaces
+this power is taken at least as large as the one in the bound for the
+residual. The proof uses the hypothesis
+$\mathsf D^C\lambda^{-1/12}\le1$ of the theorem only to absorb powers
+of $\mathsf D$. With an old-parent polynomial in their place the
+hypothesis reads $C_q\mu^{a_q}\lambda^{-1/12}\le1$, which holds for
+$j$ large, since $\lambda=\mu^{K_j}$. Since time convolution does not change the factor
+$\lambda^{-2/3}$ per level, that proof therefore
+applies in $\mathcal J_q$, at every order, to the profiles $V_p$, $C_p$,
+$B_p$, the
+oscillatory pressures and the sources $f_p+f_p^S$, and gives
+\textup{(M.\ref{M-cc:uf:hier:eq:Vbound})}--\textup{(M.\ref{M-cc:uf:hier:eq:Cbound})}
+with each power $\mathsf D^C$ replaced by an old-parent polynomial
+$C_q\mu^{a_q}$. The mean pressures are
+not used.
+At the depth $P$, at each order $n$ and with constants $C_{n,P}$ that
+depend also on $q$, the same proof bounds $W_{\rm osc}$ by
+$C_{n,P}\mu^{a_q}\lambda^{-5/4}$ in the weighted $\mathcal J_q$, the mean
+sum $\bar W$ by
+$C_{n,P}\mu^{a_q}\lambda^{-5/2}$ in the
+unweighted one, and the remainder $R_P$ in the unweighted
+$\mathcal J_q$ by
+$C_{n,P}\lambda^{-5/4}\lambda^{-2P/3}$. The term
+$R_{\widetilde\chi}$ is at most an old-parent polynomial times
+$\lambda^{-5/4}$ in the weighted $\mathcal J_q$, and it vanishes, with
+its time derivatives, outside $[t_0,t_0+1/r]$.
+
+\emph{Eulerian time derivatives.} By
+$\partial_t=(\partial_t+U\cdot\nabla_x)-U\cdot\nabla_x$, the Eulerian
+derivative $\partial_t^if^\natural$ of a profile $f$, for $i\le q$, is a
+finite sum of products of factors $\partial_t^l\partial^\beta U$, with
+$l\le q-1$ and $|\beta|\le q-1$, and one factor
+$\partial_x^{\beta'}(\partial_t^lf)^\natural$ with $l+|\beta'|\le q$.
+Lemma~M.\ref{M-cc:uf:hier:lem:physical} converts the bounds in
+$\mathcal J_q$ to Eulerian $\Holder{n}$ bounds of the last factor,
+spending $n+|\beta'|+1$ label and phase derivatives. Each of these
+derivatives costs $C\mathsf D^C\lambda^{3/2}\le\lambda^2$ for an oscillatory
+profile, and $C\mathsf D^C$, an old-parent polynomial, for a
+phase-independent one.
+The extraction costs $q!T^{-q}$, an old-parent polynomial, and the
+factors of $U$ cost
+$\Lambda_U=\mu^5$ for each derivative, by
+\eqref{aux:terminal:parent-time}.
+
+For the phase-independent mean sum and fixed $(m,q)$ the whole cost is
+an old-parent polynomial. This preserves $\lambda^{-5/2}$: with a
+constant and an exponent that depend also on $m$, and for $j$ large,
+\begin{equation}\label{aux:terminal:mean-mixed}
+ \|\partial_t^q\bar W^\natural\|_{C([0,S_j];\Holder{m})}
+ \le C_q\mu^{a_q}\lambda^{-5/2}\le\tfrac12\lambda^{-1},
+\end{equation}
+the last step because $\lambda=\mu^{K_j}$ and $K_j\to\infty$.
+
+For the approximate solution $V=U+W^\natural$ of step $j$ and its
+residual $R_V=(R_P+R_{\widetilde\chi})^\natural$, the same conversion
+gives, for $0\le i\le q$ and $0\le n\le P$,
+\begin{equation}\label{aux:terminal:V-mixed}
+ \|\partial_t^iV\|_{C_t\Holder{n}}\le\lambda^{2(n+1)+\psi'_q},\qquad
+ \|\partial_t^iR_V\|_{C_t\Holder{1}}
+ \le\lambda^{\psi'_q}\lambda_{j+1}^{-4},
+\end{equation}
+with an exponent $\psi'_q\ge0$ independent of $j$ and $n$; the constants,
+which depend on $n$, $q$ and the depth, are bounded by
+$\mathcal B(q_{j+1})$. Indeed, the parent contributes at most $\lambda^{n+2}$ to the
+first bound, by \eqref{aux:terminal:parent-time} and
+$K_j\to\infty$. In the conversion, Leibniz' rule distributes
+the $n$ derivatives over the factors of a product, and on a factor of $U$
+each of them costs $\Lambda_U\le\lambda$. For
+the residual, the remainder $R_P$ carries
+$\lambda^{-2P/3}=\lambda_{j+1}^{-4}$, and on $[t_0,t_0+1/r]$
+the conversion of Lemma~M.\ref{M-cc:uf:hier:lem:physical} carries the
+weight $\gamma\le Ce^{-L_j}=C\lambda_{j+1}^{-4}$, by
+\textup{(M.\ref{M-cc:uf:tower:eq:switch-small})} and
+\textup{(M.\ref{M-cc:uf:tower:eq:schedule})}.
+
+\emph{The truncation difference.}
+Let $v_\Lambda=(S_{\Lambda_j}-\Id)V$ be the truncation difference of
+Proposition~M.\ref{M-cc:uf:step:thm:step} at step $j$.
+We have $\partial_t^qv_\Lambda=(S_{\Lambda_j}-\Id)\partial_t^qV$.
+By the tail bound \textup{(M.\ref{M-cc:uf:trunc:eq:tail})} at the
+order $P$, whose constant is at most $\mu$, and by
+$\Lambda_j=\lambda^5$ and \eqref{aux:terminal:V-mixed}, for fixed $m$,
+\[
+ \|\partial_t^qv_\Lambda\|_{C_t\Holder{m}}
+ \le\mu\Lambda_j^{m-P}\lambda^{2(P+1)+\psi'_q}
+ =\mu\lambda^{-3P+5m+2+\psi'_q}.
+\]
+Since $\mu\le\lambda$ and $P\to\infty$, this is at most
+$\frac12\lambda^{-1}$ for $j$ large. Since $V=U_{j-1}+W^\natural$,
+$W=W_{\rm osc}+\bar W$ and $U_j=S_{\Lambda_j}V$, we have
+$U_j-U_{j-1}-O_j=\bar W^\natural+v_\Lambda$, so this bound and
+\eqref{aux:terminal:mean-mixed} prove
+\eqref{aux:terminal:increment-mixed}.
+
+\emph{The residual and the new velocity.} It remains to prove
+Lemma~\ref{aux:terminal:time} for $q$. Since $U_j=S_{\Lambda_j}V$,
+Lemma~M.\ref{M-cc:uf:trunc:lem:cutoff} and
+\eqref{aux:terminal:V-mixed} at $n=0$ give
+$\|\partial_t^iU_j\|_\infty\le\lambda^{\psi'_q+3}$ for $i\le q$, which is
+the first bound of \eqref{aux:terminal:time-bounds} with
+$\psi_q=\psi'_q+3$. By
+\textup{(M.\ref{M-cc:uf:trunc:eq:residual})}, with
+$v=v_\Lambda$ and $S=S_{\Lambda_j}$,
+\[
+ R_j=\PP\bigl[SR_V
+ +\diver\bigl(v\otimes U_j+V\otimes v+(\Id-S)(V\otimes V)\bigr)\bigr].
+\]
+Differentiate $i\le q$ times in time; the derivatives distribute over
+the products. The first term is bounded by
+\eqref{aux:terminal:V-mixed}. Every other term contains the operator
+$\Id-S$ applied to $\partial_t^lV$ or to
+$\partial_t^l(V\otimes V)$ with $l\le q$. By
+\eqref{aux:terminal:V-mixed}, the tail bound at the order $P$ and
+\textup{(M.\ref{M-cc:holder:product-growth})}, these
+terms are at most
+\[
+ C_{q,P}\Lambda_j^{2-P}\lambda^{4(P+1)+2\psi'_q}
+ \le\lambda^{15-P+2\psi'_q}
+ =\lambda^{15+2\psi'_q}\lambda_{j+1}^{-6}
+\]
+in $\Holder{1}$, because $\Lambda_j=\lambda^5$,
+$C_{q,P}\le\lambda$ and $P=6K_{j+1}$.
+Altogether $\|\partial_t^iR_j\|_\infty
+\le\lambda^{15+2\psi'_q}\lambda_{j+1}^{-4}$ for $i\le q$, and
+$\lambda^{15+2\psi'_q}\le\lambda_{j+1}^{3/2}$ for $j$ large, since
+$K_{j+1}\to\infty$. This proves the second bound
+of \eqref{aux:terminal:time-bounds} at the time order $q$, and the
+induction is complete.
+\end{proof}
+
+\section{Extension away from the origin}
+
+\begin{proof}[Proof of Theorem~\ref{aux:terminal:smooth}]
+By Theorem~M.\ref{M-cc:uf:tower:thm:finite}, on $[0,S_j]$ the
+oscillation $O_j$ is supported in the ball of radius
+$\lambda_{j-1}^{-1}$ about the origin, and these radii tend to zero.
+Fix a compact set $K\subset\mathbb T^3\setminus\{0\}$.
+Only finitely many $O_j$ meet a neighborhood of $K$.
+For every fixed pair $(m,q)$, \eqref{aux:terminal:increment-mixed} and
+$\sum_j\lambda_j^{-1}<\infty$ give a summable bound for the
+remaining increments in $C^q([0,T_\infty];C^m(K))$.
+The finitely many earlier terms are smooth there because
+$S_j>T_\infty$. The sum therefore converges with every mixed derivative
+up to $T_\infty$ away from zero. Its limit equals $u$ before $T_\infty$
+by Proposition~M.\ref{M-cc:uf:terminal:agreement}.
+
+Seeley's extension theorem \cite[p.\ 625]{Seeley}, applied componentwise
+in boundary charts and patched with a locally finite spatial partition
+of unity, extends the field smoothly through $T_\infty$ away from zero.
+The main paper identifies $T_*=T_\infty$, which proves the theorem.
+\end{proof}
+
+\begin{thebibliography}{9}
+\bibitem{Seeley} R. T. Seeley, Extension of $C^\infty$ functions defined
+in a half space, \emph{Proc. Amer. Math. Soc.} \textbf{15} (1964), 625--626.
+\href{https://doi.org/10.1090/S0002-9939-1964-0165392-8}{doi:10.1090/S0002-9939-1964-0165392-8}.
+\end{thebibliography}
+\end{document}

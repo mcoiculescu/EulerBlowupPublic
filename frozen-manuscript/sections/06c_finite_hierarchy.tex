@@ -1,0 +1,654 @@
+\subsection{The transverse equation}\label{cc:uf:sec:transverse}
+Each oscillatory correction solves a forced seed equation forward from
+zero initial data at each label and phase. Its forcing vanishes before
+activation, so the correction does too. From activation onward we measure
+its size relative to the amplitude of the seed at the origin, using the
+weight $\gamma$.
+
+We call
+\begin{equation}\label{cc:uf:hier:eq:trans}
+ V_t+MV+\kappa\partial_s\mathsf p=f,\qquad
+ \kappa\cdot V=0,\qquad \av V=\av f=0,
+\end{equation}
+the \emph{transverse equation}, because its unknown $V$ is perpendicular
+to the wave vector $\kappa$. The pressure term keeps $V$
+perpendicular to $\kappa$: differentiating $\kappa\cdot V=0$
+and using $\kappa_t=-M^T\kappa$ in \eqref{cc:uf:hier:eq:trans} gives
+\begin{equation}\label{cc:uf:hier:eq:pressure-from-trans}
+ |\kappa|^2\partial_s\mathsf p=\kappa\cdot f-2\kappa\cdot MV.
+\end{equation}
+The transverse equation is therefore the linear ordinary differential
+equation
+\begin{equation}\label{cc:uf:hier:eq:trans-ode}
+ V_t=-(\Id-2P_\kappa)MV+(\Id-P_\kappa)f
+\end{equation}
+at each fixed $(a,s)$; for $f=0$ it is the seed equation
+\eqref{cc:uf:step:eq:seed}. For
+every source we take its solution with $V(0,a,s)=0$, and $\mathsf p$ is
+the zero-mean primitive in $s$ of
+\eqref{cc:uf:hier:eq:pressure-from-trans}. For smooth $f$ the solution
+is unique and smooth, and $V$ satisfies the two constraints in
+\eqref{cc:uf:hier:eq:trans}. Both $V$ and $\mathsf p$ vanish at every
+label where $f$ vanishes for all $(t,s)$. If $f$ vanishes for $t<t_0$,
+then $V=0$ for $t\le t_0$.
+
+The plane $\kappa^\perp$ varies with the label. To compare the equation
+on the envelope with the one at the origin and to differentiate it in
+the labels, we express $V$ in coordinates in a fixed $\R^2$.
+Choose a constant $3\times2$ matrix with orthonormal columns spanning
+$k_*^\perp$, let $A_\perp$ be $D_aX$ times this matrix, and let
+$A_\perp^\dagger=(A_\perp^TA_\perp)^{-1}A_\perp^T$.
+The columns of $A_\perp$ span $\kappa^\perp$, since
+$\kappa=(D_aX)^{-T}k_*$, and $A_\perp^\dagger$ takes a vector to its
+coordinates in those columns after orthogonal projection onto their
+span: $A_\perp^\dagger A_\perp=\Id_{\R^2}$ and
+$A_\perp A_\perp^\dagger=\Id-P_\kappa$. Write $V=A_\perp v$ for a
+transverse velocity. Since $\partial_tA_\perp=MA_\perp$, the equation
+\eqref{cc:uf:hier:eq:trans-ode} becomes
+\begin{equation}\label{cc:uf:tower:eq:coordinate}
+ v_t+\mathcal M_\perp v=\psi,\qquad
+ \mathcal M_\perp=2A_\perp^\dagger MA_\perp,\qquad
+ \psi=A_\perp^\dagger f.
+\end{equation}
+
+\begin{lemma}\label{cc:uf:tower:lem:inverse}
+For $t_0\le t\le T$ and $|a|\le2\ell_*$, the seed satisfies
+\begin{equation}\label{cc:uf:tower:eq:near-origin}
+ |\mathbf a(t,a)|\le2|\mathbf a(t,0)|,\qquad
+ (\kappa\cdot M\mathbf a)(t,a)>0 .
+\end{equation}
+There is an absolute exponent $C$ such that the following holds at every
+order $n\ge0$.
+\begin{enumerate}[label=(\roman*),leftmargin=*]
+\item Let $V$ and $f$ be smooth fields on $[t_0,T]$ that satisfy
+\eqref{cc:uf:hier:eq:trans-ode}, with $V$ perpendicular to $\kappa$, and
+suppose that $V(t_0)$ and $f$ vanish at the labels outside $\supp g$.
+Then
+\begin{equation}\label{cc:uf:tower:eq:seed-norm}
+ \|V\|_{[n],\gamma}\le C_n\mathsf D^C
+ \bigl(\gamma(t_0)^{-1}\|V(t_0)\|_{[n]}+\|f\|_{[n],\gamma}\bigr).
+\end{equation}
+\item Let $f$ be smooth on $[0,T]$ with zero phase mean, and suppose
+that $f$ vanishes for $t<t_0$ and at the labels outside $\supp g$.
+The solution of \eqref{cc:uf:hier:eq:trans} with $V(0)=0$ and its
+pressure satisfy
+\begin{equation}\label{cc:uf:hier:eq:trans-bound}
+ \|V\|_{[n],\gamma}+\lambda\|\mathsf p\|_{[n],\gamma}
+ \le C_n\mathsf D^C\|f\|_{[n],\gamma}.
+\end{equation}
+\item On $[t_0,T]$ the leading oscillation and its pressure satisfy
+\begin{equation}\label{cc:uf:hier:eq:size}
+ \|A_1\|_{[n],\gamma}+\lambda\|\mathsf p[A_1]\|_{[n],\gamma}
+ \le C_n\mathsf D^C\lambda^{-5/4}.
+\end{equation}
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+By \eqref{cc:uf:tower:eq:parent-bound},
+$\mathsf D^{-1}|w|\le|A_\perp w|\le\mathsf D|w|$ for $w\in\R^2$. Hence
+$|A_\perp|\le\mathsf D$ and $|A_\perp^\dagger|\le\mathsf D$, and the
+matrix $K_\perp=A_\perp^TA_\perp$ satisfies
+$\sup|K_\perp^{-1}|\le\mathsf D^2$. By
+Proposition~\ref{cc:uf:trunc:prop:parent} and
+Lemma~\ref{cc:uf:trunc:lem:coefficients}(a),(b), the coefficients
+$A_\perp$, $A_\perp^\dagger=K_\perp^{-1}A_\perp^T$ and $\mathcal M_\perp$
+satisfy \eqref{cc:uf:trunc:eq:power}.
+
+In the coordinates $V=A_\perp v$, the seed equation at the label $a$ is
+$v_t+\mathcal M_\perp(t,a)v=0$. With the bounds for $A_\perp$ and
+$A_\perp^\dagger$, the first condition
+in \eqref{cc:uf:tower:eq:wave-origin} gives
+$|v(t)|/\gamma(t)\le\mathsf D^3|v(t')|/\gamma(t')$ for its solutions at
+$a=0$. By the bound for the first label
+derivatives of $\mathcal M_\perp$ and the choice of $\ell_*$,
+\[
+ \sup_{t_0\le t\le T}
+ |\mathcal M_\perp(t,a)-\mathcal M_\perp(t,0)|
+ \le C\mathsf D^C|a|\le\mathsf D^{-3}\qquad(|a|\le2\ell_*).
+\]
+Let $v$ solve the equation at such a label $a$ on $[t',T]$. It solves
+the equation at the origin with
+the source $-(\mathcal M_\perp(\cdot,a)-\mathcal M_\perp(\cdot,0))v$, so
+variation of constants gives
+\[
+ \frac{|v(t)|}{\gamma(t)}
+ \le\mathsf D^3\frac{|v(t')|}{\gamma(t')}
+ +\int_{t'}^t\frac{|v(t'')|}{\gamma(t'')}\dd t''.
+\]
+The weights cancel because the bound at the origin is a ratio of values
+of $\gamma$. Since $t-t'\le T\le1$, Gronwall's inequality gives
+$|v(t)|/\gamma(t)\le e\mathsf D^3|v(t')|/\gamma(t')$. For a solution of
+\eqref{cc:uf:tower:eq:coordinate} on $[t_0,T]$, variation of constants
+therefore gives, at each phase and each label with $|a|\le2\ell_*$,
+\begin{equation}\label{cc:uf:tower:eq:weighted-forward}
+ \frac{|v(t,a)|}{\gamma(t)}
+ \le e\mathsf D^3\left(
+ \frac{|v(t_0,a)|}{\gamma(t_0)}
+ +\int_{t_0}^t\frac{|\psi(t',a)|}{\gamma(t')}\,dt'\right).
+\end{equation}
+
+To compare the seed at $a$ with its value at the origin, write
+$\mathbf a=A_\perp v_a$, with $v_a=A_\perp^\dagger\mathbf a$ at $a$. The
+difference $v_a-v_0$ solves the equation at the origin with the source
+$-(\mathcal M_\perp(\cdot,a)-\mathcal M_\perp(\cdot,0))v_a$. Its value at
+$t_0$ is $(A_\perp^\dagger(t_0,a)-A_\perp^\dagger(t_0,0))\mathbf a(t_0,0)$,
+by \eqref{cc:uf:tower:eq:start} and $A_\perp^\dagger P_\kappa=0$, and
+$|\mathbf a(t_0,0)|=\gamma(t_0)\lambda^{-3/4}$. With the bound just
+proved for $v_a$, variation of constants gives
+$|v_a(t)-v_0(t)|\le C\mathsf D^C|a|\gamma(t)\lambda^{-3/4}$. Since
+$\gamma(t)\lambda^{-3/4}=|\mathbf a(t,0)|$, it follows that
+\[
+ |\mathbf a(t,a)-\mathbf a(t,0)|
+ \le C\mathsf D^C|a|\,|\mathbf a(t,0)|,
+ \qquad t_0\le t\le T.
+\]
+The label derivatives also give
+$|\kappa(t,a)-\kappa(t,0)|\le C\mathsf D^C|a||\kappa(t,0)|$
+and $|M(t,a)-M(t,0)|\le C\mathsf D^C|a|$. Since $|M|\le\mathsf D$, the
+three bounds give
+\[
+ \bigl|(\kappa\cdot M\mathbf a)(t,a)-(\kappa\cdot M\mathbf a)(t,0)\bigr|
+ \le C\mathsf D^C|a|\,|\kappa(t,0)|\,|\mathbf a(t,0)| ,
+\]
+while $(\kappa\cdot M\mathbf a)(t,0)
+=\nu(t,0)|\kappa(t,0)||\mathbf a(t,0)|
+\ge\mathsf D^{-1}|\kappa(t,0)||\mathbf a(t,0)|$, by the second condition
+in \eqref{cc:uf:tower:eq:wave-origin}. None of these exponents depends
+on the exponent of $\ell_*$, so the choice of $\ell_*$ proves
+\eqref{cc:uf:tower:eq:near-origin}.
+
+Let $V$ and $f$ be as in (i). The solution vanishes at the labels
+outside $\supp g$, where its initial value and source vanish, and
+$\supp g$ lies in $\{|a|\le2\ell_*\}$. Taking the supremum in
+\eqref{cc:uf:tower:eq:weighted-forward} gives, because
+$t-t_0\le T\le1$,
+\[
+ \|v\|_{[0],\gamma}\le e\mathsf D^3\bigl(\gamma(t_0)^{-1}\|v(t_0)\|_{[0]}
+       +\|\psi\|_{[0],\gamma}\bigr).
+\]
+Since $\supp g$ is closed, the label and phase derivatives of $v$ and
+$\psi$ also vanish outside it. So this is the zero-order
+estimate of Lemma~\ref{cc:uf:trunc:lem:lifting} on $[t_0,T]$, for the
+initial value and the source together, with the one coefficient
+$\mathcal M_\perp$, which enters through the identity. By the choice of
+$\ell_*$, condition \eqref{cc:uf:trunc:eq:slow} holds, and
+the lemma gives
+$\|v\|_{[n],\gamma}\le C_n\mathsf D^3(\gamma(t_0)^{-1}\|v(t_0)\|_{[n]}
++\|\psi\|_{[n],\gamma})$.
+The estimate divides by $\gamma$ after differentiation in label and
+phase. Since $V=A_\perp v$, $v=A_\perp^\dagger V$ and
+$\psi=A_\perp^\dagger f$, the product estimate
+\eqref{cc:uf:trunc:eq:product} and
+Lemma~\ref{cc:uf:trunc:lem:coefficients}(c) for $A_\perp$ and
+$A_\perp^\dagger$ give \eqref{cc:uf:tower:eq:seed-norm}.
+
+In (ii) the forcing vanishes for $t<t_0$, so $V(t_0)=0$.
+Applying \eqref{cc:uf:tower:eq:seed-norm} to
+\eqref{cc:uf:hier:eq:trans-ode} bounds $V$. By
+\eqref{cc:uf:hier:eq:pressure-from-trans}, $\lambda\mathsf p$ is the
+phase primitive of a product of the coefficients $\kappa/\lambda$ and
+$\lambda^2/|\kappa|^2$ with $f-2MV$, so
+\eqref{cc:uf:trunc:eq:phase-ops}, \eqref{cc:uf:trunc:eq:product} and
+\eqref{cc:uf:hier:eq:coefficient-bound} give
+\begin{equation}\label{cc:uf:hier:eq:pressure-bound}
+ \lambda\|\mathsf p\|_{[n],\gamma}
+ \le C_n\mathsf D^C\bigl(\|f\|_{[n],\gamma}+\|V\|_{[n],\gamma}\bigr),
+\end{equation}
+which proves \eqref{cc:uf:hier:eq:trans-bound}.
+
+For (iii), the time independence of the envelope implies that $g\mathbf a$
+solves the seed equation on $[t_0,T]$ at every label. It is perpendicular
+to $\kappa$ and vanishes outside $\supp g$. By
+\eqref{cc:uf:tower:eq:start}, its value at
+the time $t_0$ is $g(\Id-P_\kappa)\mathbf a(t_0,0)$. The chain rule
+gives $|g|_m\le C_m\ell_*^{-m}$, so $\|g\|_{[n]}\le C_n$. With
+\eqref{cc:uf:hier:eq:coefficient-bound} for
+$P_\kappa$ and \eqref{cc:uf:trunc:eq:product}, this gives
+$\|g\mathbf a(t_0,\cdot)\|_{[n]}
+\le C_n\mathsf D^C|\mathbf a(t_0,0)|=C_n\mathsf D^C\gamma(t_0)\lambda^{-3/4}$.
+Hence \eqref{cc:uf:tower:eq:seed-norm} with $f=0$ gives
+$\|g\mathbf a\|_{[n],\gamma}\le C_n\mathsf D^C\lambda^{-3/4}$.
+For a function of the phase alone,
+$\|F\|_{[n]}=\sum_{j\le n}h^j\|\partial_s^jF\|_\infty$, so
+Lemma~\ref{cc:uf:exact:lem:profile} gives $\|F_h\|_{[n]}\le C_nh$.
+By \eqref{cc:uf:trunc:eq:product},
+$\|A_1\|_{[n],\gamma}\le C_n\mathsf D^C h\lambda^{-3/4}
+=C_n\mathsf D^C\lambda^{-5/4}$. By \eqref{cc:uf:hier:eq:leading}, on
+$[t_0,T]$ the leading oscillation solves \eqref{cc:uf:hier:eq:trans}
+with $f=0$ and $\mathsf p=\mathsf p[A_1]$, so
+\eqref{cc:uf:hier:eq:pressure-bound} gives \eqref{cc:uf:hier:eq:size}.
+\end{proof}
+
+\subsection{The finite expansion}\label{cc:uf:sec:hierarchy}
+At depth $P$ we seek a perturbation
+\[
+ W=\sum_{p=1}^P Z_p+C_P,\qquad
+ Z_p=Y_p+B_p,\qquad Y_p=V_p+C_{p-1},\qquad C_0=0,
+\]
+where $V_p$ is perpendicular to $\kappa$ and $B_p$ is independent of phase.
+The divergence correction $C_p=C[V_p]$ makes
+$V_p+C_p=\widetilde{\mathbf d}\times Q[V_p]$ divergence free by
+\eqref{cc:uf:hier:eq:slaving}, which accounts for the last term $C_P$.
+We call $p$ the \emph{level} of $Z_p$. The factor $|\kappa|^{-1}$
+in the vector potential gives $C_{p-1}$ the bound of a term of
+level $p$, so we group it with $V_p$.
+
+\subsubsection{The equations at each level}
+
+Start from $V_1,\mathsf p_1,C_1$ in
+\eqref{cc:uf:hier:eq:switched} and put $B_1=0$, so that $Y_1=Z_1=V_1$.
+Set aside the activation error $R_{\widetilde\chi}$ of
+\eqref{cc:uf:hier:eq:switch}. The terms left by the leading wave at level
+two are
+\begin{equation}\label{cc:uf:hier:eq:H2}
+ H_2=\widetilde\chi\bigl[(\partial_t+M)C[A_1]+\mathbf d\mathsf p[A_1]\bigr]
+   +(V_1\cdot\mathbf d)V_1+(C_1\cdot\kappa)\partial_sV_1 .
+\end{equation}
+The linear term has zero phase average because $C[A_1]$ and
+$\mathsf p[A_1]$ do. In the phase average of the last term,
+\eqref{cc:uf:hier:eq:slaving} and integration by parts over a period give
+\[
+ \av{(C_1\cdot\kappa)\partial_sV_1}
+ =-\av{\partial_s(C_1\cdot\kappa)V_1}
+ =\av{(\mathbf d\cdot V_1)V_1}.
+\]
+Thus both quadratic terms in $\av{H_2}$ have a single label
+derivative and two factors of $V_1$. Each factor has size
+$C_n\mathsf D^C\lambda^{-5/4}$ by \eqref{cc:uf:hier:eq:size}, and the
+label derivative costs a power of $\mathsf D$ by \eqref{cc:uf:trunc:eq:deriv}.
+Hence $\|\av{H_2}\|_{[n]}\le C_n\mathsf D^C\lambda^{-5/2}$.
+The parent residual $R_U\circ X$ satisfies a bound of this same order by
+\eqref{cc:uf:hier:eq:parent-residual}, so it can be included in the
+first mean equation.
+
+In general, a product $(Z_i\cdot\mathbf d)Z_j$ has level $i+j$.
+The fast derivative costs one level, so $(Z_i\cdot\kappa)\partial_sY_j$
+has level $i+j-1$. Since $V_i\cdot\kappa=0$, only $C_{i-1}$ and $B_i$ can
+differentiate the phase. We collect the terms involving
+$(B_i\cdot\kappa)\partial_sY_j$ after the mean solve. The other
+terms at level $p\ge3$ give
+\begin{align}
+ H_p={}&(\partial_t+M)C_{p-1}+\mathbf d\mathsf p_{p-1}\nonumber\\
+ &+\sum_{i+j=p}(Z_i\cdot\mathbf d)Z_j
+   +\sum_{\substack{i+j=p+1\\i\ge2}}
+                  (C_{i-1}\cdot\kappa)\partial_sY_j,\label{cc:uf:hier:eq:Hp}
+\end{align}
+where all summation indices are positive integers.
+For every $p\ge2$ put
+\begin{equation}\label{cc:uf:hier:eq:source}
+ f_p=-(H_p-\av{H_p}),\qquad \bar f_p=-\av{H_p}\quad(p\ge3),\qquad
+ \bar f_2=-\av{H_2}-R_U\circ X.
+\end{equation}
+Every profile in $H_p$ is known from lower levels.
+Apply \eqref{cc:uf:hier:eq:mean} to $\bar f_p$, obtaining $B_p,\bar q_p$.
+Then put
+\begin{equation}\label{cc:uf:hier:eq:supp}
+ f_p^S=-\sum_{i=2}^p(B_i\cdot\kappa)\partial_sY_{p+1-i},
+\end{equation}
+and apply \eqref{cc:uf:hier:eq:trans} to $f_p+f_p^S$, obtaining $V_p,\mathsf p_p$.
+Finally set $Q_p=Q[V_p]$, $C_p=C[V_p]$.
+The term $-(B_p\cdot\kappa)\partial_sV_1$ in
+\eqref{cc:uf:hier:eq:supp} accounts for the transport of the leading wave
+by the new mean, so $B_p$ must be found before $V_p$. Every term in
+\eqref{cc:uf:hier:eq:supp} has zero phase average since $B_i$ and
+$\kappa$ are phase independent.
+
+Since $D_aX$, $M$ and $\kappa$ are even in $a$, $R_U\circ X$ is odd in
+$a$ and $A_1=g\mathbf aF_h$ changes sign under the reflection
+$(a,s)\mapsto(-a,-s)$, the construction is symmetric under this
+reflection: every $V_p$, $C_p$ and $B_p$ changes sign under it, and
+$W^\natural$ is odd because $X$ is odd.
+
+\begin{proposition}\label{cc:uf:hier:prop:identity}
+For every integer \(P\ge2\), the profiles obtained from
+\eqref{cc:uf:hier:eq:mean}, \eqref{cc:uf:hier:eq:source} and
+\eqref{cc:uf:hier:eq:supp} are well defined, and
+\[
+ W=\sum_{p=1}^PZ_p+C_P=\sum_{p=1}^P(V_p+C_p+B_p),\qquad
+ \mathsf P=\sum_{p=1}^P(\mathsf p_p+\bar q_p),\quad \bar q_1=0,
+\]
+satisfy \(\widetilde {\mathbf d}\cdot W=0\) and
+\begin{equation}\label{cc:uf:hier:eq:residual}
+ W_t+MW+(W\cdot\widetilde {\mathbf d})W+\widetilde {\mathbf d}\mathsf P
+       +R_U\circ X=R_P+R_{\widetilde\chi}.
+\end{equation}
+Since $\av{V_p}=\av{C_p}=0$, the oscillatory part
+\(W_{\rm osc}=W-\av W=\sum_{p=1}^P(V_p+C_p)\) is
+supported in \(\supp g\), and so are the sources $f_p+f_p^S$.
+The fields $V_p$, $C_p$, $\mathsf p_p$ and $f_p+f_p^S$ vanish for
+$t<t_0$.
+Set \(V_{P+1}=B_{P+1}=0\), so that \(Y_{P+1}=Z_{P+1}=C_P\). The
+remainder of the expansion is
+\begin{align}\label{cc:uf:hier:eq:tail}
+ R_P={}&(\partial_t+M)C_P+\mathbf d\mathsf p_P\\
+ &+\sum_{\substack{i,j\le P+1\\i+j\ge P+1}}
+                  (Z_i\cdot \mathbf d)Z_j
+ +\sum_{\substack{i,j\le P+1\\i+j\ge P+2}}
+                  (Z_i\cdot\kappa)\partial_sY_j.\nonumber
+\end{align}
+At the labels outside $\supp g$ it is independent of the phase.
+The construction is jointly smooth.
+\end{proposition}
+\begin{proof}
+By \eqref{cc:uf:hier:eq:slaving} and \eqref{cc:uf:hier:eq:mean},
+\[
+ \widetilde{\mathbf d}\cdot W
+ =\sum_{p=1}^P\bigl[\widetilde{\mathbf d}\cdot
+   (\widetilde{\mathbf d}\times Q_p)+\mathbf d\cdot B_p\bigr]=0.
+\]
+With $W=\sum_{i=1}^{P+1}Z_i$, the quadratic term is
+\[
+ (W\cdot\widetilde{\mathbf d})W
+ =\sum_{i,j}(Z_i\cdot\mathbf d)Z_j
+  +\sum_{i,j}((C_{i-1}+B_i)\cdot\kappa)\partial_sY_j
+\]
+with $1\le i,j\le P+1$. For $2\le p\le P$, the terms to be
+canceled at level $p$ sum to $H_p-f_p^S$, together with $R_U\circ X$
+at $p=2$. The new linear terms
+\[
+ (\partial_t+M)(V_p+B_p)+\kappa\partial_s\mathsf p_p
+    +\mathbf d\bar q_p=f_p+f_p^S+\bar f_p
+\]
+cancel them, since the right side is $-H_p+f_p^S$ for $p\ge3$ and
+$-H_2+f_2^S-R_U\circ X$ for $p=2$. For $V_1$, \eqref{cc:uf:hier:eq:leading}
+and \eqref{cc:uf:hier:eq:switched} give
+\[
+ V_{1,t}+MV_1+\kappa\partial_s\mathsf p_1=\widetilde\chi'A_1,\qquad
+ (\partial_t+M)C_1+\mathbf d\mathsf p_1
+ =\widetilde\chi\bigl[(\partial_t+M)C[A_1]+\mathbf d\mathsf p[A_1]\bigr]
+  +\widetilde\chi'C[A_1].
+\]
+The two terms with $\widetilde\chi'$ sum to $R_{\widetilde\chi}$, and the
+remaining term is canceled in $H_2$. The surviving
+products have $i+j>P$ for $\mathbf d$ and $i+j-1>P$ for
+$\kappa\partial_s$. Together with the two linear terms left at
+level $P+1$, these give \eqref{cc:uf:hier:eq:tail}.
+
+The sources at each level are smooth when the preceding profiles are.
+The transverse equation is a linear ordinary differential equation at
+fixed $(a,s)$ with smooth coefficients, the mean equation has smooth
+solutions by Theorem~\ref{cc:uf:mean:inverse}, and taking the curl
+preserves smoothness. By induction on the level, the profiles are well
+defined and jointly smooth.
+
+For the supports, let $\mathcal O$ be the open set of pairs $(t,a)$ with
+$t<t_0$ or $a\notin\supp g$. The fields
+$V_1=\widetilde\chi g\mathbf a F_h$, $C_1$ and $\mathsf p_1$ vanish on
+$\mathcal O$, and so does the first term of $H_2$. If the oscillatory
+profiles and pressures of index less than $p$ vanish on $\mathcal O$, then
+on $\mathcal O$ the field $H_p$ contains only the phase-independent
+products $(B_i\cdot\mathbf d)B_j$, and $f_p=f_p^S=0$ there. The solution
+of \eqref{cc:uf:hier:eq:trans} then vanishes on $\mathcal O$, by the two
+properties recorded after \eqref{cc:uf:hier:eq:trans-ode}, and so do
+$C_p=\mathbf d\times Q[V_p]$ and, by
+\eqref{cc:uf:hier:eq:pressure-from-trans}, $\mathsf p_p$, the zero-mean
+primitive of a function that vanishes on $\mathcal O$. This proves the
+assertions on the supports. On $\mathcal O$ the remainder \eqref{cc:uf:hier:eq:tail}
+therefore consists of the products $(B_i\cdot\mathbf d)B_j$, which are
+independent of the phase. The means $B_p$ do not vanish before $t_0$
+in general.
+\end{proof}
+
+\subsubsection{Bounds at every order}
+
+To bound the linear terms in \eqref{cc:uf:hier:eq:H2} and
+\eqref{cc:uf:hier:eq:Hp}, we use the transverse equation to evaluate
+the time derivative of the curl correction.
+\begin{lemma}\label{cc:uf:hier:lem:relay}
+There is an absolute exponent $C$ such that, for every \(n\ge0\) and
+every field $V$ with $\av V=0$ and $\kappa\cdot V=0$,
+\begin{equation}\label{cc:uf:hier:eq:completion-bound}
+ \|C[V]\|_{[n],\gamma}\le C_n\mathsf D^C\lambda^{-1}\|V\|_{[n+1],\gamma}.
+\end{equation}
+If moreover \(V_t+MV+\kappa\partial_s\mathsf p=f\) with $\av f=0$ and
+$\av{\mathsf p}=0$, then
+\begin{equation}\label{cc:uf:hier:eq:relay-bound}
+ \|(\partial_t+M)C[V]+\mathbf d\mathsf p\|_{[n],\gamma}
+ \le C_n\mathsf D^C\lambda^{-1}
+             \bigl(\|V\|_{[n+1],\gamma}+\|f\|_{[n+1],\gamma}\bigr).
+\end{equation}
+For the leading oscillation $V=A_1$ on $[t_0,T]$, the source in this estimate is
+$f=0$.
+\end{lemma}
+\begin{proof}
+By \eqref{cc:uf:hier:eq:completion}, $Q[V]$ is $\lambda^{-1}$ times the
+phase primitive of $V$, multiplied by the coefficients $\kappa/\lambda$
+and $\lambda^2/|\kappa|^2$, and $C[V]=\mathbf d\times Q[V]$.
+Since $\ell_*^{-1}$ is a power of $\mathsf D$,
+\eqref{cc:uf:trunc:eq:product}, \eqref{cc:uf:trunc:eq:deriv},
+\eqref{cc:uf:trunc:eq:phase-ops} and
+\eqref{cc:uf:hier:eq:coefficient-bound} give
+\eqref{cc:uf:hier:eq:completion-bound}.
+
+For \eqref{cc:uf:hier:eq:relay-bound} use \(\kappa_t=-M^T\kappa\),
+\((|\kappa|^{-2})_t=2(\kappa\cdot M\kappa)|\kappa|^{-4}\),
+and \([\partial_t,\mathbf d_j]=-M_{\ell j}\mathbf d_\ell\).
+Differentiating $Q[V]$ in time and inserting the equation for $V_t$, in
+which the term \(\kappa\times\kappa\,\partial_s\mathsf p\) vanishes, gives
+\begin{equation}\label{cc:uf:hier:eq:potential-time}
+ \partial_tQ[V]=\partial_s^{-1}\left[
+  \frac{(M^T\kappa)\times V+\kappa\times MV-\kappa\times f}
+       {|\kappa|^2}
+  -2\frac{(\kappa\times V)(\kappa\cdot M\kappa)}
+             {|\kappa|^4}\right].
+\end{equation}
+Commuting $\partial_t$ past the curl gives
+$(\partial_t+M)C[V]=\mathbf d\times\partial_tQ[V]
++[\partial_t,\mathbf d\times]Q[V]+MC[V]$.
+By \eqref{cc:uf:hier:eq:potential-time} and the formula for
+$\partial_s\mathsf p$ in \eqref{cc:uf:hier:eq:pressure-from-trans},
+each term, including $\mathbf d\mathsf p$, carries a factor $\lambda^{-1}$
+and at most one label derivative. The product and primitive estimates
+therefore give \eqref{cc:uf:hier:eq:relay-bound} without a time derivative
+of $M$, $f$ or a mean. The weight $\gamma$ is applied after the time
+differentiation.
+\end{proof}
+
+Up to fixed powers of $\mathsf D$, the leading oscillation has size
+$\lambda^{-5/4}$ by \eqref{cc:uf:hier:eq:size}, its divergence correction
+has size $\lambda^{-9/4}$ by \eqref{cc:uf:hier:eq:completion-bound},
+and the first mean has size $\lambda^{-5/2}$ by the calculation after
+\eqref{cc:uf:hier:eq:H2} and \eqref{cc:uf:mean:bound}.
+A label derivative costs a power of $\mathsf D$, while a phase derivative
+in Eulerian advection costs $|\kappa|h^{-1}\le\mathsf D^2\lambda^{3/2}$.
+The smallest gain in frequency comes from advection of the phase by the divergence
+correction, which contributes $\lambda^{-9/4}\lambda^{3/2}=\lambda^{-3/4}$.
+Advection of the phase by the mean gives $\lambda^{-1}$,
+as does taking a divergence correction. Advection in the labels gives
+$\lambda^{-5/4}$. Allowing $\lambda^{-2/3}$ per level leaves a factor
+$\lambda^{-1/12}$ to absorb the parent bounds.
+
+We induct on the level at all derivative orders at once. When a source
+requires a higher derivative of a previously computed profile, that
+order is already available. The new mean $B_p$ enters the transverse
+source \eqref{cc:uf:hier:eq:supp} undifferentiated.
+
+\Needspace{10\baselineskip}
+\begin{theorem}\label{cc:uf:hier:thm:depth}
+There is an absolute exponent $C$ such that the following holds if
+$\mathsf D^C\lambda^{-1/12}\le1$. For all integers \(n\ge0\) and
+\(p\ge2\), the construction satisfies
+\begin{align}
+ \|V_p\|_{[n],\gamma}+\|f_p+f_p^S\|_{[n],\gamma}
+        +\lambda\|\mathsf p_p\|_{[n],\gamma}
+ &\le C_{n,p}\mathsf D^C\lambda^{-5/4}\lambda^{-2(p-1)/3},
+ \label{cc:uf:hier:eq:Vbound}\\
+ \|B_p\|_{[n]}+\|\bar f_p\|_{[n]}
+ &\le C_{n,p}\mathsf D^C\lambda^{-5/2}\lambda^{-2(p-2)/3},
+ \label{cc:uf:hier:eq:Bbound}\\
+ \|C_p\|_{[n],\gamma}
+ &\le C_{n,p}\mathsf D^C\lambda^{-9/4}\lambda^{-2(p-1)/3}.
+ \label{cc:uf:hier:eq:Cbound}
+\end{align}
+The bounds \eqref{cc:uf:hier:eq:Vbound} and
+\eqref{cc:uf:hier:eq:Cbound} also hold for $p=1$, with $f_1=f_1^S=0$.
+For all integers \(P\ge2\) and \(m\ge0\), the expansion of
+Proposition~\ref{cc:uf:hier:prop:identity} at the depth $P$ satisfies
+\begin{equation}\label{cc:uf:hier:eq:sum}
+ \|W_{\rm osc}\|_{[m],\gamma}\le C_{m,P}\mathsf D^C\lambda^{-5/4},\qquad
+ \Big\|\sum_{p=2}^PB_p\Big\|_{[m]}+\Big\|\sum_{p=2}^P\bar f_p\Big\|_{[m]}
+ \le C_{m,P}\mathsf D^C\lambda^{-5/2},
+\end{equation}
+and its remainder satisfies
+\begin{equation}\label{cc:uf:hier:eq:tail-est}
+ \|R_P\|_{[m]}\le C_{m,P}\lambda^{-5/4}\lambda^{-2P/3}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+By \eqref{cc:uf:trunc:eq:product}, \eqref{cc:uf:trunc:eq:deriv} and
+\eqref{cc:uf:hier:eq:coefficient-bound}, since $\ell_*^{-1}$ is a power
+of $\mathsf D$ and $\kappa\partial_s$ costs
+$|\kappa|h^{-1}\le\mathsf D^2\lambda^{3/2}$ by
+\eqref{cc:uf:tower:eq:wave-vector}, fields $Z$, $Z'$, $Y$
+satisfy, with the weight on either factor of a product or on neither,
+\begin{equation}\label{cc:uf:hier:eq:advection}
+ \begin{aligned}
+ \|(Z\cdot\mathbf d)Z'\|_{[n],\gamma}+\|(\mathbf d\cdot Z)Z'\|_{[n],\gamma}
+ &\le C_n\mathsf D^C\|Z\|_{[n+1]}\|Z'\|_{[n+1],\gamma},\\
+ \|(Z\cdot\kappa)\partial_sY\|_{[n],\gamma}
+ &\le C_n\mathsf D^C\lambda^{3/2}\|Z\|_{[n]}\|Y\|_{[n+1],\gamma}.
+ \end{aligned}
+\end{equation}
+For $p=1$, \eqref{cc:uf:hier:eq:size} and
+\eqref{cc:uf:hier:eq:completion-bound} give
+\eqref{cc:uf:hier:eq:Vbound} and \eqref{cc:uf:hier:eq:Cbound} for
+$A_1$, $\mathsf p[A_1]$, $C[A_1]$ on $[t_0,T]$, and
+$0\le\widetilde\chi\le1$ gives them for $V_1$, $\mathsf p_1$, $C_1$.
+
+To keep powers of $\mathsf D$ from accumulating with the depth, we
+propagate a bound for the transverse source and the mean that contains
+only powers of $\lambda$. For $p\ge2$ the induction claim at every order is
+\begin{equation}\label{cc:uf:hier:eq:induction}
+ \|f_p+f_p^S\|_{[n],\gamma}+\lambda^{1/2}\|B_p\|_{[n]}
+ \le C_{n,p}\lambda^{-5/4}\lambda^{-2(p-1)/3}.
+\end{equation}
+For $B_p$ this is \eqref{cc:uf:hier:eq:Bbound} with $\lambda^{1/12}$ in
+place of $\mathsf D^C$. Since \eqref{cc:uf:hier:eq:induction} contains
+no power of $\mathsf D$, every exponent of $\mathsf D$ below is a sum
+of a bounded number of the exponents of \eqref{cc:uf:mean:bound},
+\eqref{cc:uf:hier:eq:trans-bound}, \eqref{cc:uf:hier:eq:size},
+\eqref{cc:uf:hier:eq:completion-bound},
+\eqref{cc:uf:hier:eq:relay-bound} and \eqref{cc:uf:hier:eq:advection},
+and it depends neither on the level nor on the depth. The theorem holds
+with the largest of these exponents, since $\mathsf D\ge2$. In the rest
+of the proof every bound holds up to a factor $C_{n,p}$ or $C_{m,P}$,
+which we do not write.
+
+The bound \eqref{cc:uf:hier:eq:induction} at a level $i\ge2$ gives
+\eqref{cc:uf:hier:eq:Vbound} and \eqref{cc:uf:hier:eq:Cbound} for $V_i$,
+$\mathsf p_i$ and $C_i$. Indeed, by Proposition~\ref{cc:uf:hier:prop:identity} the source
+$f_i+f_i^S$ vanishes for $t<t_0$ and outside $\supp g$, so
+\eqref{cc:uf:hier:eq:trans-bound} bounds $V_i$ and $\lambda\mathsf p_i$
+by $\mathsf D^C$ times the right side of
+\eqref{cc:uf:hier:eq:induction}, and
+\eqref{cc:uf:hier:eq:completion-bound} then bounds $C_i$. For the bounds
+at each level it remains to prove \eqref{cc:uf:hier:eq:induction} and
+\eqref{cc:uf:hier:eq:Bbound}.
+
+Let $p\ge2$, and suppose that \eqref{cc:uf:hier:eq:induction} holds at
+the levels $2\le i<p$ and at every order. Then
+\eqref{cc:uf:hier:eq:Vbound} and \eqref{cc:uf:hier:eq:Cbound} hold for
+$V_i$ and $C_i$, $1\le i<p$. Recall $Y_i=V_i+C_{i-1}$ and $Z_i=Y_i+B_i$.
+The right side of \eqref{cc:uf:hier:eq:Cbound} for $C_{i-1}$ and the
+bound \eqref{cc:uf:hier:eq:induction} for $B_i$ are at most the right
+side of \eqref{cc:uf:hier:eq:Vbound} for $V_i$. Since
+$\gamma\le1$, it follows that, for $i<p$,
+\begin{equation}\label{cc:uf:hier:eq:YZ}
+ \|Y_i\|_{[n],\gamma}+\|Z_i\|_{[n]}
+ \le\mathsf D^C\lambda^{-5/4}\lambda^{-2(i-1)/3}.
+\end{equation}
+
+The source $f_p$ in \eqref{cc:uf:hier:eq:source} uses only profiles of
+index less than $p$. Subtracting the phase mean of $(Z_i\cdot\mathbf d)Z_j$
+removes $(B_i\cdot\mathbf d)B_j$, and every other product has a
+factor $Y_i$ or $Y_j$, to which we apply the $\gamma$ norm.
+By \eqref{cc:uf:hier:eq:relay-bound} and \eqref{cc:uf:hier:eq:Vbound}
+for $V_{p-1}$, the linear term of $H_p$ is at most
+$\mathsf D^C\lambda^{-9/4}\lambda^{-2(p-2)/3}$; for $p=2$
+this is the bound for $A_1$, with $f=0$ and $\widetilde\chi\le1$. By
+\eqref{cc:uf:hier:eq:advection} and \eqref{cc:uf:hier:eq:YZ}, a product
+$(Z_i\cdot\mathbf d)Z_j$ with $i+j=p$ is at most
+$\mathsf D^C\lambda^{-5/2}\lambda^{-2(p-2)/3}$. By
+\eqref{cc:uf:hier:eq:advection}, \eqref{cc:uf:hier:eq:YZ} and
+\eqref{cc:uf:hier:eq:Cbound} for $C_{i-1}$, a product
+$(C_{i-1}\cdot\kappa)\partial_sY_j$ with $i+j=p+1$ is at most
+$\mathsf D^C\lambda^{3/2}\lambda^{-9/4}\lambda^{-5/4}\lambda^{-2(p-2)/3}
+=\mathsf D^C\lambda^{-2}\lambda^{-2(p-2)/3}$. The right side of
+\eqref{cc:uf:hier:eq:induction} is
+$\lambda^{-23/12}\lambda^{-2(p-2)/3}$, so the three bounds are this
+number times
+\[
+ \mathsf D^C\lambda^{-1/3},\qquad
+ \mathsf D^C\lambda^{-7/12},\qquad
+ \mathsf D^C\lambda^{-1/12},
+\]
+respectively. Thus $\|f_p\|_{[n],\gamma}$ is at most
+$\mathsf D^C\lambda^{-1/12}$ times the right side of
+\eqref{cc:uf:hier:eq:induction}.
+
+In the mean source $\bar f_p$, integration by parts in $s$ removes the
+fast derivative just as at level two. By \eqref{cc:uf:hier:eq:slaving},
+for $i\ge2$ we have
+\begin{equation}\label{cc:uf:hier:eq:fast-mean}
+ \av{(C_{i-1}\cdot\kappa)\partial_sY_j}
+                 =\av{(\mathbf d\cdot V_{i-1})Y_j}.
+\end{equation}
+The linear terms have zero phase average because $C_{p-1}$ and
+$\mathsf p_{p-1}$ do. Products of one mean and one oscillation also
+average to zero, since $B_i$ and $\kappa$ are phase independent and
+$\av{Y_j}=0$. Thus the mean source is
+\[
+ -\bar f_p=
+ \sum_{i+j=p}\av{(Y_i\cdot\mathbf d)Y_j}
+ +\sum_{i+j=p}\av{(\mathbf d\cdot V_i)Y_j}
+ +\sum_{i+j=p}(B_i\cdot\mathbf d)B_j,
+\]
+with the additional term $R_U\circ X$ at $p=2$. By
+\eqref{cc:uf:hier:eq:advection} and \eqref{cc:uf:hier:eq:YZ}, the first
+two sums are at most $\mathsf D^C\lambda^{-5/2}\lambda^{-2(p-2)/3}$.
+By \eqref{cc:uf:hier:eq:advection} and
+\eqref{cc:uf:hier:eq:induction} at the lower levels, the third is at
+most $\mathsf D^C\lambda^{-7/2}\lambda^{-2(p-2)/3}$, which is smaller.
+The term $R_U\circ X$ is at most $C_n\lambda^{-5/2}$, by
+\eqref{cc:uf:hier:eq:parent-residual}. Hence
+$\|\bar f_p\|_{[n]}\le\mathsf D^C\lambda^{-5/2}\lambda^{-2(p-2)/3}$
+at every order. With this estimate at the order $n+1$,
+\eqref{cc:uf:mean:bound} bounds $\|B_p\|_{[n]}$ by $\mathsf D^C$ times
+as much. This proves \eqref{cc:uf:hier:eq:Bbound} at the level $p$, and
+with the hypothesis $\mathsf D^C\le\lambda^{1/12}$ it gives
+\eqref{cc:uf:hier:eq:induction} for $B_p$.
+
+For $f_p^S$ in \eqref{cc:uf:hier:eq:supp}, the means
+$B_i$, $2\le i\le p$, are now bounded by
+\eqref{cc:uf:hier:eq:induction}, and $Y_{p+1-i}$ is bounded by
+\eqref{cc:uf:hier:eq:YZ}. By \eqref{cc:uf:hier:eq:advection}, each
+product $(B_i\cdot\kappa)\partial_sY_{p+1-i}$ is therefore at most
+$\mathsf D^C\lambda^{-3/2}\lambda^{-2(p-1)/3}$, which is
+$\mathsf D^C\lambda^{-1/4}$ times the right side of
+\eqref{cc:uf:hier:eq:induction}. With the bound for $f_p$,
+$\|f_p+f_p^S\|_{[n],\gamma}$ is at most $\mathsf D^C\lambda^{-1/12}$
+times that right side, and the hypothesis gives
+\eqref{cc:uf:hier:eq:induction} at the level $p$. This completes the
+induction. The number of products in a level and the constants of the
+lower levels at higher orders enter $C_{n,p}$.
+
+Since $\lambda\ge1$, summing
+\eqref{cc:uf:hier:eq:Vbound}--\eqref{cc:uf:hier:eq:Cbound} over
+$p\le P$ gives \eqref{cc:uf:hier:eq:sum}. For the remainder,
+recall $Y_{P+1}=Z_{P+1}=C_P$. By \eqref{cc:uf:hier:eq:Cbound} for
+$C_P$, the bound \eqref{cc:uf:hier:eq:YZ} holds for $i\le P+1$. The
+products in \eqref{cc:uf:hier:eq:tail} are therefore bounded as those
+of $H_p$ and $f_p^S$ were: the products $(Z_i\cdot\mathbf d)Z_j$ with
+$i+j=q$, and $(C_{i-1}\cdot\kappa)\partial_sY_j$ and
+$(B_i\cdot\kappa)\partial_sY_j$ with $i+j=q+1$, are at most
+$\mathsf D^C\lambda^{-1/12}$ times $\lambda^{-5/4}\lambda^{-2(q-1)/3}$,
+and in \eqref{cc:uf:hier:eq:tail} they have $q\ge P+1$. By
+\eqref{cc:uf:hier:eq:relay-bound} and \eqref{cc:uf:hier:eq:Vbound} for
+$V_P$, the linear term
+\((\partial_t+M)C_P+\mathbf d\mathsf p_P\) is at most
+$\mathsf D^C\lambda^{-1/3}$ times $\lambda^{-5/4}\lambda^{-2P/3}$. The
+products of two means are bounded in the
+unweighted norm, and every other term in the weighted norm, which
+dominates the unweighted one because $\gamma\le1$. With the hypothesis,
+this is \eqref{cc:uf:hier:eq:tail-est}.
+\end{proof}

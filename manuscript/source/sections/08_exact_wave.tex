@@ -1,0 +1,449 @@
+\subsection{The approximate solution}\label{cc:uf:sec:approximate}
+Fix an integer $P\ge2$. The profiles $W,\mathsf P$ of
+Proposition~\ref{cc:uf:hier:prop:identity} at depth $P$ give the
+Eulerian velocity and pressure
+\[
+ V=U+W^\natural,\qquad \Pi=p_U+\mathsf P^\natural,\qquad
+ W=W_{\rm osc}+\bar W,\quad \bar W=\sum_{p=2}^PB_p .
+\]
+Fix an absolute integer $b\ge1$, at least as large
+as the exponents $C$ of Theorem~\ref{cc:uf:hier:thm:depth} and of
+Lemma~\ref{cc:uf:hier:lem:physical}, and sufficiently large for the
+finitely many estimates of this subsection and the next. Put
+\[
+ C_{\rm step}=\Gamma_P\mathsf D^b,
+\]
+where $\Gamma_P\ge1$ depends only on $P$ and the fixed profiles.
+We take it sufficiently large compared with every $C_{2,P}$ in this
+subsection and the next. The estimates of the residual, the pressure
+Hessian and the flow use the profile bounds through order two. The
+truncation uses the velocity bound in $\Holder{P}$ and the tail estimate
+\eqref{cc:uf:trunc:eq:tail}. From here on we assume
+\begin{equation}\label{cc:uf:step:eq:small}
+ C_{\rm step}\lambda^{-1/12}\le1 .
+\end{equation}
+Since $C_{\rm step}\ge\mathsf D^C$ for the exponent $C$ of
+Theorem~\ref{cc:uf:hier:thm:depth}, the hypothesis of that theorem
+holds.
+
+To estimate the velocity and residual in Eulerian coordinates, we evaluate
+each profile at $a=X(t,\cdot)^{-1}(x)$ and $s=k_*\cdot a$.
+
+\begin{lemma}\label{cc:uf:hier:lem:physical}
+Let \(g_0(t,a,s)\) be smooth and independent of the phase at the labels
+outside \(\supp g\). Assume its phase average extends smoothly and
+periodically in $a$ across the cell faces. There is an absolute exponent
+$C$ such that, for every integer \(m\ge0\) and every $t\in[t_0,T]$,
+\begin{align}
+ \sum_{|\beta|=m}\|\partial_x^\beta g_0^\natural(t)\|_{L^\infty}
+ &\le C_m(\mathsf D^C\lambda^{3/2})^m\gamma(t)
+                  \|g_0\|_{[m],\gamma},
+ \label{cc:uf:hier:eq:physical-infty}\\
+ \|g_0^\natural(t)\|_{\Holder{m}}
+ &\le C_m(\mathsf D^C\lambda^{3/2})^{m+1}\gamma(t)
+                  \|g_0\|_{[m+1],\gamma}.
+ \label{cc:uf:hier:eq:physical}
+\end{align}
+Both bounds also hold on $[0,T]$ with \(\gamma\) replaced by one, and for
+a phase-independent field with \(\mathsf D^C\lambda^{3/2}\) replaced by
+\(\mathsf D^C\).
+\end{lemma}
+\begin{proof}
+The field \(\widetilde{\mathbf d}_ig_0\) is again independent of the
+phase outside \(\supp g\), which lies in the interior of the cell, so
+\(g_0^\natural\) and its derivatives extend smoothly and periodically.
+The spatial chain rule in \eqref{cc:uf:hier:eq:graph} and
+\(\widetilde{\mathbf d}=(D_aX)^{-T}(\nabla_a+k_*\partial_s)\) give
+\[
+ \sum_i\|\widetilde{\mathbf d}_ig_0\|_{[n],\gamma}
+ \le C_n\mathsf D^C\lambda^{3/2}\|g_0\|_{[n+1],\gamma},\qquad n\ge0,
+\]
+by Lemma~\ref{cc:uf:trunc:lem:fields} and
+\eqref{cc:uf:hier:eq:coefficient-bound}: a label derivative costs
+$\ell_*^{-1}$, a fixed power of $\mathsf D$, and $k_*\partial_s$ costs
+$|k_*|h^{-1}\le\mathsf D\lambda^{3/2}$, by
+\eqref{cc:uf:tower:eq:wave-vector}.
+Iterate the displayed bound; at each time the supremum of a field is at
+most $\gamma(t)$ times its weighted norm of order zero. This proves
+\eqref{cc:uf:hier:eq:physical-infty}. The bound
+\(\|v\|_{\Holder{0}}\le C(\|v\|_\infty+\|\nabla v\|_\infty)\),
+applied to derivatives through order \(m\), proves
+\eqref{cc:uf:hier:eq:physical} with one additional derivative. A
+phase-independent field has
+\(\widetilde{\mathbf d}g_0=\mathbf dg_0\), proving the last assertion.
+\end{proof}
+
+In Section~\ref{cc:uf:sec:tower} the oscillations are summed in the
+supremum norm, while their higher derivatives control the Fourier tail
+in \eqref{cc:uf:tower:eq:tail-small}. The means can extend across the
+torus and back to time zero, so their sum must converge at every fixed
+derivative order.
+
+\begin{lemma}\label{cc:uf:step:lem:approximate}
+The field \(V\) is smooth, odd and
+divergence free, \(\Pi\) is smooth, and
+\begin{equation}\label{cc:uf:step:eq:approximate}
+ V_t+V\cdot\nabla V+\nabla\Pi=R_V,\qquad
+ R_V=R_P^\natural+R_{\widetilde\chi}^\natural .
+\end{equation}
+The oscillation satisfies
+\begin{equation}\label{cc:uf:step:eq:physical-sup}
+ \|W_{\rm osc}^\natural\|_{C_tL^\infty}
+ \le C_{0,P}\mathsf D^b\lambda^{-5/4},
+\end{equation}
+and for every \(m\ge0\),
+\begin{equation}\label{cc:uf:step:eq:physical}
+\begin{gathered}
+ \|W_{\rm osc}^\natural\|_{C_t\Holder{m}}
+ \le C_{m,P}\mathsf D^{b(m+2)}\lambda^{3(m+1)/2-5/4},\qquad
+ \|\bar W^\natural\|_{C_t\Holder{m}}
+ \le C_{m,P}\mathsf D^{b(m+2)}\lambda^{-5/2},\\
+ \|R_V\|_{C_t\Holder{1}}
+ \le C_{\rm step}\lambda^2
+   \bigl(\lambda^{-2P/3}+\|\widetilde\chi'\gamma\|_\infty\bigr),
+\end{gathered}
+\end{equation}
+where the last supremum is over $[t_0,T]$.
+\end{lemma}
+\begin{proof}
+By \eqref{cc:uf:hier:eq:graph}, at \(x=X(t,a)\) one has
+\((\partial_t+U\cdot\nabla)W^\natural=(W_t)^\natural\),
+\(W^\natural\cdot\nabla U=(MW)^\natural\),
+\(W^\natural\cdot\nabla W^\natural=((W\cdot\widetilde{\mathbf d})W)^\natural\) and
+\(\nabla\mathsf P^\natural=(\widetilde{\mathbf d}\mathsf P)^\natural\). Adding
+the definition of \(R_U\) and \eqref{cc:uf:hier:eq:residual} gives
+\eqref{cc:uf:step:eq:approximate}, because \((R_U\circ X)^\natural=R_U\):
+the residual of the parent is canceled exactly. Also
+\(\widetilde{\mathbf d}\cdot W=0\) gives \(\diver V=0\).
+Since \(\supp g\) lies in the interior of the cell, the oscillatory
+terms in \(W^\natural\) and \(\mathsf P^\natural\) extend smoothly and
+periodically for every \(k_*\). Proposition~\ref{cc:uf:hier:prop:identity}
+gives the smoothness of \(V\) and \(\Pi\), and \(W^\natural\) is odd by
+the symmetry of the construction of Subsection~\ref{cc:uf:sec:hierarchy}
+under \((a,s)\mapsto(-a,-s)\).
+
+Since $\gamma\le1$, the supremum of
+$W_{\rm osc}^\natural$ is at most $\|W_{\rm osc}\|_{[0],\gamma}$, and
+\eqref{cc:uf:hier:eq:sum} gives \eqref{cc:uf:step:eq:physical-sup}.
+The bound \eqref{cc:uf:hier:eq:physical} of
+Lemma~\ref{cc:uf:hier:lem:physical}, applied to $W_{\rm osc}$ and
+$\bar W$ with \eqref{cc:uf:hier:eq:sum} at the order $m+1$, proves the
+first two bounds of \eqref{cc:uf:step:eq:physical}.
+By Proposition~\ref{cc:uf:hier:prop:identity}, $R_P$ is independent of
+the phase outside $\supp g$, so \eqref{cc:uf:hier:eq:physical} at $m=1$,
+with $\gamma$ replaced by one, and \eqref{cc:uf:hier:eq:tail-est} bound
+$R_P^\natural$ in $C_t\Holder{1}$ by
+$C_{2,P}\mathsf D^C\lambda^{7/4}\lambda^{-2P/3}$. By
+\eqref{cc:uf:hier:eq:size} and \eqref{cc:uf:hier:eq:completion-bound},
+$\|A_1+C[A_1]\|_{[2],\gamma}\le C\mathsf D^C\lambda^{-5/4}$. At each time
+$t$, $R_{\widetilde\chi}$ is $\widetilde\chi'(t)$ times this field, so
+\eqref{cc:uf:hier:eq:physical} at that time bounds
+$R_{\widetilde\chi}^\natural(t)$ in $\Holder{1}$ by
+$C\mathsf D^C\lambda^{7/4}|\widetilde\chi'(t)|\gamma(t)$. This proves
+the last bound of \eqref{cc:uf:step:eq:physical}.
+\end{proof}
+
+In \eqref{cc:uf:step:eq:physical} the depth $P$ controls the expansion
+remainder. For a later wave, \eqref{cc:uf:tower:eq:switch-small}
+bounds $\gamma$ on the interval where the time cutoff varies.
+
+The next mean equation requires an upper bound on the added pressure
+Hessian, since the pressure Hessian enters the displacement form
+\eqref{cc:uf:mean:jacobi-id} with a minus sign. The next wave also needs
+the velocity gradient at the origin. Once $\widetilde\chi=1$, the
+rank-one term in \eqref{cc:uf:tower:eq:central-return} supplies the
+wave contribution to the gradient in \eqref{cc:uf:tower:eq:split}.
+
+\Needspace{8\baselineskip}
+\begin{lemma}\label{cc:uf:step:lem:pressure-center}
+On \([0,T]\times\mathbb T^3\),
+\begin{equation}\label{cc:uf:step:eq:hessian}
+ D_x^2\mathsf P^\natural\le C_{\rm step}\lambda^{-1/4}\Id .
+\end{equation}
+At \(x=0\), for \(t_0\le t\le T\),
+\begin{equation}\label{cc:uf:tower:eq:central-return}
+ \nabla V(t,0)=\nabla U(t,0)
+   +\widetilde\chi(t)\,\mathbf a(t,0)\otimes\kappa(t,0)+E_c(t),
+ \qquad
+ |E_c|\le\lambda^{-1/3} .
+\end{equation}
+\end{lemma}
+\begin{proof}
+Write the leading pressure as \(\mathsf p_1=-c_{\mathbf a}P_h\), with
+\(c_{\mathbf a}=2\widetilde\chi g(\kappa\cdot M\mathbf a)/|\kappa|^2\). Since
+$D_x^2\mathsf p_1^\natural
+=(\widetilde{\mathbf d}\,\widetilde{\mathbf d}\,\mathsf p_1)^\natural$ and
+\(\mathbf d_i\kappa_j=\mathbf d_j\kappa_i\), with \(a=X(t,\cdot)^{-1}(x)\)
+and \(s=k_*\cdot a\) on the right,
+\begin{equation}\label{cc:uf:exact:eq:primary-hess}
+ D_x^2\mathsf p_1^\natural=
+ -c_{\mathbf a}F_h'\kappa\otimes\kappa
+ +(\mathbf d\partial_s\mathsf p_1)\otimes\kappa+
+ \kappa\otimes(\mathbf d\partial_s\mathsf p_1)
+ +(\partial_s\mathsf p_1)\mathbf d\kappa+\mathbf d^2\mathsf p_1 .
+\end{equation}
+The product $\widetilde\chi g$ takes values in $[0,1]$ and vanishes off
+$[t_0,T]\times\supp g$, where $\kappa\cdot M\mathbf a>0$ by
+\eqref{cc:uf:tower:eq:near-origin}. Hence
+\(0\le c_{\mathbf a}|\kappa|^2\le2|\kappa||M||\mathbf a|\). With
+\(F_h'\ge-Ch\), the first tensor on the right is therefore at most
+\(Chc_{\mathbf a}|\kappa|^2\Id\). On $[t_0,T]\times\supp g$,
+\eqref{cc:uf:tower:eq:near-origin} gives
+$|\mathbf a|\le2\lambda^{-3/4}$, while $|\kappa|\le\mathsf D^2\lambda$
+and $|M|\le\mathsf D$ by \eqref{cc:uf:tower:eq:wave-vector} and
+\eqref{cc:uf:tower:eq:parent-bound}. So
+\(c_{\mathbf a}|\kappa|^2\le4\mathsf D^3\lambda^{1/4}\) and, since
+$h=\lambda^{-1/2}$, the first tensor is at most
+\(C\mathsf D^3\lambda^{-1/4}\Id\). By
+\eqref{cc:uf:trunc:eq:product}, \eqref{cc:uf:trunc:eq:deriv} and
+\eqref{cc:uf:hier:eq:coefficient-bound}, the sum of the remaining
+tensors is at most
+$C\mathsf D^C\lambda^{3/2}\|\mathsf p_1\|_{[2]}$ in supremum norm, and
+\(\lambda\|\mathsf p_1\|_{[2]}\le C\mathsf D^C\lambda^{-5/4}\)
+by \eqref{cc:uf:hier:eq:size}. So their sum is at most
+$C\mathsf D^C\lambda^{-3/4}$.
+
+For the higher oscillatory pressures, \eqref{cc:uf:hier:eq:Vbound}
+gives the least decay in $\lambda$ at $p=2$, where it bounds
+$\mathsf p_2$ by $C_{2,P}\mathsf D^C\lambda^{-1-23/12}$.
+Two Eulerian derivatives in \eqref{cc:uf:hier:eq:physical-infty}
+would cost $\lambda^3$, leaving $\lambda^{1/12}$. To bound the first
+derivative, use the transverse equation \eqref{cc:uf:hier:eq:pressure-from-trans}.
+For $2\le p\le P$ it gives
+\[
+ \nabla_x\mathsf p_p^\natural
+   =(\mathbf d\mathsf p_p+\kappa\partial_s\mathsf p_p)^\natural,
+ \qquad
+ \kappa\partial_s\mathsf p_p=P_\kappa(f_p+f_p^S-2MV_p).
+\]
+The label derivative costs a power of $\mathsf D$, and the phase term
+is bounded by the source and velocity in \eqref{cc:uf:hier:eq:Vbound}.
+The coefficient estimates therefore give
+\[
+ \Big\|\widetilde{\mathbf d}\sum_{p=2}^P\mathsf p_p\Big\|_{[1],\gamma}
+ \le C_{2,P}\mathsf D^C\lambda^{-23/12}.
+\]
+The oscillatory pressures are supported in $\supp g$ in Lagrangian coordinates.
+One further Eulerian derivative costs $\lambda^{3/2}$ up to a power
+of $\mathsf D$, so \eqref{cc:uf:hier:eq:physical-infty} gives
+\begin{equation}\label{cc:uf:exact:eq:higher-hess}
+ \Big\|D_x^2\sum_{p=2}^P\mathsf p_p^\natural\Big\|_\infty
+ \le C_{2,P}\mathsf D^C\lambda^{-5/12}.
+\end{equation}
+For the mean pressures, add the mean equations
+\eqref{cc:uf:hier:eq:mean} of the levels $2\le p\le P$. In Eulerian coordinates the
+sum is the linearized Euler equation \eqref{cc:uf:mean:physical} for
+$\bar W^\natural$ over $U$, with the pressure
+$\sum_p\bar q_p^\natural$ and the source $(\sum_p\bar f_p)^\natural$,
+and its divergence is
+\[
+ \Delta\sum_{p=2}^P\bar q_p^\natural
+ =\diver\Bigl(\sum_{p=2}^P\bar f_p\Bigr)^\natural
+  -2\tr\bigl(\nabla U\,\nabla\bar W^\natural\bigr).
+\]
+The operator $D^2\Delta^{-1}$ is bounded on $\Holder{0}$. By
+\eqref{cc:uf:hier:eq:physical} for phase-independent fields and
+\eqref{cc:uf:hier:eq:sum}, the source and $\bar W^\natural$ are at most
+$C_{2,P}\mathsf D^C\lambda^{-5/2}$ in $C_t\Holder{1}$, and
+$\|\nabla U\|_{C_t\Holder{0}}\le C\mathsf D\norm{\nabla U}_\infty
+\le C\mathsf D^2$ by \eqref{cc:uf:trunc:eq:lp} and
+\eqref{cc:uf:tower:eq:parent-bound}. Hence the Hessian of the
+sum of the mean pressures is at most
+$C_{2,P}\mathsf D^C\lambda^{-5/2}$ in supremum norm. Together with the
+bounds for the tensors of \eqref{cc:uf:exact:eq:primary-hess} and with
+\eqref{cc:uf:exact:eq:higher-hess}, this proves
+\eqref{cc:uf:step:eq:hessian}.
+
+To compute the velocity gradient at $x=0$, evaluate at $a=0$ and $s=0$,
+since the flow of $U$ fixes the origin. As
+\(g(0)=F_h'(0)=1\) and \(F_h(0)=0\), the chain rule
+\eqref{cc:uf:hier:eq:graph} gives
+\(D_xV_1^\natural(t,0)=\widetilde\chi(t)\mathbf a(t,0)\otimes\kappa(t,0)\).
+Hence
+\[
+ E_c(t)=D_x(W_{\rm osc}-V_1)^\natural(t,0)+D_x\bar W^\natural(t,0).
+\]
+The field \(W_{\rm osc}-V_1=\sum_{p=2}^PV_p+\sum_{p=2}^{P+1}C_p\) is supported in
+\(\supp g\). By \eqref{cc:uf:hier:eq:Vbound} and
+\eqref{cc:uf:hier:eq:Cbound}, its norm \(\|\cdot\|_{[1],\gamma}\) is at
+most \(C_{2,P}\mathsf D^C\lambda^{-23/12}\), the bound for $V_2$,
+and \(\|\bar W\|_{[1]}\le C_{2,P}\mathsf D^C\lambda^{-5/2}\) by
+\eqref{cc:uf:hier:eq:sum}. The bound \eqref{cc:uf:hier:eq:physical-infty}
+at \(m=1\) therefore gives
+\(|E_c|\le C_{2,P}\mathsf D^C\lambda^{-5/12}
+=C_{2,P}\mathsf D^C\lambda^{-1/12}\cdot\lambda^{-1/3}\). Since
+$b$ is at least the exponent $C$ of this bound and
+$\Gamma_P\ge C_{2,P}$, \eqref{cc:uf:step:eq:small} makes it at
+most $\lambda^{-1/3}$.
+This proves \eqref{cc:uf:tower:eq:central-return}.
+\end{proof}
+
+To allow for the difference introduced by frequency truncation, let $Y$
+be the flow of $V+v$ for a small divergence-free field $v$. A direct Gronwall
+estimate for $D_aY$ puts the large velocity gradient in an exponential.
+Write $Y(t,a)=X(t,\mathcal A_t(a))$ and let the label and phase evolve
+as independent variables. Incompressibility expresses the oscillatory
+phase velocity through a label divergence, giving a small velocity
+gradient in the scaled variables. We then differentiate the change of
+label on the graph $s=k_*\cdot a$ to recover $D\mathcal A_t$.
+
+\begin{lemma}\label{cc:uf:step:lem:flow-bounds}
+Let $v$ be a smooth divergence-free field on $[0,T]\times\mathbb T^3$
+with $\norm v_{C_tC^2}\le\lambda^{-5/2}$. The flow $Y$ of $V+v$ from
+time zero satisfies
+\begin{equation}\label{cc:uf:step:eq:deformation}
+ \sup|(D_aY)^{\pm1}|\le C_{\rm step}\lambda^{1/4}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The field $v\circ X$ is independent of the phase, and
+$\mathbf d\cdot(v\circ X)=(\diver v)\circ X=0$, so
+$\widetilde{\mathbf d}\cdot(W+v\circ X)=0$. By the chain rule and
+\eqref{cc:uf:hier:eq:coefficient-bound} for $D_aX$,
+$\|v\circ X\|_{[2]}\le C\mathsf D^C\norm v_{C_tC^2}$.
+Put $c=(D_aX)^{-1}(W+v\circ X)$ and write $c=c_{\rm osc}+\bar c$ for its
+oscillatory and phase-independent parts, with $c_{\rm osc}$ repeated over
+the lattice by $(a,s)\mapsto(a+n,s+k_*\cdot n)$,
+$n\in\mathbb Z^3$. On the graph $s=k_*\cdot a$, the field $c$ is then
+$(D_aX)^{-1}((W^\natural+v)\circ X)$. The Piola identity turns the
+solenoidality of $W+v\circ X$ into $(\nabla_a+k_*\partial_s)\cdot c=0$,
+and the zero-mean phase primitive of its oscillatory part gives
+$k_*\cdot c_{\rm osc}=-\partial_s^{-1}\diver_a c_{\rm osc}$. With
+\eqref{cc:uf:hier:eq:sum} and \eqref{cc:uf:hier:eq:coefficient-bound},
+the norms without weight therefore satisfy
+\[
+ \|c_{\rm osc}\|_{[2]}\le C_{2,P}\mathsf D^C\lambda^{-5/4},\qquad
+ \|\bar c\|_{[2]}\le C_{2,P}\mathsf D^C\lambda^{-5/2},\qquad
+ \|k_*\cdot c\|_{[1]}\le C_{2,P}\mathsf D^C\lambda^{-5/4};
+\]
+in the last bound the oscillatory part costs one label derivative and
+the mean part the factor $|k_*|\le\mathsf D\lambda$ of
+\eqref{cc:uf:tower:eq:wave-vector}.
+
+Let \(\mathscr L_t\), with first component \(a+\eta_a(t,a,s)\), be the
+flow from time zero of
+\begin{equation}\label{cc:uf:exact:eq:particle}
+ \dot a=c(t,a,s),\qquad \dot s=k_*\cdot c(t,a,s).
+\end{equation}
+In the coordinates $(a/\ell_*,s/h)$ this vector field is
+$(c/\ell_*,k_*\cdot c/h)$, and its gradient is at most
+$C(\ell_*^{-1}\|c\|_{[1]}+h^{-1}\|k_*\cdot c\|_{[1]})
+\le C_{2,P}\mathsf D^C\lambda^{-3/4}
+\le C_{2,P}\mathsf D^C\lambda^{-1/12}$. Since $b$ is at least the
+exponent $C$ of this bound, \eqref{cc:uf:step:eq:small} makes it at
+most $C_{2,P}/\Gamma_P$, a small absolute constant since $\Gamma_P$ is
+large.
+Since $t\le T\le1$, Gronwall's inequality then bounds the
+gradients of $\mathscr L_t$ and of $\mathscr L_t^{-1}$ in these
+coordinates by $2$. The scaled gradient of $c$ is at most
+$\|c\|_{[1]}$, so integrating $\dot\eta_a=c$ along the flow gives
+\[
+ \ell_*|\partial_a\eta_a|+h|\partial_s\eta_a|
+ \le C\|c\|_{[1]}\le C_{2,P}\mathsf D^C\lambda^{-5/4},
+\]
+and the displacement of $\mathscr L_t^{-1}$ satisfies the same bound.
+
+Differentiating $Y=X(t,\mathcal A)$ gives
+$\partial_t\mathcal A=((D_aX)^{-1}((W^\natural+v)\circ X))(t,\mathcal A)$.
+Since $s-k_*\cdot a$ is preserved by \eqref{cc:uf:exact:eq:particle},
+the graph $s=k_*\cdot a$ is invariant, so
+$\mathcal A_t(a)=a+\eta_a(t,a,k_*\cdot a)$, the first
+component of \(\mathscr L_t\) on this graph. The same formula with the
+displacement of \(\mathscr L_t^{-1}\) gives the inverse map.
+Thus $D\mathcal A_t-\Id=\partial_a\eta_a+\partial_s\eta_a\otimes k_*$,
+and with the corresponding identity for the inverse,
+\[
+ |D\mathcal A_t^{\pm1}-\Id|
+ \le\bigl(\ell_*^{-1}+|k_*|h^{-1}\bigr)C_{2,P}\mathsf D^C\lambda^{-5/4}
+ \le C_{2,P}\mathsf D^C\lambda^{1/4}.
+\]
+Then \(D_aY=(D_aX\circ\mathcal A)D\mathcal A\) and
+\((D_aY)^{-1}=(D\mathcal A)^{-1}((D_aX)^{-1}\circ\mathcal A)\), with
+the bound \eqref{cc:uf:tower:eq:parent-bound} for the deformation of
+the parent, give \eqref{cc:uf:step:eq:deformation}.
+\end{proof}
+
+\Needspace{11\baselineskip}
+\subsection{Frequency truncation}\label{cc:uf:trunc:sec:truncation}
+We truncate $V$ with the smooth frequency cutoff $S_\Lambda$ of
+Appendix~\ref{cc:app:cutoff}, as in the mollification step
+of~\cite[Section~2.4]{BDLSVOnsager}. The cutoff bounds all higher
+derivatives of the next parent in terms of $\Lambda$ and its supremum.
+We choose its pressure $p$ so that its residual is divergence free.
+The equation for the expansion pressure $\Pi$ contains $\diver R_V$
+by \eqref{cc:uf:step:eq:approximate}, so the bound for $D^2(p-\Pi)$
+includes both the residual of $V$ and the Fourier tail. The iteration
+uses the gradient bound on the new residual and the upper bound on
+$D^2(p-p_U)$ to propagate \eqref{cc:uf:tower:eq:parent-coercive}.
+
+\begin{proposition}\label{cc:uf:step:thm:step}
+Let $\Lambda\ge1$, and with the depth $P$ of the expansion put
+\begin{equation}\label{cc:uf:step:eq:truncation}
+ u=S_\Lambda V,\qquad v_\Lambda=u-V,\qquad
+ \varepsilon_\Lambda=\Lambda^{2-P}
+ \bigl(1+\norm V_{C_t\Holder{P}}\bigr)^2 .
+\end{equation}
+Let $p$ be the function of zero mean with
+$\Delta p=-\tr((\nabla u)^2)$, and let
+$R_u=u_t+u\cdot\nabla u+\nabla p$. Then $u$ is smooth, odd, divergence
+free and supported on frequencies at most $2\Lambda$, its residual $R_u$ is odd,
+divergence free and supported on frequencies at most $4\Lambda$, and
+\begin{equation}\label{cc:uf:step:eq:truncated}
+ \norm{v_\Lambda}_{C_t\Holder{2}}\le C_{2,P}\varepsilon_\Lambda,\qquad
+ \norm{R_u}_{C_t\Holder{1}}+\norm{D^2(p-\Pi)}_{C_t\Holder{0}}
+ \le C\norm{R_V}_{C_t\Holder{1}}+C_{2,P}\varepsilon_\Lambda .
+\end{equation}
+Moreover, on $[0,T]\times\mathbb T^3$,
+\begin{equation}\label{cc:uf:step:eq:pressure-error}
+ D^2(p-p_U)\le\bigl(C_{\rm step}\lambda^{-1/4}
+   +C\norm{R_V}_{C_t\Holder{1}}+C_{2,P}\varepsilon_\Lambda\bigr)\Id .
+\end{equation}
+\end{proposition}
+\begin{proof}
+By Lemma~\ref{cc:uf:trunc:lem:cutoff}, $u$ and $v_\Lambda$ are odd and
+divergence free and $u$ is supported on frequencies at most $2\Lambda$.
+Since $\diver(u\cdot\nabla u)=\tr((\nabla u)^2)$, the residual is
+$R_u=\partial_tu+\PP\diver(u\otimes u)$; it is odd, divergence free and
+supported on frequencies at most $4\Lambda$.
+Applying $S_\Lambda$ and then $\PP$ to \eqref{cc:uf:step:eq:approximate}
+gives
+$\partial_tu+\PP\diver S_\Lambda(V\otimes V)=\PP S_\Lambda R_V$.
+Subtracting this from the formula for $R_u$ gives
+\begin{equation}\label{cc:uf:trunc:eq:residual}
+ R_u=\PP\bigl[S_\Lambda R_V
+   +\diver\bigl(v_\Lambda\otimes u+V\otimes v_\Lambda
+                +(\Id-S_\Lambda)(V\otimes V)\bigr)\bigr].
+\end{equation}
+To bound $R_u$ in $\Holder{1}$ we need the three quadratic tensors in
+\eqref{cc:uf:trunc:eq:residual} in $\Holder{2}$. This accounts for
+the power $\Lambda^{2-P}$ and the square in $\varepsilon_\Lambda$.
+The tail bound \eqref{cc:uf:trunc:eq:tail} at the order $P$ gives
+$\norm{v_\Lambda}_{\Holder{s}}
+\le C_{2,P}\Lambda^{s-P}\norm V_{\Holder{P}}$ for
+$s\le2$, and in particular the first bound of
+\eqref{cc:uf:step:eq:truncated}. By Leibniz' rule and the algebra
+inequality for the norm of $\Holder{0}$, for every integer $m\ge0$,
+\begin{equation}\label{cc:holder:product-growth}
+ \norm{fg}_{\Holder{m}}\le C_m\norm f_{\Holder{m}}\norm g_{\Holder{m}}.
+\end{equation}
+Hence the three tensors on the right of
+\eqref{cc:uf:trunc:eq:residual} are at most
+$C_{2,P}\Lambda^{2-P}\norm V_{\Holder{P}}^2\le C_{2,P}\varepsilon_\Lambda$ in
+$\Holder{2}$. The periodic
+multipliers $\PP$ and $D^2\Delta^{-1}$ of order zero are bounded
+on $\Holder{0}$ and commute with derivatives, as does $S_\Lambda$; this
+bounds $R_u$ in $\Holder{1}$.
+For the pressure, the divergence of \eqref{cc:uf:step:eq:approximate} is
+$\Delta\Pi=\diver R_V-\tr((\nabla V)^2)$. Hence
+\[
+ \Delta(p-\Pi)
+ =-\tr(\nabla v_\Lambda\nabla V)-\tr(\nabla u\nabla v_\Lambda)
+  -\diver R_V,
+\]
+and $\norm{D^2(p-\Pi)}_{\Holder{0}}
+\le C\norm{v_\Lambda}_{\Holder{1}}(\norm V_{\Holder{1}}+\norm u_{\Holder{1}})
++C\norm{R_V}_{\Holder{1}}$. This proves \eqref{cc:uf:step:eq:truncated}.
+Since $p-p_U=(p-\Pi)+\mathsf P^\natural$,
+Lemma~\ref{cc:uf:step:lem:pressure-center} then gives
+\eqref{cc:uf:step:eq:pressure-error}.
+\end{proof}

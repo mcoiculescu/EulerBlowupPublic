@@ -1,0 +1,113 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,mathrsfs,microtype,enumitem,graphicx,needspace}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,fit}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Holder}[1]{C^{#1,1/2}}
+\newcommand{\T}{\mathbb T^3}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\curl}{\operatorname{curl}}
+\newcommand{\diver}{\operatorname{div}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\av}[1]{\langle #1\rangle_s}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\eps}{\varepsilon}
+\title[Singularity Formation for the 3-D Euler Equations]{Finite-Time Singularity Formation\\for the 3-D Euler Equations}
+\hypersetup{pdftitle={Finite-Time Singularity Formation for the 3-D Euler Equations}}
+\author{Levent Alp\"oge}
+\author{Tristan Buckmaster}
+\author{Matei P. Coiculescu}
+\date{}
+\begin{document}
+\raggedbottom
+\begin{abstract}
+We construct smooth periodic initial data for the three-dimensional
+incompressible Euler equations whose solution blows up in finite time.
+The velocity remains bounded, while the vorticity magnitude at the origin
+tends to infinity. Away from the origin, the velocity and its time derivative
+have smooth spatial limits at the singular time. The construction uses
+localized Craik--Criminale waves as building blocks of a multi-scale construction.
+\end{abstract}
+\maketitle
+\setcounter{tocdepth}{1}
+\tableofcontents
+\input{sections/01_problem}
+\input{sections/01b_parameters}
+\input{sections/01c_provenance}
+\input{sections/01d_ai_statement}
+\section{The wave and its amplification}\label{cc:sec:waves}
+\input{sections/02_affine}
+\input{sections/03_amplification}
+\input{sections/04_localized_wave}
+\section{Selecting initial data by the endpoint problem}\label{cc:sec:endpoint}
+\input{sections/06b_mean_inverse}
+\section{From a localized wave to an approximate solution}\label{cc:sec:exact}
+We correct the localized wave of Section~\ref{cc:sec:localized} to obtain
+the parent velocity for the next wave. The corrections must preserve the
+leading wave's rank-one contribution to the velocity gradient at the
+origin, where the next wave is amplified. The new parent must also have
+controlled flow deformation and satisfy the pressure and residual bound
+\eqref{cc:uf:tower:eq:parent-coercive} for the next endpoint problem.
+
+At each level of the expansion we first remove the phase average of the
+error using Theorem~\ref{cc:uf:mean:inverse}. The first mean correction
+also cancels the residual of the parent. Transport of the leading wave
+by the new mean then enters the equation for the oscillatory correction.
+The residual of the new parent has three sources. The depth controls the
+remainder of the expansion. The wave is small compared with its peak
+while it is switched on, so its gain controls the error from the time
+cutoff. The final Fourier cutoff contributes the error estimated in
+\eqref{cc:uf:step:eq:truncated}. Section~\ref{cc:uf:sec:tower} chooses
+the parameters to make all three errors small on the scale of the next
+wave.
+
+\input{sections/08a_parent_step}
+\input{sections/05b_parent_coefficients}
+\input{sections/06d_mean_estimates}
+\input{sections/06c_finite_hierarchy}
+\input{sections/08_exact_wave}
+\section{The initial wave and the inductive step}\label{cc:sec:iteration}
+The bounds \eqref{cc:uf:tower:eq:wave-origin} in
+Section~\ref{cc:sec:exact} require a seed whose growth controls every
+transverse amplitude at the origin and whose first coupling stays positive.
+The first wave supplies the shear
+for the second at time zero. Each later wave grows in the shear of its
+predecessor. Its gain allows us to switch it on while its amplitude is
+still small compared with its maximum.
+
+\input{sections/03a_exact_base}
+\input{sections/08b_induction}
+\input{sections/09_limit}
+\appendix
+\input{sections/appA_mean_regularity}
+\input{sections/appB_cutoff}
+\input{sections/appC_parameters}
+\input{sections/appD_finite_norms}
+
+\section*{Acknowledgments}
+T.~B. acknowledges support from the National Science Foundation under
+grants DMS-2243205 and DMS-2244879 and from the Simons Foundation through
+its Wave Turbulence collaboration. He thanks Diego C\'ordoba and Luis
+Mart\'inez-Zoroa for many discussions of their work, which laid the
+foundation for this construction.
+M.~P.~C.\ acknowledges support at New York University through a Simons
+Society of Fellows Junior Fellowship. Simons Foundation International
+funds the fellowship, and the Simons Foundation administers it.
+
+We thank Anthropic for supporting the collaboration from which this paper
+grew.
+
+\input{references}
+\end{document}

@@ -1,0 +1,18 @@
+Single-point vorticity blow-up with bounded velocity for the forced three-dimensional incompressible Euler equations — Lean 4 formalisation
+
+Copyright 2026 Anthropic, PBC
+
+This work is distributed under the Apache License, Version 2.0 (see LICENSE).
+
+vendor/ChainPlanar/ (with vendor/ChainPlanar/vendor/cm24-r2/) contains modules of a
+planar and axisymmetric fluid-mechanics Lean library developed by the same project on
+Mathlib, included with its own LICENSE and NOTICE. CCPoint/Lib/Vendor/PlanarODE/ and
+CCPoint/Lib/Vendor/ParamODE/ contain nine ordinary-differential-equation modules taken
+verbatim (import lines re-pointed) from two sibling Lean formalisations by the same
+project, keeping their namespace AffineCore. All vendored code is by the same copyright
+holder under the same licence.
+
+Dependencies not contained here: Lean 4 (https://github.com/leanprover/lean4) and
+mathlib4 (Apache 2.0), with mathlib4's standard dependency set fetched at the revisions
+in lake-manifest.json. batteries, aesop, Qq, ProofWidgets4, import-graph,
+LeanSearchClient and plausible are Apache 2.0; Cli (leanprover/lean4-cli) is MIT.

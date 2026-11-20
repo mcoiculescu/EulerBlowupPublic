@@ -1,0 +1,175 @@
+\section{Localized waves over a smooth parent}\label{cc:sec:localized}
+We transport the phase and envelope of a Craik--Criminale wave by the
+parent flow. The amplitude evolves along each particle path as in the
+affine model. Its variation from particle to particle, together with the
+spatial cutoff, requires a correction to keep the velocity divergence free.
+
+\subsection{Lagrangian coordinates and the leading wave}\label{cc:sec:material}
+Let $I=[0,T]$, $T>0$, and let $U$ be a smooth odd divergence-free
+velocity on $I\times\T$. We need only its flow $X$ and its velocity
+gradient. Write $a$ for a particle's position at time zero and
+$x=X(t,a)$ for its position at time $t$. Set
+\[
+ X(0,a)=a,\qquad M=(D_xU)\circ X,\qquad
+ \mathbf d=(D_aX)^{-T}\nabla_a .
+\]
+Time derivatives in these coordinates hold $a$ fixed.
+On the lift to $\R^3$, $X(t,a+n)=X(t,a)+n$ for $n\in\mathbb Z^3$.
+
+Fix the time-zero wave vector $k_*\in\R^3\setminus\{0\}$ and give the
+particle with label $a$ the phase $\phi(a)=k_*\cdot a$.
+The transported phase $\phi\circ X(t,\cdot)^{-1}$
+has Eulerian gradient $\kappa=\mathbf d\phi=(D_aX)^{-T}k_*$ at $X(t,a)$.
+For a flow linear in $a$ the transported phase is $\kappa\cdot x$, as in
+Lemma~\ref{cc:lem:wave}.
+A spatial derivative of a wave can fall on its amplitude or on its
+oscillatory factor. To distinguish the two, write a profile as $f(t,a,s)$
+with an independent phase $s\in\R/\mathbb Z$, measured in cycles, and set
+\[
+ f^\natural(t,X(t,a))=f(t,a,\phi(a)),\qquad
+ \widetilde{\mathbf d}=\mathbf d+\kappa\partial_s .
+\]
+Here $\mathbf d$ differentiates at fixed $s$, and $\kappa\partial_s$
+differentiates through the phase. Along the parent flow the phase is
+constant, so the two chain rules are
+\begin{equation}\label{cc:uf:hier:eq:graph}
+ \nabla_x f^\natural=(\widetilde{\mathbf d}f)^\natural,\qquad
+ (\partial_t+U\cdot\nabla_x)f^\natural=(f_t)^\natural.
+\end{equation}
+The phase modulo one is periodic in $a$ exactly when $k_*\in\mathbb Z^3$.
+To allow arbitrary $k_*$, we evaluate the oscillatory profiles on the
+lifted label cell $[-1/2,1/2]^3$ and extend periodically. They vanish near
+the cell boundary, so the extension is smooth. Phase-independent profiles
+are already periodic in $a$.
+
+Along each particle path the local velocity gradient $M$ plays the role of
+the matrix $D$ in \eqref{cc:eq:wave-ode}. Indeed, differentiating
+$\kappa=(D_aX)^{-T}k_*$ and using $\partial_tD_aX=MD_aX$ gives
+$\kappa_t=-M^T\kappa$. Choose a smooth envelope $g(a)$ supported in the
+interior of the label cell and an \emph{activation time} $t_0\in[0,T)$.
+On a neighborhood of $\supp g$ the amplitude, called the
+\emph{seed}, solves the other Craik--Criminale equation,
+\begin{equation}\label{cc:uf:step:eq:seed}
+ \mathbf a_t=-M\mathbf a+2\kappa\frac{\kappa\cdot M\mathbf a}{|\kappa|^2},
+ \qquad \mathbf a(t_0,a)=\mathbf a_*(a),\qquad
+ \kappa(t_0,a)\cdot\mathbf a_*(a)=0 .
+\end{equation}
+The initial amplitude is smooth and may depend on $a$. For the first wave
+it is constant and $t_0=0$. By \eqref{cc:eq:wave-ode}, the seed remains
+perpendicular to $\kappa$ for $t_0\le t\le T$.
+
+Let $F_0$ be a smooth odd $1$-periodic profile and $P_0$ its zero-mean
+periodic primitive. The \emph{leading oscillation} and its pressure are
+\begin{equation}\label{cc:uf:hier:eq:primary}
+ A_1=g\mathbf a F_0,\qquad \mathsf p[A_1]=-p_{\rm w}gP_0,\qquad
+ p_{\rm w}=2\frac{\kappa\cdot M\mathbf a}{|\kappa|^2}.
+\end{equation}
+Along the particle with label $a$ the leading oscillation is
+$A_1^\natural(t,X(t,a))=g(a)\mathbf a(t,a)F_0(\phi(a))$.
+The pressure balances the acceleration along $\kappa$. Multiplying
+\eqref{cc:uf:step:eq:seed} by $gF_0$ gives
+$A_{1,t}+MA_1=p_{\rm w}\kappa gF_0$, and $P_0'=F_0$ gives
+\begin{equation}\label{cc:uf:hier:eq:leading}
+ A_{1,t}+MA_1+\kappa\partial_s\mathsf p[A_1]=0 .
+\end{equation}
+
+The seed is transverse, so the phase derivative contributes zero to
+$\nabla_x\cdot A_1^\natural$. Differentiating $g\mathbf a$ still leaves
+$(\mathbf d\cdot A_1)^\natural$. To cancel this divergence while keeping
+the wave localized, we look for a potential whose curl has fast part $A_1$.
+By \eqref{cc:uf:hier:eq:graph}, the Eulerian curl of $Q^\natural$ is
+$(\widetilde{\mathbf d}\times Q)^\natural$. We need the same correction for each later
+oscillation. For a profile $V$ with $\kappa\cdot V=0$ and phase mean
+$\av V=0$, the fast part of the curl is $\kappa\times\partial_s Q$.
+To make it equal to $V$, take
+\begin{equation}\label{cc:uf:hier:eq:completion}
+ Q[V]=-\partial_s^{-1}\frac{\kappa\times V}{|\kappa|^2},
+ \qquad C[V]=\mathbf d\times Q[V],
+\end{equation}
+where $\partial_s^{-1}$ is the zero-mean periodic primitive in $s$.
+Since $\kappa\cdot V=0$, the vector triple product gives
+$\kappa\times\partial_s Q[V]=V$. The other part of the curl is $C[V]$,
+the \emph{divergence correction}. Its component along $\kappa$ determines
+how it differentiates the phase of another oscillation. The identities
+for the completed velocity and for this component are
+\begin{equation}\label{cc:uf:hier:eq:slaving}
+ V+C[V]=\widetilde{\mathbf d}\times Q[V],\qquad
+ \kappa\cdot C[V]=-\partial_s^{-1}(\mathbf d\cdot V).
+\end{equation}
+For the second identity, apply $\widetilde{\mathbf d}\cdot$ to the first.
+The $\mathbf d_i$ commute as pulled-back coordinate derivatives. Since
+$\kappa_j=\mathbf d_j\phi$ and $\kappa$ is independent of $s$, the
+$\widetilde{\mathbf d}_i$ commute as well. Thus both
+$\widetilde{\mathbf d}\cdot(\widetilde{\mathbf d}\times Q[V])$ and
+$\mathbf d\cdot C[V]$ vanish. Transversality leaves
+$\partial_s(\kappa\cdot C[V])=-\mathbf d\cdot V$. Taking the zero-mean
+primitive gives \eqref{cc:uf:hier:eq:slaving}, since $Q[V]$ and $C[V]$
+have zero phase mean.
+
+For the leading oscillation the potential is
+\[
+ Q[A_1]=gP_0\,\frac{\mathbf a\times\kappa}{|\kappa|^2}.
+\]
+The potential supplies a factor $|\kappa|^{-1}$, and its curl at fixed
+phase costs one label derivative, as quantified in \eqref{cc:uf:hier:eq:completion-bound}.
+Both $Q[V]$ and $C[V]$ vanish outside the label support of $V$ at each
+time, since the primitive acts at fixed label and the curl is local in $a$.
+Thus the corrected velocity $(A_1+C[A_1])^\natural$ is a curl supported
+in $X(t,\supp g)$. The leading pressure $\mathsf p[A_1]^\natural$ also
+vanishes outside this set.
+In the construction $g$ is even and equals one near zero,
+and $\mathbf a_*$ is even in $a$. The odd flow gives even $M$ and
+$\kappa$, so the seed is even in $a$. Since $F_0$ is odd and $P_0$ is
+even, the completed Eulerian velocity is odd.
+
+A later wave must switch on at its activation time. Take a smooth time
+cutoff $0\le\widetilde\chi\le1$ on $[0,T]$ vanishing for $t<t_0$,
+with $\widetilde\chi\equiv1$ for the first wave. Set
+\begin{equation}\label{cc:uf:hier:eq:switched}
+ V_1=\widetilde\chi A_1,\qquad
+ \mathsf p_1=\widetilde\chi\mathsf p[A_1],\qquad
+ C_2=\widetilde\chi C[A_1]=C[V_1].
+\end{equation}
+For $t_0>0$ these products extend smoothly by zero across $t_0$
+because the cutoff is flat there. Multiplication by a time cutoff preserves
+the spatial divergence cancellation. Its derivative along the parent
+flow contributes the term
+\begin{equation}\label{cc:uf:hier:eq:switch}
+ R_{\widetilde\chi}=\widetilde\chi'\,(A_1+C[A_1])
+\end{equation}
+to the residual, so the cutoff error depends on the size of the wave
+while it is being switched on.
+
+\subsection{The profile}\label{cc:sec:profile}
+We choose $F_0=F_h$ to prescribe the central velocity gradient and
+control the wave pressure. Since $g(0)=1$ and $F_h(0)=0$, taking
+$F_h'(0)=1$ gives the leading oscillation $A_1^\natural$ the gradient
+$\mathbf a\otimes\kappa$ at the origin. In the affine model the wave
+pressure has Hessian $-p_{\rm w}F_h'(k\cdot x)k\otimes k$. When $p_{\rm w}>0$,
+the bound $F_h'\ge-Ch$ controls its largest eigenvalue, as in
+\eqref{cc:intro:profile-curvature}.
+
+\begin{lemma}\label{cc:uf:exact:lem:profile}
+There are odd smooth \(1\)-periodic functions
+\(F_h\), \(0<h\le1\), with zero-mean primitives \(P_h\), such that
+\[
+ F_h'(0)=1,\qquad -Ch\le F_h'\le1,\qquad
+ \norm{F_h}_\infty\le Ch,\qquad
+ \norm{\partial_s^jF_h}_\infty\le C_jh^{1-j}\quad(j\ge2).
+\]
+\end{lemma}
+\begin{proof}
+Fix an even $\psi\in C_c^\infty((-1/4,1/4))$ with $0\le\psi\le1$ and
+$\psi(0)=1$. The bump $\psi(s/h)$ has integral
+$c_h=h\int_{\R}\psi<h/2$ over one period. Subtract its mean to obtain a
+periodic primitive, and normalize the slope at zero by setting
+\[
+ F_h'(s)=\frac{\psi(s/h)-c_h}{1-c_h}\quad(|s|\le1/2),\qquad F_h(0)=0.
+\]
+The derivative is even with mean zero, so $F_h$ is odd and periodic
+and has a zero-mean periodic primitive $P_h$.
+Since $c_h<1/2$, the slope equals one at zero and lies between $-2c_h$
+and one. Integrating the lower bound from $0$ to $s$ and from $s$ to $1$,
+using $F_h(0)=F_h(1)=0$, gives $\norm{F_h}_\infty\le 2c_h$.
+Differentiating $\psi(s/h)$ another $j-1$ times gives the bound $C_jh^{1-j}$.
+\end{proof}

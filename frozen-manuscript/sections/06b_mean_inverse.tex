@@ -1,0 +1,201 @@
+For a prescribed force $f$ in the linearized Euler equation
+\eqref{cc:intro:linearized-momentum}, we choose the initial value $b(0)$
+of the phase-independent correction to preserve each particle's final
+position to first order. The first-order displacement $\xi$ induced by
+$b$ vanishes initially because the starting positions are fixed.
+We impose $\xi(T)=0$ to select $b(0)$.
+
+Fix $0<T\le1$ and $I=[0,T]$. Let the parent $u$ be a smooth
+divergence-free field on $I\times\mathbb T^3$, not assumed to solve any
+equation, and let $X(t,a)$, $X(0,a)=a$, be its volume-preserving flow. Set
+\begin{equation}\label{cc:uf:mean:data}
+ M=(\nabla u)\circ X,\quad
+ H^\#=-(M_t+M^2),\quad
+ K=(D_aX)^TD_aX,\quad \Omega=(D_aX)^T(M^T-M)D_aX.
+\end{equation}
+Time derivatives keep $a$ fixed. Choose
+$D_-\ge\max\{1,\sup_{I,a}|(D_aX)^{-1}|\}$.
+The flow equation gives
+\begin{equation}\label{cc:uf:mean:flow-identities}
+ \partial_t D_aX=MD_aX,\qquad
+ K_t-\Omega=2(D_aX)^T\partial_t D_aX.
+\end{equation}
+Let $p$ be a smooth function and write $R=u_t+u\cdot\nabla u+\nabla p$.
+The gradient of this identity is
+$(\partial_t+u\cdot\nabla)\nabla u+(\nabla u)^2+D^2p=\nabla R$, with
+$(\nabla u)_{ij}=\partial_ju_i$. Along trajectories the material
+derivative becomes $\partial_t$, so
+\begin{equation}\label{cc:uf:mean:eq:Hsharp}
+ H^\#=(D^2p-\nabla R)\circ X.
+\end{equation}
+For a solution of the Euler equations, $H^\#$ is the pressure Hessian
+along the flow: it is what prevents the velocity gradient from evolving
+by the Riccati equation $M_t=-M^2$, and it is symmetric; for a linear
+flow $Dx$ this is the condition that $D'+D^2$ be symmetric in
+Subsection~\ref{cc:sec:affine}. In general $H^\#$ need not be symmetric.
+The matrix $M^T-M$ is the vorticity of $u$ along the flow:
+$(M^T-M)y=-(\curl u\circ X)\times y$. Thus $\Omega$ is the vorticity
+pulled back to labels. When $H^\#\le\Id$ as quadratic forms, the
+displacement energy is coercive and the inverse in Appendix~\ref{cc:app:mean}
+gives a unique correction with a H\"older bound.
+
+\subsection{Displacement and the two end conditions}
+
+Here $H^1_0(I;\R^3)$ is the space of $z\in H^1(I;\R^3)$ with
+$z(0)=z(T)=0$, the closure of $C^\infty_c((0,T);\R^3)$ in $H^1$. Fix a
+label $a$, let $z\in H^1_0(I;\R^3)$, and put $\xi=D_aX(\cdot,a)z$. Since
+$\partial_t D_aX=MD_aX$,
+\begin{equation}\label{cc:uf:mean:xi-t}
+ \xi_t=(\partial_t D_aX)z+D_aX z_t=M\xi+D_aX z_t,\qquad
+ z_t=(D_aX)^{-1}(\xi_t-M\xi).
+\end{equation}
+
+By the first variation formula \eqref{cc:intro:first-variation}, the
+displacement induced by $b$ satisfies $\xi_t=M\xi+b\circ X$.
+Thus \eqref{cc:uf:mean:xi-t} identifies $D_aX z_t=b\circ X$.
+Since $D_aX$ is invertible, the prescribed final displacement
+$\xi(T)=0$ is equivalent to $z(T)=0$.
+
+Cauchy--Schwarz in $z(t)=-\int_t^T z_t(s)\dd s$ gives
+\begin{equation}\label{cc:uf:mean:poincare}
+ |z(t)|^2\le(T-t)\int_I|z_t|^2\dd s,\qquad
+ \int_I|z|^2\dd t\le\frac{T^2}{2}\int_I|z_t|^2\dd t.
+\end{equation}
+Since $D_aX$ is smooth, $\xi\in H^1_0(I;\R^3)$ as well, so
+\eqref{cc:uf:mean:poincare} also holds for $\xi$; in particular
+$\|\xi\|_{L^2(I)}\le\|\xi_t\|_{L^2(I)}$, since $T\le1$. By
+\eqref{cc:uf:mean:xi-t} and $|(D_aX)^{-1}|\le D_-$,
+\[
+ \|z_t\|_{L^2(I)}
+ \le D_-\bigl(\|\xi_t\|_{L^2(I)}+\|M\|_\infty\|\xi\|_{L^2(I)}\bigr)
+ \le D_-(1+\|M\|_\infty)\|\xi_t\|_{L^2(I)}.
+\]
+Squaring gives
+\begin{equation}\label{cc:uf:mean:equivalence}
+ \int_I|z_t|^2\dd t\le D_-^2(1+\|M\|_\infty)^2\int_I|\xi_t|^2\dd t.
+\end{equation}
+
+\subsection{Coercivity}
+
+The inverse in Appendix~\ref{cc:app:mean} requires the label form
+$\int_I(Kz_t\cdot z_t+\Omega z_t\cdot z)\dd t$ to control
+$\int_I|z_t|^2\dd t$. In the displacement variable $\xi$, the integrand
+contains $H^\#$ and a total derivative that integrates to zero because
+$\xi$ vanishes at both ends. We can then use the upper bound on $H^\#$ and
+\eqref{cc:uf:mean:equivalence} to obtain the required estimate.
+
+Substitute $D_aX z_t=\xi_t-M\xi$ and $D_aX z=\xi$ in the two terms. First,
+$Kz_t\cdot z_t=|D_aX z_t|^2=|\xi_t|^2-2\xi_t\cdot M\xi+|M\xi|^2$. Second,
+$\Omega z_t\cdot z=(M^T-M)(\xi_t-M\xi)\cdot\xi
+=\xi_t\cdot M\xi-\xi_t\cdot M^T\xi-|M\xi|^2+M^2\xi\cdot\xi$. Adding,
+and using
+$\partial_t(\xi\cdot M\xi)=\xi_t\cdot M\xi+\xi_t\cdot M^T\xi+M_t\xi\cdot\xi$
+and $M_t+M^2=-H^\#$, we obtain
+\[
+ Kz_t\cdot z_t+\Omega z_t\cdot z
+ =|\xi_t|^2-H^\#\xi\cdot\xi-\partial_t(\xi\cdot M\xi).
+\]
+Since $\xi$ vanishes at both ends, integration and density give
+\begin{equation}\label{cc:uf:mean:jacobi-id}
+ \int_I(Kz_t\cdot z_t+\Omega z_t\cdot z)\dd t
+ =\int_I(|\xi_t|^2-H^\#\xi\cdot\xi)\dd t.
+\end{equation}
+
+\begin{lemma}\label{cc:uf:mean:hardy}
+Assume $H^\#\le\Id$ on $I\times\mathbb T^3$ as quadratic forms. Then
+for every $a\in\mathbb T^3$, $z\in H^1_0(I;\R^3)$ and
+$\xi=D_aX(\cdot,a)z$, one has
+$\int_I H^\#\xi\cdot\xi\dd t\le\frac12\int_I|\xi_t|^2\dd t$. Hence
+\begin{equation}\label{cc:uf:mean:coercive}
+ \int_I(Kz_t\cdot z_t+\Omega z_t\cdot z)\dd t
+ \ge\frac12\int_I|\xi_t|^2\dd t.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The assumption $H^\#\le\Id$, the second inequality of
+\eqref{cc:uf:mean:poincare} for $\xi$ and $T\le1$ give
+\[
+ \int_I H^\#\xi\cdot\xi\dd t
+ \le\int_I|\xi|^2\dd t
+ \le\frac{T^2}2\int_I|\xi_t|^2\dd t
+ \le\frac12\int_I|\xi_t|^2\dd t.
+\]
+Equation~\eqref{cc:uf:mean:jacobi-id} gives
+\eqref{cc:uf:mean:coercive}.
+\end{proof}
+
+\subsection{The inverse and its pressure}\label{cc:uf:sec:mean}
+
+Given a source $L(t,a)$, we solve the system
+\begin{equation}\label{cc:uf:mean:integrated}
+ K(t)v(t)-\int_0^t(\Omega v)(s)\dd s+L(t)=c+\nabla_a\phi,
+ \qquad v=z_t,\quad z(0)=z(T)=0,\quad\diver_a z=0,
+\end{equation}
+for the displacement $z$, a time-independent divergence-free field $c$
+and a label pressure gradient $\nabla_a\phi$. For the force sources of
+Theorem~\ref{cc:uf:mean:inverse}, \eqref{cc:uf:mean:integrated} is the
+linearized momentum equation \eqref{cc:uf:mean:strong} integrated once
+in time. For these sources $L(0)=0$. Since $K(0)=\Id$, the equation
+at time zero reads $v(0)=c+\nabla_a\phi(0)$. Projecting
+onto divergence-free fields gives $c=v(0)$. Since $b\circ X=D_aXv$
+and $X(0,a)=a$, the constant $c$ is the initial correction $b(0)$.
+
+\begin{theorem}\label{cc:uf:mean:inverse}
+Assume $H^\#\le\Id$ on $I\times\mathbb T^3$ as quadratic forms. For
+every $L\in C(I;\Holder{0})$ the system
+\eqref{cc:uf:mean:integrated} has a unique solution with
+$z\in C^1(I;\Holder{0})$, $c\in\Holder{0}$ divergence free and
+$\nabla_a\phi\in C(I;\Holder{0})$. There are absolute $C,p$ such that, with
+\begin{equation}\label{cc:uf:mean:base-constant}
+ A=C\bigl(D_-+\|M\|_\infty+\norm K_{C_t\Holder{1}}
+   +\norm\Omega_{C_t\Holder{1}}\bigr)^p,
+\end{equation}
+one has $\norm v_{C_t\Holder{0}}\le A\norm L_{C_t\Holder{0}}$.
+
+Let $f$ be a smooth field on $I\times\mathbb T^3$, and let
+$L=-\int_0^tg(s)\dd s$ with $g=(D_aX)^T(f\circ X)$. Then $z$ is smooth.
+Put $B=D_aX v$ and $\mathcal D=2(D_aX)^T\partial_t D_aX$.
+There is a smooth zero-mean label pressure $\mathsf q$ such that
+\begin{equation}\label{cc:uf:mean:strong}
+ Kv_t+\nabla_a\mathsf q=g-\mathcal Dv.
+\end{equation}
+Thus $b=B\circ X^{-1}$ and $q=\mathsf q\circ X^{-1}$ are smooth and solve
+\begin{equation}\label{cc:uf:mean:physical}
+ \diver b=0,\qquad
+ b_t+u\cdot\nabla b+b\cdot\nabla u+\nabla q=f.
+\end{equation}
+The endpoint conditions select the initial velocity $b(0)$.
+
+The number $A$ also bounds, uniformly in $t$, the operator norm on
+$\Holder{0}$ of the fixed-time inverse $(\PP K(t))^{-1}\PP$, where
+$(\PP K(t))^{-1}$ inverts the map $v\mapsto\PP(K(t)v)$ on the
+divergence-free fields of $\Holder{0}$.
+\end{theorem}
+\begin{proof}
+Rescale time by $\tau=t/T$ and put $Z(\tau)=z(t)/T$, so
+$Z_\tau=v$. Theorem~\ref{cc:holder:linear} applies with coefficients
+$K,T\Omega$, ellipticity $D_-^{-2}$ and source $L$.
+Its coercivity constant is $1/\bigl(2D_-^2(1+\|M\|_\infty)^2\bigr)$,
+by Lemma~\ref{cc:uf:mean:hardy} and \eqref{cc:uf:mean:equivalence}.
+It gives the unique solution. Since $D_-\ge1$ and $T\le1$, the quantity
+$Q$ of Appendix~\ref{cc:app:mean} is at most an absolute constant times
+a fixed power of the sum in parentheses in
+\eqref{cc:uf:mean:base-constant}, so the estimate
+\eqref{cc:holder:eq:base-linear} gives the asserted bound.
+For a smooth $f$ the source $L$ is smooth, and so is the solution, by
+the last assertion of Theorem~\ref{cc:holder:linear}.
+Differentiating \eqref{cc:uf:mean:integrated}, using
+$K_t-\Omega=\mathcal D$ from \eqref{cc:uf:mean:flow-identities}, and
+setting $\mathsf q=-\phi_t$ gives
+\eqref{cc:uf:mean:strong}. Then
+$B_t+MB=D_aX v_t+2(\partial_t D_aX)v$ and the Piola identity
+$\diver_x(B\circ X^{-1})=(\diver_a v)\circ X^{-1}$ give
+\eqref{cc:uf:mean:physical}.
+Finally, by Lemma~\ref{cc:holder:freezing} with $H=\R^3$, $\mathcal R=\PP$ and
+$B=K(t)$, whose coercivity is $D_-^{-2}$, the fixed-time inverse is
+bounded by a fixed power of $2+D_-^2+\|K(t)\|_{C^1}$. Since
+$D_-\ge1$, this number is also at most an absolute constant times a
+fixed power of the sum in parentheses in
+\eqref{cc:uf:mean:base-constant}, so $A$ bounds the fixed-time inverse
+once $C$ and $p$ are enlarged.
+\end{proof}

@@ -1,0 +1,128 @@
+\subsection{Velocity, central vorticity and the maximal time}
+
+\begin{proposition}\label{cc:uf:terminal:velocity-curl}
+The solution has bounded velocity on $[0,T_\infty)$, and
+$|\curl u(t,0)|\longrightarrow\infty$ as $t\uparrow T_\infty$.
+\end{proposition}
+\begin{proof}
+The continuous field $w$ on $[0,T_\infty]\times\mathbb T^3$ is bounded,
+and Proposition~\ref{cc:uf:terminal:agreement} identifies it with $u$
+before $T_\infty$.
+
+For the vorticity, fix a large $j$ and consider the whole interval
+$[t_j,t_{j+1}]$. The preceding wave is fully active there. Applying
+\textup{(T4)} of Theorem~\ref{cc:uf:tower:thm:finite} at steps $j-1$
+and $j$ gives, at the origin,
+\[
+ \nabla U_j=\nabla U_{j-2}
+   +\mathbf a_{j-1}\otimes\kappa_{j-1}
+   +\widetilde\chi_j\,\mathbf a_j\otimes\kappa_j+E_{c,j-1}+E_{c,j}.
+\]
+A gradient $\mathbf a\otimes\kappa$ contributes $\kappa\times\mathbf a$
+to vorticity. Projecting $\curl U_j$ along $\kappa_j$ therefore removes
+the leading curl of wave $j$. The preceding wave contributes
+$\kappa_{j-1}\times\mathbf a_{j-1}=\sigma_{j-1}E_3$ in its own frame.
+By \eqref{cc:eq:scaled-pair} and Lemma~\ref{cc:uf:exact:lem:additive},
+the $E_3$ component of $\kappa_j/\lambda_j$ is at least $1/2$ and its
+length is at most $C(1+\tau^2)$ at normalized time $\tau$.
+The normalized length of $[t_j,S_j]$ is at most $CL_{j+1}^4$ by item 2
+of the proof of Theorem~\ref{cc:uf:tower:thm:finite}. Thus
+\begin{equation}\label{cc:uf:terminal:eq:projection}
+ \frac{\kappa_j}{|\kappa_j|}\cdot(\kappa_{j-1}\times\mathbf a_{j-1})
+    \ge c\sigma_{j-1}L_{j+1}^{-8},\qquad
+ \frac{\kappa_j}{|\kappa_j|}\cdot(\kappa_j\times\mathbf a_j)=0.
+\end{equation}
+
+The preceding wave retains its strength throughout $[t_j,t_{j+1}]$.
+Put $\mu=\lambda_{j-1}$. At $t_j$, \eqref{cc:uf:tower:eq:late-values}
+gives $\sigma_{j-1}\ge c\mu^{1/4}$. By \eqref{cc:eq:frame},
+$|\partial_t\log\sigma_{j-1}|\le|\nabla U_{j-2}(t,0)|
+\le\lambda_{j-2}^9\le\mu^{1/32}$, using
+\eqref{cc:uf:tower:eq:derived-low} and item 2 above. Since the interval
+has length at most $\tau_j\le\mu^{-1/16}$ by \textup{(T4)} and
+\eqref{cc:uf:tower:eq:increment-tail}, $\log\sigma_{j-1}$ changes by
+at most one. Hence $\sigma_{j-1}\ge c\mu^{1/4}$ on the whole interval.
+Since $L_{j+1}^8\le(\log\mu)^{16}\le\mu^{1/8}$ for large $j$ by
+\eqref{cc:uf:tower:eq:uniform}, the projected curl of the preceding wave
+in \eqref{cc:uf:terminal:eq:projection} is at least $c\mu^{1/8}$.
+The older gradient contributes at most $C\lambda_{j-2}^9$ to the curl
+and the two central errors are at most $2\mu^{-1/4}$ in norm. Consequently
+\begin{equation}\label{cc:uf:terminal:eq:curl-lower}
+ |\curl U_j(t,0)|
+ \ge c\lambda_{j-1}^{1/8}-C\lambda_{j-2}^9-C,
+\end{equation}
+which tends to infinity uniformly on $[t_j,t_{j+1}]$.
+
+For $\ell>j$ the oscillation $O_\ell$ vanishes throughout $[t_j,t_{j+1}]$.
+Applying \eqref{cc:uf:tower:eq:increment} to the remaining increments
+at order one and taking the limit by Proposition~\ref{cc:uf:terminal:agreement}
+gives
+\[
+ \sup_{t_j\le t\le t_{j+1}}|\curl(u-U_j)(t,0)|
+ \le C\sum_{\ell>j}\lambda_\ell^{-1}.
+\]
+This tail tends to zero. The successive intervals cover
+$[t_j,T_\infty)$, so \eqref{cc:uf:terminal:eq:curl-lower} gives
+$|\curl u(t,0)|\to\infty$ as $t\uparrow T_\infty$.
+\end{proof}
+
+\begin{corollary}\label{cc:uf:terminal:time}
+The maximal existence time is $T_*=T_\infty\in(0,\infty)$, and
+both integrals in \eqref{cc:uf:eq:main-breakdown} diverge.
+\end{corollary}
+\begin{proof}
+By Proposition~\ref{cc:uf:terminal:agreement}, $T_*\ge T_\infty$. If
+$T_*>T_\infty$, then smoothness on the compact interval $[0,T_\infty]$
+would bound $\curl u(t,0)$, contrary to
+Proposition~\ref{cc:uf:terminal:velocity-curl}. Hence $T_*=T_\infty$,
+which is positive and finite by Theorem~\ref{cc:uf:tower:thm:finite}.
+The initial data are smooth, so the periodic Beale--Kato--Majda criterion
+\cite{BKM}, in the formulation of \cite[Theorem~1]{GGPP}, implies
+$\int_0^{T_*}\|\curl u(t)\|_\infty\dd t=\infty$.
+The gradient integral also diverges, since
+$\|\curl u\|_\infty\le C\|\nabla u\|_\infty$.
+\end{proof}
+
+\subsection{The velocity away from the origin at the singular time}
+
+\begin{proposition}\label{cc:uf:terminal:off-origin}
+For every compact $K\subset\mathbb T^3\setminus\{0\}$ and every integer
+$m\ge0$, both $u(t)$ and $\partial_tu(t)$ converge in $C^m(K)$ as
+$t\uparrow T_\infty$.
+\end{proposition}
+\begin{proof}
+Fix $K$ and $m$ as in the statement. The support of $O_j$ lies in the
+ball of radius $\lambda_{j-1}^{-1}$ about the origin throughout $[0,T_\infty]$.
+For large $j$ the ball is disjoint from $K$ and $q_j\ge m$, so
+\eqref{cc:uf:tower:eq:increment} gives
+$\|U_j-U_{j-1}\|_{C([0,T_\infty];C^m(K))}\le\lambda_j^{-1}$.
+The increments are summable in this norm, hence $u(t)\to w(T_\infty)$
+in $C^m(K)$.
+
+The time derivative also contains the pressure gradient, which depends
+on the velocity on the whole torus. Choose a smooth cutoff $\chi$ equal
+to one near $K$ and zero near the origin. On $[0,T_\infty)$ we have
+\[
+ \partial_tu=-\PP\diver(\chi u\otimes u)-\PP\diver\bigl((1-\chi)u\otimes u\bigr).
+\]
+Applying the spatial convergence just proved on $\supp\chi$ through
+order $m+2$ gives convergence of $\chi u\otimes u$ in $\Holder{m+1}$
+on the torus. Since $\PP\diver$ maps $\Holder{m+1}$ boundedly to
+$\Holder{m}$, the first term converges in $C^m(K)$.
+
+For the second term, $\supp(1-\chi)$ is a positive distance from $K$.
+Only the pressure part $-\nabla\Delta^{-1}\diver\diver$ acts across
+this distance. Its kernel is smooth off the diagonal, so for any
+bounded tensor field $A$,
+\[
+ \|\PP\diver((1-\chi)A)\|_{C^m(K)}\le C_{m,K,\chi}\|A\|_{L^1}.
+\]
+Since $u(t)\otimes u(t)\to w(T_\infty)\otimes w(T_\infty)$ uniformly
+on the torus, the difference tends to zero in $L^1$. The estimate
+therefore gives convergence of the second term in $C^m(K)$.
+\end{proof}
+
+Propositions~\ref{cc:uf:terminal:agreement},
+\ref{cc:uf:terminal:velocity-curl} and~\ref{cc:uf:terminal:off-origin}
+and Corollary~\ref{cc:uf:terminal:time} prove
+Theorem~\ref{cc:target:unforced}.

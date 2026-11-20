@@ -1,0 +1,25 @@
+\section{The parameter inequalities}\label{cc:app:parameters}
+\begin{proof}[Proof of Lemma~\ref{cc:uf:tower:lem:slow-orders}]
+The current order $q_j$ is always admissible in the maximum
+\eqref{cc:uf:tower:eq:schedule}. Indeed, $\mathcal B(q_1)=\mathcal B(1)
+\le N=\lambda_0$, and for $j\ge2$ the preceding choice gives
+$\mathcal B(q_j)\le\lambda_{j-2}\le\lambda_{j-1}$. Thus $q_{j+1}=q_j$
+until $\lambda_{j-1}$ reaches $\mathcal B(q_j+1)$, at which point the
+order increases by one. Since $N>1$ and $K_j\ge2$, the frequencies tend
+to infinity. They eventually exceed every fixed threshold, so
+$q_j\to\infty$.
+
+The gain $L_{j+1}$ involves three successive frequency steps. By
+\eqref{cc:uf:tower:eq:schedule},
+\[
+ L_{j+1}=4\log\lambda_{j+2}
+        =4K_jK_{j+1}K_{j+2}\log\lambda_{j-1}.
+\]
+Each exponent is at most $K(q_{j+1}+1)$, since the orders increase
+by at most one. Thus \eqref{cc:uf:tower:eq:uniform} follows from
+\eqref{cc:par:floor} and the choice of $q_{j+1}$, which give
+\[
+ 4K_jK_{j+1}K_{j+2}\le4K(q_{j+1}+1)^3
+ \le\log\mathcal B(q_{j+1})\le\log\lambda_{j-1}. \qedhere
+\]
+\end{proof}

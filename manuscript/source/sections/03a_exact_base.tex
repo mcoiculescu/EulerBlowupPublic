@@ -1,0 +1,67 @@
+\subsection{The initial wave over a stationary shear}\label{cc:uf:sec:first-wave}
+For $0<\rho\le1$ let
+\begin{equation}\label{cc:uf:base:eq:stationary}
+ U_0(x)=\sin(2\pi x_2)(e_1+\rho e_3),\qquad B_\rho=2\pi(e_1+\rho e_3)\otimes e_2
+\end{equation}
+be the stationary shear of Section~\ref{cc:sec:problem} and its gradient
+at the origin. The field $U_0$ is smooth, odd, divergence free and
+supported on the Fourier modes $\pm e_2$. As it depends only on $x_2$
+and has no second component, $U_0\cdot\nabla U_0=0$. Its pressure and
+residual therefore vanish. Each particle keeps its second coordinate,
+so the flow and its deformation are
+\begin{equation}\label{cc:uf:base:eq:deformation}
+ X_0(t,a)=a+t\sin(2\pi a_2)(e_1+\rho e_3),\qquad
+ (D_aX_0)^{\pm1}(t,a)=\Id\pm t\cos(2\pi a_2) B_\rho.
+\end{equation}
+The inverse formula uses $B_\rho^2=0$. The origin is a fixed particle and
+$|B_\rho|\le4\pi$.
+
+Take the first wave of frequency $\lambda$ over $U_0$ on $[0,T]$ with
+\begin{equation}\label{cc:uf:base:eq:first-wave}
+ k_*=\lambda e_1,\qquad \widetilde\chi\equiv1,
+\end{equation}
+so it is fully present at time zero. At the origin solve the seed
+equation \eqref{cc:uf:step:eq:seed} with initial direction $e_2$ and
+scale the solution so that $\max_{[0,T]}|\mathbf a(t,0)|=\lambda^{-3/4}$.
+At time zero $\kappa(0,a)=\lambda e_1$ at every label, so the projection
+in \eqref{cc:uf:tower:eq:start} leaves this initial amplitude unchanged.
+The initial frame at the origin is $(e_1,e_2,e_3)$, in which
+\begin{equation}\label{cc:uf:base:eq:shear-couplings}
+ e_1\cdot B_\rho e_2=2\pi,\qquad e_3\cdot B_\rho e_2=2\pi\rho .
+\end{equation}
+The second wave starts at time zero, so its amplification parameter is
+the ratio $\eta(0)/\nu(0)=\rho$ of these couplings in the first wave's
+frame. The shear that amplifies it is the leading
+gradient $\mathbf a(0,0)\otimes\kappa(0,0)$ contributed by the first
+wave in \eqref{cc:uf:tower:eq:central-return}.
+
+\begin{lemma}\label{cc:uf:base:lem:first}
+If $T|B_\rho|\le1/8$, the first wave satisfies the two conditions
+\eqref{cc:uf:tower:eq:wave-origin} for every $\mathsf D\ge2$, and its
+strength at the origin at time zero lies between $\lambda^{1/4}/2$ and
+$\lambda^{1/4}$.
+\end{lemma}
+\begin{proof}
+At the origin the seed equation reads
+$\mathbf b_t=-(\Id-2P_\kappa)B_\rho\mathbf b$. Since $\Id-2P_\kappa$
+is a reflection, every nonzero solution satisfies
+$\bigl|\partial_t\log|\mathbf b|\bigr|\le|B_\rho|$. Applying this estimate
+to $\mathbf b$ and to the seed $\mathbf a$, whose length is proportional
+to $\gamma$, gives
+\[
+ \frac{|\mathbf b(t)|}{\gamma(t)}
+ \le e^{2T|B_\rho|}\frac{|\mathbf b(t')|}{\gamma(t')}
+ \le 2\frac{|\mathbf b(t')|}{\gamma(t')}\qquad(0\le t'\le t\le T).
+\]
+The same estimate on the seed gives
+$e^{-T|B_\rho|}\lambda^{-3/4}\le|\mathbf a(0,0)|\le\lambda^{-3/4}$.
+Multiplying by $|\kappa(0,0)|=\lambda$ gives the initial strength.
+
+For the sign of the coupling, the frame equations \eqref{cc:eq:frame}
+give $|\partial_tE_1|,|\partial_tE_2|\le|B_\rho|$. Thus the first coupling
+can change by at most $2t|B_\rho|^2$ from its value in
+\eqref{cc:uf:base:eq:shear-couplings}, and
+\[
+ \nu(t,0)=E_1(t)\cdot B_\rho E_2(t)\ge 2\pi-2t|B_\rho|^2\ge\pi .
+\]
+\end{proof}

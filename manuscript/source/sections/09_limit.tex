@@ -1,0 +1,49 @@
+\section{The limit and its terminal behavior}\label{cc:sec:limit}
+On the common interval $[0,T_\infty]$ of Theorem~\ref{cc:uf:tower:thm:finite},
+\eqref{cc:uf:tower:eq:increment} gives $\|U_j-U_{j-1}\|_{C_tL^\infty}
+\le2\lambda_j^{-1}$. The sum converges, so the velocities converge
+uniformly to a continuous field $w$ on $[0,T_\infty]\times\mathbb T^3$.
+For convergence of derivatives we use that the oscillations vanish
+before activation and have supports shrinking to the origin.
+
+\subsection{Convergence before the accumulation time}
+
+\begin{proposition}\label{cc:uf:terminal:agreement}
+The data $U_j(0)$ converge in every $\Holder{m}$ to an odd divergence-free field $u_0$.
+In particular, $u_0\in C^\infty(\mathbb T^3;\R^3)$.
+Let $u$ be the maximal smooth
+solution of the Euler equations from $u_0$, with maximal time $T_*>0$, supplied by
+Section~\ref{cc:sec:problem}. Then $T_*\ge T_\infty$ and, for every
+$T<T_\infty$ and integer $m\ge0$,
+$U_j\to u$ in $C([0,T];\Holder{m})$. The solution is smooth and odd on
+$[0,T_\infty)\times\mathbb T^3$.
+\end{proposition}
+\begin{proof}
+Fix $T<T_\infty$ and $m\ge1$. Since $t_j\uparrow T_\infty$ and
+$q_j\uparrow\infty$, we can choose $j_0$ with $T\le t_{j_0}$ and
+$q_{j_0}\ge m$. For $j>j_0$ the oscillation $O_j$ vanishes on $[0,T]$.
+Thus \eqref{cc:uf:tower:eq:increment} gives, for $\ell>n\ge j_0$,
+\[
+ \|U_\ell-U_n\|_{C([0,T];\Holder{m})}
+ \le\sum_{j>n}\lambda_j^{-1}\le2\lambda_{n+1}^{-1}.
+\]
+The limit in each of these norms is $w$. In particular $u_0=w(0)$ is
+smooth, and $w$ is odd and divergence free on $[0,T]$.
+
+Integrating \eqref{cc:uf:tower:eq:leray} gives
+\[
+ U_j(t)=U_j(0)-\int_0^t\PP\diver(U_j\otimes U_j)\dd t'
+        +\int_0^tR_j\dd t'.
+\]
+By \textup{(T2)}, the last integral has supremum norm at most
+$T\lambda_{j+1}^{-3}$. Convergence in $C([0,T];\Holder{1})$, the product
+estimate \eqref{cc:holder:product-growth} and boundedness of $\PP$ on
+$\Holder{0}$ give uniform convergence of the projected nonlinear term.
+Hence $\partial_t w=-\PP\diver(w\otimes w)$. The right-hand side is
+continuous in every spatial H\"older norm, so differentiating the equation
+gives joint smoothness. Uniqueness identifies $w$ with $u$ wherever both
+exist. Since $w$ exists for every $T<T_\infty$, maximality gives
+$T_*\ge T_\infty$.
+\end{proof}
+
+\input{sections/09b_terminal_properties}

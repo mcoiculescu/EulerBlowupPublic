@@ -1,0 +1,65 @@
+\subsection{Finite-order estimates for the mean}\label{cc:uf:mean:sec:finite}
+The phase-independent corrections of the expansion solve the linearized
+Euler equations over the parent, with zero displacement at both ends of
+$[0,T]$. For a smooth phase-independent source \(\bar f(t,a)\),
+Theorem~\ref{cc:uf:mean:inverse} over $U$
+gives \((B,\bar q)\) with
+\begin{equation}\label{cc:uf:hier:eq:mean}
+ B_t+MB+\mathbf d\bar q=\bar f,\qquad \mathbf d\cdot B=0,\qquad
+ z(0)=z(T)=0,\quad B=D_aX z_t.
+\end{equation}
+In the notation of that theorem, $\bar f=f\circ X$,
+$g=(D_aX)^T\bar f$, $v=z_t$, and $\bar q$ is the pressure $\mathsf q$ of
+\eqref{cc:uf:mean:strong}. We call \eqref{cc:uf:hier:eq:mean} the
+\emph{mean equation}. The terminal condition selects the initial
+velocity $B(0)$, so the mean can already be present before activation.
+We estimate it on all of $[0,T]$ in the unweighted label norms.
+The inverse preserves the derivative order in the scaled H\"older
+norms. Passing to the supremum norms by \eqref{cc:uf:trunc:eq:holder-sup}
+costs one derivative of the source. At each level of the expansion
+the mean source is formed from terms already estimated at all orders.
+
+\begin{proposition}\label{cc:uf:mean:columns}
+There is an absolute exponent $C$ such that, for every $n\ge0$, every
+solution of the mean equation \eqref{cc:uf:hier:eq:mean} satisfies
+\begin{equation}\label{cc:uf:mean:bound}
+ \norm B_{[n]}\le C_n\mathsf D^C\norm{\bar f}_{[n+1]}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+By Proposition~\ref{cc:uf:trunc:prop:parent} and
+Lemma~\ref{cc:uf:trunc:lem:coefficients}(a), the coefficients $K$ and
+$\Omega$ of \eqref{cc:uf:mean:data}, which enter
+\eqref{cc:uf:mean:integrated}, satisfy \eqref{cc:uf:trunc:eq:power}.
+Theorem~\ref{cc:uf:mean:inverse} applies over $U$ with $D_-=\mathsf D$,
+by \eqref{cc:uf:tower:eq:parent-bound}. Its constant $A$ of
+\eqref{cc:uf:mean:base-constant} contains $D_-$,
+$\|M\|_\infty\le\mathsf D$ and the norms of $K$ and $\Omega$ in
+$C_t\Holder{1}$, so it is at most $\mathsf D^C$. Since $\ell_*$ is a
+sufficiently large negative power of $\mathsf D$, the first bound of
+\eqref{cc:uf:trunc:eq:holder-sup} and
+Lemma~\ref{cc:uf:trunc:lem:coefficients}(c) give
+\begin{equation}\label{cc:uf:mean:thresholds}
+ \ell_*^m\bigl(|K|_{m,1/2}+|\Omega|_{m,1/2}\bigr)
+ \le C_m\mathsf D^C\ell_*^{1/2}\le C_m/A\qquad(m\ge1).
+\end{equation}
+Label derivatives preserve the endpoint and divergence constraints,
+the time independence of the divergence-free field, and the class of
+label gradients in \eqref{cc:uf:mean:integrated}. Theorem~\ref{cc:uf:mean:inverse}
+bounds the map $L\mapsto v$ by $A$ in $C_t\Holder{0}$. The term $Kv$
+enters directly, and $\Omega v$ enters through time integration,
+an operator of norm at most $T\le1$.
+Thus \eqref{cc:uf:mean:thresholds} gives the coefficient bounds for
+Lemma~\ref{cc:uf:trunc:lem:lifting} with $C_{\rm low}=A$.
+Applying its H\"older estimate to the source $L=-\int_0^tg(t')\dd t'$
+of \eqref{cc:uf:mean:integrated} gives
+\begin{equation}\label{cc:uf:mean:holder-bound}
+ \norm v_{[n],1/2}\le C_n\mathsf D^C\norm g_{[n],1/2}.
+\end{equation}
+By \eqref{cc:uf:trunc:eq:holder-sup} and \eqref{cc:uf:hier:eq:coefficient-bound},
+$\|D_aX\|_{[n],1/2}\le C_n\ell_*^{-1/2}\mathsf D^C\le C_n\mathsf D^{C'}$,
+with $C'$ absolute. Using $B=D_aXv$ and $g=(D_aX)^T\bar f$ in
+\eqref{cc:uf:mean:holder-bound}, the product estimate \eqref{cc:uf:trunc:eq:product}
+gives $\|B\|_{[n],1/2}\le C_n\mathsf D^C\|\bar f\|_{[n],1/2}$.
+The comparison \eqref{cc:uf:trunc:eq:holder-sup} now gives \eqref{cc:uf:mean:bound}.
+\end{proof}
